@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="16E195" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+    <entity name="Event" representedClassName="Event" syncable="YES" codeGenerationType="class">
+        <attribute name="eventId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="team1Name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="team2Name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="totals" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Total" inverseName="event" inverseEntity="Total" syncable="YES"/>
+    </entity>
+    <entity name="Total" representedClassName="Total" syncable="YES" codeGenerationType="class">
+        <attribute name="betL" optional="YES" attributeType="Float" minValueString="0" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="betM" optional="YES" attributeType="Float" minValueString="0" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="profit" optional="YES" attributeType="Float" minValueString="0" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="profitL" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="profitM" optional="YES" attributeType="Float" minValueString="0" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="total" optional="YES" attributeType="Float" minValueString="0.5" maxValueString="20" defaultValueString="0.5" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="event" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Event" inverseName="totals" inverseEntity="Event" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Event" positionX="-155" positionY="-54" width="128" height="103"/>
+        <element name="Total" positionX="72" positionY="-117" width="128" height="148"/>
+    </elements>
+</model>

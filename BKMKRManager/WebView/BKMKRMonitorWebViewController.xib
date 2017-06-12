@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
+        <plugIn identifier="com.apple.WebKitIBPlugin" version="11762"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="BKMKRMonitorWebViewController">
+            <connections>
+                <outlet property="listenCheckbox" destination="Dug-hf-xBt" id="Bt3-CS-1aN"/>
+                <outlet property="urlTextField" destination="6fL-iZ-Xef" id="fBy-M7-95S"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+                <outlet property="webView" destination="7bm-ob-z6z" id="o9t-cM-84X"/>
+                <outlet property="webViewIndicator" destination="fa2-78-caj" id="1eS-Hd-Ysr"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="740" height="312"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6fL-iZ-Xef">
+                    <rect key="frame" x="20" y="270" width="400" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="400" id="Wli-Op-Uel"/>
+                        <constraint firstAttribute="height" constant="22" id="tyS-W5-15N"/>
+                    </constraints>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="https://www.favoritsport.com.ua/ru/live/" drawsBackground="YES" id="URk-T5-7k8">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rc6-6z-buK">
+                    <rect key="frame" x="422" y="264" width="81" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="K2l-bz-Ixe"/>
+                        <constraint firstAttribute="width" constant="69" id="LfP-Y3-xN6"/>
+                    </constraints>
+                    <buttonCell key="cell" type="push" title="Load" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="J7J-lc-3I1">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="load:" target="-2" id="mz5-Sk-3pK"/>
+                    </connections>
+                </button>
+                <progressIndicator hidden="YES" wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="fa2-78-caj">
+                    <rect key="frame" x="505" y="273" width="16" height="16"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="16" id="S3r-Yh-hU3"/>
+                        <constraint firstAttribute="height" constant="16" id="hZf-W5-aTE"/>
+                    </constraints>
+                </progressIndicator>
+                <webView translatesAutoresizingMaskIntoConstraints="NO" id="7bm-ob-z6z">
+                    <rect key="frame" x="20" y="20" width="700" height="230"/>
+                    <webPreferences key="preferences" defaultFontSize="16" defaultFixedFontSize="13" minimumFontSize="0">
+                        <nil key="identifier"/>
+                    </webPreferences>
+                    <connections>
+                        <outlet property="frameLoadDelegate" destination="-2" id="wCU-hN-jF0"/>
+                    </connections>
+                </webView>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="81M-3I-n9D">
+                    <rect key="frame" x="694" y="272" width="13" height="21"/>
+                    <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSAddTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="DE5-O3-ofm">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="addEvent:" target="-2" id="lLF-BE-l5L"/>
+                        <binding destination="-2" name="enabled" keyPath="self.document.event" id="3e4-qU-goZ">
+                            <dictionary key="options">
+                                <string key="NSValueTransformerName">NSIsNil</string>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </button>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="v4A-z8-CwT">
+                    <rect key="frame" x="707" y="272" width="13" height="21"/>
+                    <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSRemoveTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="nlt-Qk-l0R">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="removeEvent:" target="-2" id="itY-xk-FIH"/>
+                        <binding destination="-2" name="enabled" keyPath="self.document.event" id="pLo-nQ-vqO">
+                            <dictionary key="options">
+                                <string key="NSValueTransformerName">NSIsNotNil</string>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </button>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Dug-hf-xBt">
+                    <rect key="frame" x="527" y="272" width="59" height="18"/>
+                    <buttonCell key="cell" type="check" title="Listen" bezelStyle="regularSquare" imagePosition="left" inset="2" id="qkG-4f-ZJu">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="listen:" target="-2" id="LfJ-iI-PlK"/>
+                        <binding destination="-2" name="enabled" keyPath="self.document.event" id="1vE-TM-uNL">
+                            <dictionary key="options">
+                                <string key="NSValueTransformerName">NSIsNotNil</string>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstItem="Dug-hf-xBt" firstAttribute="centerY" secondItem="fa2-78-caj" secondAttribute="centerY" id="1bo-kY-f0J"/>
+                <constraint firstItem="rc6-6z-buK" firstAttribute="leading" secondItem="6fL-iZ-Xef" secondAttribute="trailing" constant="8" id="37g-2t-nkK"/>
+                <constraint firstItem="v4A-z8-CwT" firstAttribute="top" secondItem="81M-3I-n9D" secondAttribute="top" id="6hj-Ai-Unj"/>
+                <constraint firstItem="6fL-iZ-Xef" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="CUQ-Ol-IqK"/>
+                <constraint firstItem="v4A-z8-CwT" firstAttribute="leading" secondItem="81M-3I-n9D" secondAttribute="trailing" id="CdK-1E-Ll0"/>
+                <constraint firstItem="v4A-z8-CwT" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="20" id="Ehw-BH-5H8"/>
+                <constraint firstAttribute="bottom" secondItem="7bm-ob-z6z" secondAttribute="bottom" constant="20" id="GLV-4i-vJb"/>
+                <constraint firstItem="81M-3I-n9D" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="20" id="RCz-lv-HCj"/>
+                <constraint firstAttribute="trailing" secondItem="7bm-ob-z6z" secondAttribute="trailing" constant="20" id="S8P-ld-PAE"/>
+                <constraint firstItem="7bm-ob-z6z" firstAttribute="top" secondItem="6fL-iZ-Xef" secondAttribute="bottom" constant="20" id="ZDv-9Q-sj6"/>
+                <constraint firstItem="7bm-ob-z6z" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="ZVM-2X-eqN"/>
+                <constraint firstItem="Dug-hf-xBt" firstAttribute="leading" secondItem="fa2-78-caj" secondAttribute="trailing" constant="8" id="aux-64-1hK"/>
+                <constraint firstAttribute="trailing" secondItem="v4A-z8-CwT" secondAttribute="trailing" constant="20" id="b59-TY-7EU"/>
+                <constraint firstItem="rc6-6z-buK" firstAttribute="centerY" secondItem="6fL-iZ-Xef" secondAttribute="centerY" id="e3A-Cb-6Lx"/>
+                <constraint firstItem="fa2-78-caj" firstAttribute="centerY" secondItem="rc6-6z-buK" secondAttribute="centerY" id="hdR-KS-Fji"/>
+                <constraint firstItem="fa2-78-caj" firstAttribute="leading" secondItem="rc6-6z-buK" secondAttribute="trailing" constant="8" id="yi5-VI-bRZ"/>
+                <constraint firstItem="6fL-iZ-Xef" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="20" id="zMS-eA-7h9"/>
+            </constraints>
+            <point key="canvasLocation" x="247" y="179"/>
+        </customView>
+        <userDefaultsController representsSharedInstance="YES" id="EvB-Yg-mjj"/>
+    </objects>
+    <resources>
+        <image name="NSAddTemplate" width="11" height="11"/>
+        <image name="NSRemoveTemplate" width="11" height="11"/>
+    </resources>
+</document>

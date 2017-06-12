@@ -1,0 +1,701 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		960DFD9F1ED58D7A0051B522 /* teamsInfo.js in Resources */ = {isa = PBXBuildFile; fileRef = 960DFD9E1ED58D7A0051B522 /* teamsInfo.js */; };
+		960DFDA41ED5A4F80051B522 /* BKMKRTotalsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 960DFDA21ED5A4F80051B522 /* BKMKRTotalsViewController.m */; };
+		960DFDA51ED5A4F80051B522 /* BKMKRTotalsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 960DFDA31ED5A4F80051B522 /* BKMKRTotalsViewController.xib */; };
+		960DFDB71ED858CA0051B522 /* BKMKRTotalsCollectionViewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 960DFDB51ED858CA0051B522 /* BKMKRTotalsCollectionViewItem.m */; };
+		960DFDB81ED858CA0051B522 /* BKMKRTotalsCollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 960DFDB61ED858CA0051B522 /* BKMKRTotalsCollectionViewItem.xib */; };
+		9611F2B11EE03C38003BFBDC /* BKMKRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9611F2B01EE03C38003BFBDC /* BKMKRViewController.m */; };
+		961C34F61ED4F9170057C611 /* score.js in Resources */ = {isa = PBXBuildFile; fileRef = 961C34F41ED4F9170057C611 /* score.js */; };
+		961C34F71ED4F9170057C611 /* total.js in Resources */ = {isa = PBXBuildFile; fileRef = 961C34F51ED4F9170057C611 /* total.js */; };
+		961C34FA1ED4F97F0057C611 /* BKMKRWebParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 961C34F91ED4F97F0057C611 /* BKMKRWebParser.m */; };
+		963C38361EE0AE510007E06C /* BKMKRDataModelManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 963C38351EE0AE510007E06C /* BKMKRDataModelManager.m */; };
+		963C38391EE0BE1A0007E06C /* goal.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 963C38381EE0BE1A0007E06C /* goal.mp3 */; };
+		963EF4E61EAB7B3E00DE39F4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 963EF4E51EAB7B3E00DE39F4 /* AppDelegate.m */; };
+		963EF4E91EAB7B3E00DE39F4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 963EF4E81EAB7B3E00DE39F4 /* main.m */; };
+		963EF4EF1EAB7B3E00DE39F4 /* Document.m in Sources */ = {isa = PBXBuildFile; fileRef = 963EF4EE1EAB7B3E00DE39F4 /* Document.m */; };
+		963EF4F21EAB7B3E00DE39F4 /* Document.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 963EF4F01EAB7B3E00DE39F4 /* Document.xcdatamodeld */; };
+		963EF4F41EAB7B3E00DE39F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 963EF4F31EAB7B3E00DE39F4 /* Assets.xcassets */; };
+		963EF4F71EAB7B3E00DE39F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 963EF4F51EAB7B3E00DE39F4 /* Main.storyboard */; };
+		963EF5021EAB7B3E00DE39F4 /* BKMKRManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 963EF5011EAB7B3E00DE39F4 /* BKMKRManagerTests.m */; };
+		9651B5C21ED9C47600281BF7 /* BKMKREventHandlerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9651B5C11ED9C47600281BF7 /* BKMKREventHandlerView.m */; };
+		9651B5C51ED9CE2B00281BF7 /* BKMKRViewControllerAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 9651B5C41ED9CE2B00281BF7 /* BKMKRViewControllerAnimator.m */; };
+		9651B5C91ED9D10700281BF7 /* BKMKRTotalDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9651B5C71ED9D10700281BF7 /* BKMKRTotalDetailViewController.m */; };
+		9651B5CA1ED9D10700281BF7 /* BKMKRTotalDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9651B5C81ED9D10700281BF7 /* BKMKRTotalDetailViewController.xib */; };
+		9653B8631EE409DB009BC849 /* BKMKREventInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9653B8621EE409DB009BC849 /* BKMKREventInfo.m */; };
+		96540A2F1EAB809100255866 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96540A2E1EAB809100255866 /* WebKit.framework */; };
+		96BC65571ED0DCF600F013E2 /* BKMKREventInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96BC65551ED0DCF600F013E2 /* BKMKREventInfoViewController.m */; };
+		96BC65581ED0DCF600F013E2 /* BKMKREventInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96BC65561ED0DCF600F013E2 /* BKMKREventInfoViewController.xib */; };
+		96BC655D1ED0E2AA00F013E2 /* NSView+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = 96BC655C1ED0E2AA00F013E2 /* NSView+Layout.m */; };
+		96BC65621ED17CCA00F013E2 /* BKMKRWebViewSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 96BC65611ED17CCA00F013E2 /* BKMKRWebViewSection.m */; };
+		96BC65651ED17F8400F013E2 /* MKBKRBetViewSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 96BC65641ED17F8400F013E2 /* MKBKRBetViewSection.m */; };
+		96BC65691ED1814100F013E2 /* BKMKRMonitorWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96BC65671ED1814100F013E2 /* BKMKRMonitorWebViewController.m */; };
+		96BC656A1ED1814100F013E2 /* BKMKRMonitorWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96BC65681ED1814100F013E2 /* BKMKRMonitorWebViewController.xib */; };
+		96E58C441ED4AB66004D988F /* Document+notifications.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E58C431ED4AB66004D988F /* Document+notifications.m */; };
+		96EBABDD1EE5305E00D0397A /* fork.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 96EBABDC1EE5305E00D0397A /* fork.mp3 */; };
+		96EBABE11EE535BA00D0397A /* BKMKRTotalAnalyzer.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EBABE01EE535BA00D0397A /* BKMKRTotalAnalyzer.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		963EF4FE1EAB7B3E00DE39F4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 963EF4D91EAB7B3E00DE39F4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 963EF4E01EAB7B3E00DE39F4;
+			remoteInfo = BKMKRManager;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		960DFD9E1ED58D7A0051B522 /* teamsInfo.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = teamsInfo.js; sourceTree = "<group>"; };
+		960DFDA11ED5A4F80051B522 /* BKMKRTotalsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BKMKRTotalsViewController.h; path = Activities/Totals/BKMKRTotalsViewController.h; sourceTree = "<group>"; };
+		960DFDA21ED5A4F80051B522 /* BKMKRTotalsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BKMKRTotalsViewController.m; path = Activities/Totals/BKMKRTotalsViewController.m; sourceTree = "<group>"; };
+		960DFDA31ED5A4F80051B522 /* BKMKRTotalsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BKMKRTotalsViewController.xib; path = Activities/Totals/BKMKRTotalsViewController.xib; sourceTree = "<group>"; };
+		960DFDB41ED858CA0051B522 /* BKMKRTotalsCollectionViewItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BKMKRTotalsCollectionViewItem.h; path = Activities/Totals/BKMKRTotalsCollectionViewItem.h; sourceTree = "<group>"; };
+		960DFDB51ED858CA0051B522 /* BKMKRTotalsCollectionViewItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BKMKRTotalsCollectionViewItem.m; path = Activities/Totals/BKMKRTotalsCollectionViewItem.m; sourceTree = "<group>"; };
+		960DFDB61ED858CA0051B522 /* BKMKRTotalsCollectionViewItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BKMKRTotalsCollectionViewItem.xib; path = Activities/Totals/BKMKRTotalsCollectionViewItem.xib; sourceTree = "<group>"; };
+		9611F2AF1EE03C38003BFBDC /* BKMKRViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BKMKRViewController.h; path = Common/BKMKRViewController.h; sourceTree = "<group>"; };
+		9611F2B01EE03C38003BFBDC /* BKMKRViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BKMKRViewController.m; path = Common/BKMKRViewController.m; sourceTree = "<group>"; };
+		961C34F41ED4F9170057C611 /* score.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = score.js; sourceTree = "<group>"; };
+		961C34F51ED4F9170057C611 /* total.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = total.js; sourceTree = "<group>"; };
+		961C34F81ED4F97F0057C611 /* BKMKRWebParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKMKRWebParser.h; sourceTree = "<group>"; };
+		961C34F91ED4F97F0057C611 /* BKMKRWebParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKMKRWebParser.m; sourceTree = "<group>"; };
+		963C38341EE0AE510007E06C /* BKMKRDataModelManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKMKRDataModelManager.h; sourceTree = "<group>"; };
+		963C38351EE0AE510007E06C /* BKMKRDataModelManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKMKRDataModelManager.m; sourceTree = "<group>"; };
+		963C38381EE0BE1A0007E06C /* goal.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = goal.mp3; sourceTree = "<group>"; };
+		963C383A1EE0BF520007E06C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		963EF4E11EAB7B3E00DE39F4 /* BKMKRManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BKMKRManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		963EF4E41EAB7B3E00DE39F4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		963EF4E51EAB7B3E00DE39F4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		963EF4E81EAB7B3E00DE39F4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		963EF4ED1EAB7B3E00DE39F4 /* Document.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Document.h; sourceTree = "<group>"; };
+		963EF4EE1EAB7B3E00DE39F4 /* Document.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Document.m; sourceTree = "<group>"; };
+		963EF4F11EAB7B3E00DE39F4 /* Document.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Document.xcdatamodel; sourceTree = "<group>"; };
+		963EF4F31EAB7B3E00DE39F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		963EF4F61EAB7B3E00DE39F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		963EF4F81EAB7B3E00DE39F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		963EF4FD1EAB7B3E00DE39F4 /* BKMKRManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BKMKRManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		963EF5011EAB7B3E00DE39F4 /* BKMKRManagerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BKMKRManagerTests.m; sourceTree = "<group>"; };
+		963EF5031EAB7B3E00DE39F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9651B5C01ED9C47600281BF7 /* BKMKREventHandlerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BKMKREventHandlerView.h; path = Common/BKMKREventHandlerView.h; sourceTree = "<group>"; };
+		9651B5C11ED9C47600281BF7 /* BKMKREventHandlerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BKMKREventHandlerView.m; path = Common/BKMKREventHandlerView.m; sourceTree = "<group>"; };
+		9651B5C31ED9CE2B00281BF7 /* BKMKRViewControllerAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BKMKRViewControllerAnimator.h; path = Common/BKMKRViewControllerAnimator.h; sourceTree = "<group>"; };
+		9651B5C41ED9CE2B00281BF7 /* BKMKRViewControllerAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BKMKRViewControllerAnimator.m; path = Common/BKMKRViewControllerAnimator.m; sourceTree = "<group>"; };
+		9651B5C61ED9D10700281BF7 /* BKMKRTotalDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BKMKRTotalDetailViewController.h; path = Activities/Totals/BKMKRTotalDetailViewController.h; sourceTree = "<group>"; };
+		9651B5C71ED9D10700281BF7 /* BKMKRTotalDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BKMKRTotalDetailViewController.m; path = Activities/Totals/BKMKRTotalDetailViewController.m; sourceTree = "<group>"; };
+		9651B5C81ED9D10700281BF7 /* BKMKRTotalDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BKMKRTotalDetailViewController.xib; path = Activities/Totals/BKMKRTotalDetailViewController.xib; sourceTree = "<group>"; };
+		9653B8611EE409DB009BC849 /* BKMKREventInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BKMKREventInfo.h; path = Model/WebViewModel/BKMKREventInfo.h; sourceTree = "<group>"; };
+		9653B8621EE409DB009BC849 /* BKMKREventInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BKMKREventInfo.m; path = Model/WebViewModel/BKMKREventInfo.m; sourceTree = "<group>"; };
+		96540A2E1EAB809100255866 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		96BC65541ED0DCF600F013E2 /* BKMKREventInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BKMKREventInfoViewController.h; path = Activities/Info/BKMKREventInfoViewController.h; sourceTree = "<group>"; };
+		96BC65551ED0DCF600F013E2 /* BKMKREventInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BKMKREventInfoViewController.m; path = Activities/Info/BKMKREventInfoViewController.m; sourceTree = "<group>"; };
+		96BC65561ED0DCF600F013E2 /* BKMKREventInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BKMKREventInfoViewController.xib; path = Activities/Info/BKMKREventInfoViewController.xib; sourceTree = "<group>"; };
+		96BC655B1ED0E2AA00F013E2 /* NSView+Layout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSView+Layout.h"; path = "Categories/NSView+Layout.h"; sourceTree = "<group>"; };
+		96BC655C1ED0E2AA00F013E2 /* NSView+Layout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSView+Layout.m"; path = "Categories/NSView+Layout.m"; sourceTree = "<group>"; };
+		96BC65601ED17CCA00F013E2 /* BKMKRWebViewSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BKMKRWebViewSection.h; path = Sectioins/BKMKRWebViewSection.h; sourceTree = "<group>"; };
+		96BC65611ED17CCA00F013E2 /* BKMKRWebViewSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BKMKRWebViewSection.m; path = Sectioins/BKMKRWebViewSection.m; sourceTree = "<group>"; };
+		96BC65631ED17F8400F013E2 /* MKBKRBetViewSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MKBKRBetViewSection.h; path = Sectioins/MKBKRBetViewSection.h; sourceTree = "<group>"; };
+		96BC65641ED17F8400F013E2 /* MKBKRBetViewSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MKBKRBetViewSection.m; path = Sectioins/MKBKRBetViewSection.m; sourceTree = "<group>"; };
+		96BC65661ED1814100F013E2 /* BKMKRMonitorWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BKMKRMonitorWebViewController.h; path = WebView/BKMKRMonitorWebViewController.h; sourceTree = "<group>"; };
+		96BC65671ED1814100F013E2 /* BKMKRMonitorWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BKMKRMonitorWebViewController.m; path = WebView/BKMKRMonitorWebViewController.m; sourceTree = "<group>"; };
+		96BC65681ED1814100F013E2 /* BKMKRMonitorWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BKMKRMonitorWebViewController.xib; path = WebView/BKMKRMonitorWebViewController.xib; sourceTree = "<group>"; };
+		96E58C401ED346C3004D988F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		96E58C421ED4AB66004D988F /* Document+notifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Document+notifications.h"; path = "Categories/Document+notifications.h"; sourceTree = "<group>"; };
+		96E58C431ED4AB66004D988F /* Document+notifications.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Document+notifications.m"; path = "Categories/Document+notifications.m"; sourceTree = "<group>"; };
+		96EBABDC1EE5305E00D0397A /* fork.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = fork.mp3; sourceTree = "<group>"; };
+		96EBABDF1EE535BA00D0397A /* BKMKRTotalAnalyzer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BKMKRTotalAnalyzer.h; path = Analyzer/BKMKRTotalAnalyzer.h; sourceTree = "<group>"; };
+		96EBABE01EE535BA00D0397A /* BKMKRTotalAnalyzer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BKMKRTotalAnalyzer.m; path = Analyzer/BKMKRTotalAnalyzer.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		963EF4DE1EAB7B3E00DE39F4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96540A2F1EAB809100255866 /* WebKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		963EF4FA1EAB7B3E00DE39F4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		960DFDA01ED5A4920051B522 /* Totals */ = {
+			isa = PBXGroup;
+			children = (
+				960DFDA11ED5A4F80051B522 /* BKMKRTotalsViewController.h */,
+				960DFDA21ED5A4F80051B522 /* BKMKRTotalsViewController.m */,
+				960DFDA31ED5A4F80051B522 /* BKMKRTotalsViewController.xib */,
+				960DFDB41ED858CA0051B522 /* BKMKRTotalsCollectionViewItem.h */,
+				960DFDB51ED858CA0051B522 /* BKMKRTotalsCollectionViewItem.m */,
+				960DFDB61ED858CA0051B522 /* BKMKRTotalsCollectionViewItem.xib */,
+				9651B5C61ED9D10700281BF7 /* BKMKRTotalDetailViewController.h */,
+				9651B5C71ED9D10700281BF7 /* BKMKRTotalDetailViewController.m */,
+				9651B5C81ED9D10700281BF7 /* BKMKRTotalDetailViewController.xib */,
+			);
+			name = Totals;
+			sourceTree = "<group>";
+		};
+		9611F2B21EE0461F003BFBDC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9653B85A1EE4026A009BC849 /* WebViewModel */,
+				963C38331EE0AE510007E06C /* CoreDataModel */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		961C34F21ED4F9170057C611 /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				961C34F31ED4F9170057C611 /* js */,
+				961C34F81ED4F97F0057C611 /* BKMKRWebParser.h */,
+				961C34F91ED4F97F0057C611 /* BKMKRWebParser.m */,
+			);
+			name = Parser;
+			path = WebView/Parser;
+			sourceTree = "<group>";
+		};
+		961C34F31ED4F9170057C611 /* js */ = {
+			isa = PBXGroup;
+			children = (
+				960DFD9E1ED58D7A0051B522 /* teamsInfo.js */,
+				961C34F41ED4F9170057C611 /* score.js */,
+				961C34F51ED4F9170057C611 /* total.js */,
+			);
+			path = js;
+			sourceTree = "<group>";
+		};
+		963C38331EE0AE510007E06C /* CoreDataModel */ = {
+			isa = PBXGroup;
+			children = (
+				963C38341EE0AE510007E06C /* BKMKRDataModelManager.h */,
+				963C38351EE0AE510007E06C /* BKMKRDataModelManager.m */,
+			);
+			name = CoreDataModel;
+			path = Model/CoreDataModel;
+			sourceTree = "<group>";
+		};
+		963C38371EE0BE1A0007E06C /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				96EBABDC1EE5305E00D0397A /* fork.mp3 */,
+				963C38381EE0BE1A0007E06C /* goal.mp3 */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
+		963EF4D81EAB7B3E00DE39F4 = {
+			isa = PBXGroup;
+			children = (
+				963EF4E31EAB7B3E00DE39F4 /* BKMKRManager */,
+				963EF5001EAB7B3E00DE39F4 /* BKMKRManagerTests */,
+				963EF4E21EAB7B3E00DE39F4 /* Products */,
+				96540A2D1EAB809100255866 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		963EF4E21EAB7B3E00DE39F4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				963EF4E11EAB7B3E00DE39F4 /* BKMKRManager.app */,
+				963EF4FD1EAB7B3E00DE39F4 /* BKMKRManagerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		963EF4E31EAB7B3E00DE39F4 /* BKMKRManager */ = {
+			isa = PBXGroup;
+			children = (
+				96EBABDE1EE5352A00D0397A /* Analyzer */,
+				9611F2B21EE0461F003BFBDC /* Model */,
+				9651B5BF1ED9C42100281BF7 /* Common */,
+				96BC655F1ED17BA400F013E2 /* Sections */,
+				96BC655A1ED0E24600F013E2 /* Categories */,
+				96BC65501ED0DB0B00F013E2 /* Activities */,
+				96BC65491ED0C52500F013E2 /* WebView */,
+				963EF4E41EAB7B3E00DE39F4 /* AppDelegate.h */,
+				963EF4E51EAB7B3E00DE39F4 /* AppDelegate.m */,
+				963EF4ED1EAB7B3E00DE39F4 /* Document.h */,
+				963EF4EE1EAB7B3E00DE39F4 /* Document.m */,
+				963EF4F31EAB7B3E00DE39F4 /* Assets.xcassets */,
+				963EF4F51EAB7B3E00DE39F4 /* Main.storyboard */,
+				963EF4F81EAB7B3E00DE39F4 /* Info.plist */,
+				963EF4F01EAB7B3E00DE39F4 /* Document.xcdatamodeld */,
+				963C38371EE0BE1A0007E06C /* resources */,
+				963EF4E71EAB7B3E00DE39F4 /* Supporting Files */,
+			);
+			path = BKMKRManager;
+			sourceTree = "<group>";
+		};
+		963EF4E71EAB7B3E00DE39F4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				963EF4E81EAB7B3E00DE39F4 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		963EF5001EAB7B3E00DE39F4 /* BKMKRManagerTests */ = {
+			isa = PBXGroup;
+			children = (
+				963EF5011EAB7B3E00DE39F4 /* BKMKRManagerTests.m */,
+				963EF5031EAB7B3E00DE39F4 /* Info.plist */,
+			);
+			path = BKMKRManagerTests;
+			sourceTree = "<group>";
+		};
+		9651B5BF1ED9C42100281BF7 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				9611F2AF1EE03C38003BFBDC /* BKMKRViewController.h */,
+				9611F2B01EE03C38003BFBDC /* BKMKRViewController.m */,
+				9651B5C31ED9CE2B00281BF7 /* BKMKRViewControllerAnimator.h */,
+				9651B5C41ED9CE2B00281BF7 /* BKMKRViewControllerAnimator.m */,
+				9651B5C01ED9C47600281BF7 /* BKMKREventHandlerView.h */,
+				9651B5C11ED9C47600281BF7 /* BKMKREventHandlerView.m */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		9653B85A1EE4026A009BC849 /* WebViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9653B8611EE409DB009BC849 /* BKMKREventInfo.h */,
+				9653B8621EE409DB009BC849 /* BKMKREventInfo.m */,
+			);
+			name = WebViewModel;
+			sourceTree = "<group>";
+		};
+		96540A2D1EAB809100255866 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				963C383A1EE0BF520007E06C /* AVFoundation.framework */,
+				96E58C401ED346C3004D988F /* CoreData.framework */,
+				96540A2E1EAB809100255866 /* WebKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		96BC65491ED0C52500F013E2 /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				961C34F21ED4F9170057C611 /* Parser */,
+				96BC65661ED1814100F013E2 /* BKMKRMonitorWebViewController.h */,
+				96BC65671ED1814100F013E2 /* BKMKRMonitorWebViewController.m */,
+				96BC65681ED1814100F013E2 /* BKMKRMonitorWebViewController.xib */,
+			);
+			name = WebView;
+			sourceTree = "<group>";
+		};
+		96BC65501ED0DB0B00F013E2 /* Activities */ = {
+			isa = PBXGroup;
+			children = (
+				960DFDA01ED5A4920051B522 /* Totals */,
+				96BC65591ED0DF0D00F013E2 /* Info */,
+			);
+			name = Activities;
+			sourceTree = "<group>";
+		};
+		96BC65591ED0DF0D00F013E2 /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				96BC65541ED0DCF600F013E2 /* BKMKREventInfoViewController.h */,
+				96BC65551ED0DCF600F013E2 /* BKMKREventInfoViewController.m */,
+				96BC65561ED0DCF600F013E2 /* BKMKREventInfoViewController.xib */,
+			);
+			name = Info;
+			sourceTree = "<group>";
+		};
+		96BC655A1ED0E24600F013E2 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				96E58C421ED4AB66004D988F /* Document+notifications.h */,
+				96E58C431ED4AB66004D988F /* Document+notifications.m */,
+				96BC655B1ED0E2AA00F013E2 /* NSView+Layout.h */,
+				96BC655C1ED0E2AA00F013E2 /* NSView+Layout.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		96BC655F1ED17BA400F013E2 /* Sections */ = {
+			isa = PBXGroup;
+			children = (
+				96BC65601ED17CCA00F013E2 /* BKMKRWebViewSection.h */,
+				96BC65611ED17CCA00F013E2 /* BKMKRWebViewSection.m */,
+				96BC65631ED17F8400F013E2 /* MKBKRBetViewSection.h */,
+				96BC65641ED17F8400F013E2 /* MKBKRBetViewSection.m */,
+			);
+			name = Sections;
+			sourceTree = "<group>";
+		};
+		96EBABDE1EE5352A00D0397A /* Analyzer */ = {
+			isa = PBXGroup;
+			children = (
+				96EBABDF1EE535BA00D0397A /* BKMKRTotalAnalyzer.h */,
+				96EBABE01EE535BA00D0397A /* BKMKRTotalAnalyzer.m */,
+			);
+			name = Analyzer;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		963EF4E01EAB7B3E00DE39F4 /* BKMKRManager */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 963EF5061EAB7B3E00DE39F4 /* Build configuration list for PBXNativeTarget "BKMKRManager" */;
+			buildPhases = (
+				963EF4DD1EAB7B3E00DE39F4 /* Sources */,
+				963EF4DE1EAB7B3E00DE39F4 /* Frameworks */,
+				963EF4DF1EAB7B3E00DE39F4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BKMKRManager;
+			productName = BKMKRManager;
+			productReference = 963EF4E11EAB7B3E00DE39F4 /* BKMKRManager.app */;
+			productType = "com.apple.product-type.application";
+		};
+		963EF4FC1EAB7B3E00DE39F4 /* BKMKRManagerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 963EF5091EAB7B3E00DE39F4 /* Build configuration list for PBXNativeTarget "BKMKRManagerTests" */;
+			buildPhases = (
+				963EF4F91EAB7B3E00DE39F4 /* Sources */,
+				963EF4FA1EAB7B3E00DE39F4 /* Frameworks */,
+				963EF4FB1EAB7B3E00DE39F4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				963EF4FF1EAB7B3E00DE39F4 /* PBXTargetDependency */,
+			);
+			name = BKMKRManagerTests;
+			productName = BKMKRManagerTests;
+			productReference = 963EF4FD1EAB7B3E00DE39F4 /* BKMKRManagerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		963EF4D91EAB7B3E00DE39F4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = Chemer;
+				TargetAttributes = {
+					963EF4E01EAB7B3E00DE39F4 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+					963EF4FC1EAB7B3E00DE39F4 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 963EF4E01EAB7B3E00DE39F4;
+					};
+				};
+			};
+			buildConfigurationList = 963EF4DC1EAB7B3E00DE39F4 /* Build configuration list for PBXProject "BKMKRManager" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 963EF4D81EAB7B3E00DE39F4;
+			productRefGroup = 963EF4E21EAB7B3E00DE39F4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				963EF4E01EAB7B3E00DE39F4 /* BKMKRManager */,
+				963EF4FC1EAB7B3E00DE39F4 /* BKMKRManagerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		963EF4DF1EAB7B3E00DE39F4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96BC656A1ED1814100F013E2 /* BKMKRMonitorWebViewController.xib in Resources */,
+				961C34F61ED4F9170057C611 /* score.js in Resources */,
+				9651B5CA1ED9D10700281BF7 /* BKMKRTotalDetailViewController.xib in Resources */,
+				960DFD9F1ED58D7A0051B522 /* teamsInfo.js in Resources */,
+				960DFDA51ED5A4F80051B522 /* BKMKRTotalsViewController.xib in Resources */,
+				960DFDB81ED858CA0051B522 /* BKMKRTotalsCollectionViewItem.xib in Resources */,
+				96BC65581ED0DCF600F013E2 /* BKMKREventInfoViewController.xib in Resources */,
+				961C34F71ED4F9170057C611 /* total.js in Resources */,
+				96EBABDD1EE5305E00D0397A /* fork.mp3 in Resources */,
+				963EF4F41EAB7B3E00DE39F4 /* Assets.xcassets in Resources */,
+				963EF4F71EAB7B3E00DE39F4 /* Main.storyboard in Resources */,
+				963C38391EE0BE1A0007E06C /* goal.mp3 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		963EF4FB1EAB7B3E00DE39F4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		963EF4DD1EAB7B3E00DE39F4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				963EF4EF1EAB7B3E00DE39F4 /* Document.m in Sources */,
+				96BC655D1ED0E2AA00F013E2 /* NSView+Layout.m in Sources */,
+				96BC65691ED1814100F013E2 /* BKMKRMonitorWebViewController.m in Sources */,
+				963EF4E91EAB7B3E00DE39F4 /* main.m in Sources */,
+				963EF4F21EAB7B3E00DE39F4 /* Document.xcdatamodeld in Sources */,
+				96E58C441ED4AB66004D988F /* Document+notifications.m in Sources */,
+				9651B5C21ED9C47600281BF7 /* BKMKREventHandlerView.m in Sources */,
+				960DFDB71ED858CA0051B522 /* BKMKRTotalsCollectionViewItem.m in Sources */,
+				96EBABE11EE535BA00D0397A /* BKMKRTotalAnalyzer.m in Sources */,
+				9651B5C51ED9CE2B00281BF7 /* BKMKRViewControllerAnimator.m in Sources */,
+				96BC65651ED17F8400F013E2 /* MKBKRBetViewSection.m in Sources */,
+				963C38361EE0AE510007E06C /* BKMKRDataModelManager.m in Sources */,
+				96BC65571ED0DCF600F013E2 /* BKMKREventInfoViewController.m in Sources */,
+				9611F2B11EE03C38003BFBDC /* BKMKRViewController.m in Sources */,
+				960DFDA41ED5A4F80051B522 /* BKMKRTotalsViewController.m in Sources */,
+				96BC65621ED17CCA00F013E2 /* BKMKRWebViewSection.m in Sources */,
+				9653B8631EE409DB009BC849 /* BKMKREventInfo.m in Sources */,
+				961C34FA1ED4F97F0057C611 /* BKMKRWebParser.m in Sources */,
+				9651B5C91ED9D10700281BF7 /* BKMKRTotalDetailViewController.m in Sources */,
+				963EF4E61EAB7B3E00DE39F4 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		963EF4F91EAB7B3E00DE39F4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				963EF5021EAB7B3E00DE39F4 /* BKMKRManagerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		963EF4FF1EAB7B3E00DE39F4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 963EF4E01EAB7B3E00DE39F4 /* BKMKRManager */;
+			targetProxy = 963EF4FE1EAB7B3E00DE39F4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		963EF4F51EAB7B3E00DE39F4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				963EF4F61EAB7B3E00DE39F4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		963EF5041EAB7B3E00DE39F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		963EF5051EAB7B3E00DE39F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		963EF5071EAB7B3E00DE39F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = BKMKRManager/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = chemer.com.ua.BKMKRManager;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		963EF5081EAB7B3E00DE39F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = BKMKRManager/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = chemer.com.ua.BKMKRManager;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		963EF50A1EAB7B3E00DE39F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = BKMKRManagerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = chemer.com.ua.BKMKRManagerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BKMKRManager.app/Contents/MacOS/BKMKRManager";
+			};
+			name = Debug;
+		};
+		963EF50B1EAB7B3E00DE39F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = BKMKRManagerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = chemer.com.ua.BKMKRManagerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BKMKRManager.app/Contents/MacOS/BKMKRManager";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		963EF4DC1EAB7B3E00DE39F4 /* Build configuration list for PBXProject "BKMKRManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				963EF5041EAB7B3E00DE39F4 /* Debug */,
+				963EF5051EAB7B3E00DE39F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		963EF5061EAB7B3E00DE39F4 /* Build configuration list for PBXNativeTarget "BKMKRManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				963EF5071EAB7B3E00DE39F4 /* Debug */,
+				963EF5081EAB7B3E00DE39F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		963EF5091EAB7B3E00DE39F4 /* Build configuration list for PBXNativeTarget "BKMKRManagerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				963EF50A1EAB7B3E00DE39F4 /* Debug */,
+				963EF50B1EAB7B3E00DE39F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		963EF4F01EAB7B3E00DE39F4 /* Document.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				963EF4F11EAB7B3E00DE39F4 /* Document.xcdatamodel */,
+			);
+			currentVersion = 963EF4F11EAB7B3E00DE39F4 /* Document.xcdatamodel */;
+			path = Document.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 963EF4D91EAB7B3E00DE39F4 /* Project object */;
+}
