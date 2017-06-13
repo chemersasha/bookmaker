@@ -78,8 +78,12 @@
     Total *total = self.representedObject;
     Document *document = self.view.window.windowController.document;
     BKMKRTotalInfo totalInfo = [document.eventInfo totalInfoAtTotal:total.total];
-    [self betLCurrentCoefficientDidReceive:totalInfo.lCoefficient];
-    [self betMCurrentCoefficientDidReceive:totalInfo.mCoefficient];
+    self.betLCurrentCoefficientLabel.stringValue =  (totalInfo.lCoefficient)
+                ? [NSString stringWithFormat:@"%.2f", totalInfo.lCoefficient]
+                : @"-";
+    self.betMCurrentCoefficientLabel.stringValue =  (totalInfo.mCoefficient)
+                ? [NSString stringWithFormat:@"%.2f", totalInfo.mCoefficient]
+                : @"-";
 }
 
 - (void)startSound {
