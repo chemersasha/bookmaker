@@ -194,7 +194,10 @@ static NSString * const kBKMKRWebViewUrl = @"https://www.favoritsport.com.ua/ru/
     BKMKRWebParser *webParser = [[BKMKRWebParser alloc] initWithWebView:self.webView];
     __weak BKMKRMonitorWebViewController *wSelf = self;
     [webParser parse1X2WithCompletion:^(NSArray *data) {
-
+        self.document.eventInfo.win1X2 = data;
+        [[NSNotificationCenter defaultCenter] postNotificationName:wSelf.document.webViewWin1X2DidReceiveNotification
+                                                        object:wSelf.document
+                                                      userInfo:@{wSelf.document.userInfoDataKey:data}];
     }];
 }
 

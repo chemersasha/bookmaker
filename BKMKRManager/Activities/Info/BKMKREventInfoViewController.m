@@ -15,6 +15,8 @@
 @property (weak) IBOutlet NSTextField *team2ScoreLabel;
 @property (weak) IBOutlet NSTextField *team1NameLabel;
 @property (weak) IBOutlet NSTextField *team2NameLabel;
+@property (weak) IBOutlet NSTextField *win0Coef;
+@property (weak) IBOutlet NSTextField *win1Coef;
 
 @property (weak) IBOutlet NSButton *stopGoalSoundButton;
 @property (nonatomic, strong) AVAudioPlayer *audioPlayer;
@@ -61,6 +63,8 @@
     NSNotificationCenter *defaultCenter = [NSNotificationCenter defaultCenter];
     [defaultCenter addObserver:self selector:@selector(team1ScoreDidChangeNotification:) name:self.document.webViewTeam1ScoreDidChangeNotification object:self.document];
     [defaultCenter addObserver:self selector:@selector(team2ScoreDidChangeNotification:) name:self.document.webViewTeam2ScoreDidChangeNotification object:self.document];
+    
+    [defaultCenter addObserver:self selector:@selector(win1X2DidReceiveNotification:) name:self.document.webViewWin1X2DidReceiveNotification object:self.document];
 }
 
 - (void)eventListenDidStop {
@@ -72,6 +76,7 @@
     NSNotificationCenter *defaultCenter = [NSNotificationCenter defaultCenter];
     [defaultCenter removeObserver:self name:self.document.webViewTeam1ScoreDidChangeNotification object:self.document];
     [defaultCenter removeObserver:self name:self.document.webViewTeam2ScoreDidChangeNotification object:self.document];
+    [defaultCenter removeObserver:self name:self.document.webViewWin1X2DidReceiveNotification object:self.document];
 }
 
 #pragma mark - Notifications
@@ -88,6 +93,11 @@
         [self startGoalSound];
     }
     self.team2ScoreLabel.stringValue = self.document.eventInfo.team2Score.stringValue;
+}
+
+- (void)win1X2DidReceiveNotification:(NSNotification *)notification {
+    self.win0Coef.stringValue = self.document.eventInfo.win1X2[0];
+    self.win1Coef.stringValue = self.document.eventInfo.win1X2[2];
 }
 
 @end

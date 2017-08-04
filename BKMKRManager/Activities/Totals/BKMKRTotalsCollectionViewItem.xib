@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11762" systemVersion="16F73" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
@@ -78,20 +78,6 @@
                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                             </textFieldCell>
                         </textField>
-                        <button hidden="YES" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vLQ-r5-AsF">
-                            <rect key="frame" x="89" y="38" width="13" height="15"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="13" id="BhF-gM-6Sc"/>
-                                <constraint firstAttribute="width" constant="13" id="s5h-Qp-nlF"/>
-                            </constraints>
-                            <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSStop" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hq4-Aj-Ebc">
-                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                <font key="font" metaFont="system"/>
-                            </buttonCell>
-                            <connections>
-                                <action selector="stopSound:" target="Sdm-W3-7vk" id="XpQ-lb-hwA"/>
-                            </connections>
-                        </button>
                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KV1-NL-8p5">
                             <rect key="frame" x="0.0" y="69" width="190" height="1"/>
                             <constraints>
@@ -233,6 +219,20 @@
                                 <binding destination="Sdm-W3-7vk" name="value" keyPath="self.representedObject.profit" id="gsX-WC-m1H"/>
                             </connections>
                         </textField>
+                        <button hidden="YES" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vLQ-r5-AsF">
+                            <rect key="frame" x="177" y="-1" width="13" height="15"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="13" id="BhF-gM-6Sc"/>
+                                <constraint firstAttribute="width" constant="13" id="s5h-Qp-nlF"/>
+                            </constraints>
+                            <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSStop" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hq4-Aj-Ebc">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="stopSound:" target="Sdm-W3-7vk" id="XpQ-lb-hwA"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <constraints>
                         <constraint firstItem="Elq-Vm-F47" firstAttribute="centerY" secondItem="SdN-Fv-qOk" secondAttribute="centerY" id="0d3-Ns-1cN"/>
@@ -261,8 +261,6 @@
                         <constraint firstItem="Xvb-vH-sVF" firstAttribute="centerY" secondItem="C7L-3U-OEB" secondAttribute="centerY" id="ahW-gj-btz"/>
                         <constraint firstItem="axV-1O-I7s" firstAttribute="leading" secondItem="AsZ-rm-geB" secondAttribute="trailing" constant="5" id="cbd-tT-io0"/>
                         <constraint firstItem="8Xe-AW-jOb" firstAttribute="top" secondItem="Bss-rY-msj" secondAttribute="top" id="ddk-Vd-5wl"/>
-                        <constraint firstItem="vLQ-r5-AsF" firstAttribute="centerY" secondItem="Bss-rY-msj" secondAttribute="centerY" id="eVT-ai-VOl"/>
-                        <constraint firstItem="vLQ-r5-AsF" firstAttribute="centerX" secondItem="Bss-rY-msj" secondAttribute="centerX" id="fJ6-pV-A18"/>
                         <constraint firstAttribute="trailing" secondItem="K4N-oX-YLC" secondAttribute="trailing" id="flz-bq-uHC"/>
                         <constraint firstItem="iTg-tE-CWX" firstAttribute="leading" secondItem="Jj9-26-jMg" secondAttribute="trailing" constant="10" id="fnD-5c-4LP"/>
                         <constraint firstItem="OwC-6H-c1y" firstAttribute="leading" secondItem="Bss-rY-msj" secondAttribute="leading" id="hen-oM-Zk4"/>
@@ -284,6 +282,7 @@
                 <constraint firstItem="U5B-4X-qva" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="EXE-Du-qlR"/>
                 <constraint firstAttribute="trailing" secondItem="Bss-rY-msj" secondAttribute="trailing" constant="5" id="GV4-CE-pbW"/>
                 <constraint firstItem="U5B-4X-qva" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="LE7-Fg-DaO"/>
+                <constraint firstAttribute="trailing" secondItem="vLQ-r5-AsF" secondAttribute="trailing" constant="5" id="NIe-aH-5h6"/>
                 <constraint firstItem="Bss-rY-msj" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="5" id="VdB-Ye-vxd"/>
                 <constraint firstItem="U5B-4X-qva" firstAttribute="height" secondItem="SIV-ny-Qpx" secondAttribute="height" id="Vxd-p5-QmW"/>
                 <constraint firstAttribute="trailing" secondItem="U5B-4X-qva" secondAttribute="trailing" id="YZz-3Q-9B7"/>
@@ -292,6 +291,7 @@
                 <constraint firstAttribute="trailing" secondItem="SIV-ny-Qpx" secondAttribute="trailing" id="fg9-JR-TFP"/>
                 <constraint firstAttribute="bottom" secondItem="Bss-rY-msj" secondAttribute="bottom" constant="5" id="hef-Ko-gNx"/>
                 <constraint firstAttribute="trailing" secondItem="U5B-4X-qva" secondAttribute="trailing" id="rLD-lR-B1c"/>
+                <constraint firstAttribute="bottom" secondItem="vLQ-r5-AsF" secondAttribute="bottom" constant="5" id="yoF-St-5wI"/>
             </constraints>
             <connections>
                 <outlet property="delegate" destination="Sdm-W3-7vk" id="RNL-3q-9kj"/>

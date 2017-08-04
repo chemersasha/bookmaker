@@ -77,7 +77,7 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             NSString *page = [self.webView stringByEvaluatingJavaScriptFromString:callback];
             NSArray *result = [page componentsSeparatedByString:@"&&"];
-            completionHandler(page);
+            completionHandler(result);
         });
     });
 }

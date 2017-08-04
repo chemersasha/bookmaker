@@ -14,6 +14,7 @@
 @property (nonatomic, strong, readonly) NSString *webViewTeam1ScoreDidChangeNotification;
 @property (nonatomic, strong, readonly) NSString *webViewTeam2ScoreDidChangeNotification;
 @property (nonatomic, strong, readonly) NSString *webViewTotalsDidReceiveNotification;
+@property (nonatomic, strong, readonly) NSString *webViewWin1X2DidReceiveNotification;
 @property (nonatomic, strong, readonly) NSString *eventDidLoadNotification;
 @property (nonatomic, strong, readonly) NSString *eventDidUnloadNotification;
 @property (nonatomic, strong, readonly) NSString *userInfoDataKey;

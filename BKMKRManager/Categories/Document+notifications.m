@@ -11,11 +11,13 @@
 static NSString * const kBKMKRWebViewTeam1ScoreDidChangeNotification = @"kBKMKRWebViewTeam1ScoreDidChangeNotification";
 static NSString * const kBKMKRWebViewTeam2ScoreDidChangeNotification = @"kBKMKRWebViewTeam2ScoreDidChangeNotification";
 static NSString * const kBKMKRWebViewTotalsDidReceiveNotification = @"kBKMKRWebViewTotalsDidReceiveNotification";
+static NSString * const kBKMKRWebViewWin1X2DidReceiveNotification = @"kBKMKRWebViewWin1X2DidReceiveNotification";
 static NSString * const kBKMKREventListenDidStartNotification = @"kBKMKREventListenDidStartNotification";
 static NSString * const kBKMKREventListenDidStopNotificationNotification = @"kBKMKREventListenDidStopNotificationNotification";
 static NSString * const kBKMKREventDidLoadNotification = @"kBKMKREventDidLoadNotification";
 static NSString * const kBKMKREventDidUnloadNotification = @"kBKMKREventDidUnloadNotification";
 static NSString * const kBKMKRUserInfoDataKey = @"kBKMKRUserInfoDataKey";
+
 
 @implementation Document (notifications)
 
@@ -29,6 +31,10 @@ static NSString * const kBKMKRUserInfoDataKey = @"kBKMKRUserInfoDataKey";
 
 - (NSString *)webViewTotalsDidReceiveNotification {
     return kBKMKRWebViewTotalsDidReceiveNotification;
+}
+
+- (NSString *)webViewWin1X2DidReceiveNotification {
+    return kBKMKRWebViewWin1X2DidReceiveNotification;
 }
 
 - (NSString *)eventDidLoadNotification {
