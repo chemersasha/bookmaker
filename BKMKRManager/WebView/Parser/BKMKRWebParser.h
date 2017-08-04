@@ -15,5 +15,5 @@
 - (void)parseTotalsWithCompletion:(void (^)(NSDictionary *totals))completionHandler;
 - (void)parseScoreWithCompletion:(void (^)(NSArray *score))completionHandler;
 - (void)parseTeamNamesWithCompletion:(void (^)(NSArray *score))completionHandler;
-
+- (void)parse1X2WithCompletion:(void (^)(NSArray *data))completionHandler;
 @end

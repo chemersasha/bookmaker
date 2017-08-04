@@ -31,6 +31,7 @@
 		9651B5CA1ED9D10700281BF7 /* BKMKRTotalDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9651B5C81ED9D10700281BF7 /* BKMKRTotalDetailViewController.xib */; };
 		9653B8631EE409DB009BC849 /* BKMKREventInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9653B8621EE409DB009BC849 /* BKMKREventInfo.m */; };
 		96540A2F1EAB809100255866 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96540A2E1EAB809100255866 /* WebKit.framework */; };
+		967F8C291F28EABF0050DD09 /* win1X2.js in Resources */ = {isa = PBXBuildFile; fileRef = 967F8C281F28EABF0050DD09 /* win1X2.js */; };
 		96BC65571ED0DCF600F013E2 /* BKMKREventInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96BC65551ED0DCF600F013E2 /* BKMKREventInfoViewController.m */; };
 		96BC65581ED0DCF600F013E2 /* BKMKREventInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96BC65561ED0DCF600F013E2 /* BKMKREventInfoViewController.xib */; };
 		96BC655D1ED0E2AA00F013E2 /* NSView+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = 96BC655C1ED0E2AA00F013E2 /* NSView+Layout.m */; };
@@ -94,6 +95,7 @@
 		9653B8611EE409DB009BC849 /* BKMKREventInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BKMKREventInfo.h; path = Model/WebViewModel/BKMKREventInfo.h; sourceTree = "<group>"; };
 		9653B8621EE409DB009BC849 /* BKMKREventInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BKMKREventInfo.m; path = Model/WebViewModel/BKMKREventInfo.m; sourceTree = "<group>"; };
 		96540A2E1EAB809100255866 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		967F8C281F28EABF0050DD09 /* win1X2.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = win1X2.js; sourceTree = "<group>"; };
 		96BC65541ED0DCF600F013E2 /* BKMKREventInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BKMKREventInfoViewController.h; path = Activities/Info/BKMKREventInfoViewController.h; sourceTree = "<group>"; };
 		96BC65551ED0DCF600F013E2 /* BKMKREventInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BKMKREventInfoViewController.m; path = Activities/Info/BKMKREventInfoViewController.m; sourceTree = "<group>"; };
 		96BC65561ED0DCF600F013E2 /* BKMKREventInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BKMKREventInfoViewController.xib; path = Activities/Info/BKMKREventInfoViewController.xib; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 		961C34F31ED4F9170057C611 /* js */ = {
 			isa = PBXGroup;
 			children = (
+				967F8C281F28EABF0050DD09 /* win1X2.js */,
 				960DFD9E1ED58D7A0051B522 /* teamsInfo.js */,
 				961C34F41ED4F9170057C611 /* score.js */,
 				961C34F51ED4F9170057C611 /* total.js */,
@@ -433,6 +436,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				967F8C291F28EABF0050DD09 /* win1X2.js in Resources */,
 				96BC656A1ED1814100F013E2 /* BKMKRMonitorWebViewController.xib in Resources */,
 				961C34F61ED4F9170057C611 /* score.js in Resources */,
 				9651B5CA1ED9D10700281BF7 /* BKMKRTotalDetailViewController.xib in Resources */,

@@ -15,7 +15,7 @@
     BOOL result = NO;
 
     float waitCoefficient = [BKMKRTotalAnalyzer betMWaitCoefficientFromTotal:total];
-    if (waitCoefficient!=0 && coefficient>waitCoefficient) {
+    if (waitCoefficient>0 && coefficient>waitCoefficient) {
         result = YES;
     }
 

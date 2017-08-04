@@ -153,6 +153,7 @@ static NSString * const kBKMKRWebViewUrl = @"https://www.favoritsport.com.ua/ru/
 - (void)parseWebViewDynamicInfo {
     [self parseScore];
     [self parseTotals];
+    [self parse1X2];
 }
 
 - (void)parseScore {
@@ -188,6 +189,15 @@ static NSString * const kBKMKRWebViewUrl = @"https://www.favoritsport.com.ua/ru/
                                                       userInfo:@{wSelf.document.userInfoDataKey:data}];
     }];
 }
+
+- (void)parse1X2 {
+    BKMKRWebParser *webParser = [[BKMKRWebParser alloc] initWithWebView:self.webView];
+    __weak BKMKRMonitorWebViewController *wSelf = self;
+    [webParser parse1X2WithCompletion:^(NSArray *data) {
+
+    }];
+}
+
 
 #pragma mark - WebFrameLoadDelegate
 

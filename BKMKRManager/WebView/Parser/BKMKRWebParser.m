@@ -52,7 +52,7 @@
         NSString *callback = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
         dispatch_async(dispatch_get_main_queue(), ^{
             NSString *page = [self.webView stringByEvaluatingJavaScriptFromString:callback];
-            NSArray *score = [page componentsSeparatedByString:@":"];
+            NSArray *score = [page componentsSeparatedByString:@"\n"];
             completionHandler(score);
         });
     });
@@ -66,6 +66,18 @@
             NSString *page = [self.webView stringByEvaluatingJavaScriptFromString:callback];
             NSArray *names = [page componentsSeparatedByString:@"&&"];
             completionHandler(names);
+        });
+    });
+}
+
+- (void)parse1X2WithCompletion:(void (^)(NSArray *data))completionHandler {
+    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"win1X2" ofType:@"js"];
+        NSString *callback = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSString *page = [self.webView stringByEvaluatingJavaScriptFromString:callback];
+            NSArray *result = [page componentsSeparatedByString:@"&&"];
+            completionHandler(page);
         });
     });
 }
