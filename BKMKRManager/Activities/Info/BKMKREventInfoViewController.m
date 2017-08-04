@@ -17,6 +17,7 @@
 @property (weak) IBOutlet NSTextField *team2NameLabel;
 @property (weak) IBOutlet NSTextField *win0Coef;
 @property (weak) IBOutlet NSTextField *win1Coef;
+@property (weak) IBOutlet NSTextField *winXCoef;
 
 @property (weak) IBOutlet NSButton *stopGoalSoundButton;
 @property (nonatomic, strong) AVAudioPlayer *audioPlayer;
@@ -71,6 +72,10 @@
     self.team1ScoreLabel.stringValue = @"-";
     self.team2ScoreLabel.stringValue = @"-";
     
+    self.win0Coef.stringValue = @"-";
+    self.winXCoef.stringValue = @"-";
+    self.win1Coef.stringValue = @"-";
+    
     [self stopGoalSound:nil];
     
     NSNotificationCenter *defaultCenter = [NSNotificationCenter defaultCenter];
@@ -96,8 +101,11 @@
 }
 
 - (void)win1X2DidReceiveNotification:(NSNotification *)notification {
-    self.win0Coef.stringValue = self.document.eventInfo.win1X2[0];
-    self.win1Coef.stringValue = self.document.eventInfo.win1X2[2];
+    if (self.document.eventInfo.win1X2.count == 3) {
+        self.win0Coef.stringValue = self.document.eventInfo.win1X2[0];
+        self.winXCoef.stringValue = self.document.eventInfo.win1X2[1];
+        self.win1Coef.stringValue = self.document.eventInfo.win1X2[2];
+    }
 }
 
 @end
