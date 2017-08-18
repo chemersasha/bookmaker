@@ -19,6 +19,9 @@
 @property (weak) IBOutlet NSTextField *win1Coef;
 @property (weak) IBOutlet NSTextField *winXCoef;
 
+@property (weak) IBOutlet NSTextField *win0RingCoefTextField;
+@property (weak) IBOutlet NSTextField *win1RingCoefTextField;
+
 @property (weak) IBOutlet NSButton *stopGoalSoundButton;
 @property (nonatomic, strong) AVAudioPlayer *audioPlayer;
 @end
@@ -27,6 +30,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.win0RingCoefTextField.floatValue = 0.0;
+    self.win1RingCoefTextField.floatValue = 0.0;
 }
 
 - (void)startGoalSound {

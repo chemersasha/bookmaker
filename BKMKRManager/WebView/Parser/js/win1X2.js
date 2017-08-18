@@ -11,17 +11,17 @@ function win1X2() {
         
         if(outcomes.length == 3) {
             // receive first teame win coef
-            var outcome0 = ((outcomes[0].innerText != 'undefined') ? outcomes[0].innerText : '-');
+            var outcome0 = outcomes[0].innerText;
             outcome0 = outcome0.split("\n");
             result = outcome0[1];
              
             // draw coef
-            var outcome1 = ((outcomes[1].innerText != 'undefined') ? outcomes[1].innerText : '-');
+            var outcome1 = outcomes[1].innerText;
             outcome1 = outcome1.split("\n");
             result = result + '&&' + outcome1[1];
             
             // receive second teame win coef
-            var outcome2 = ((outcomes[2].innerText != 'undefined') ? outcomes[2].innerText : '-');
+            var outcome2 = outcomes[2].innerText;
             outcome2 = outcome2.split("\n");
             result = result + '&&' + outcome2[1];
         }

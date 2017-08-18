@@ -15,7 +15,9 @@
                 <outlet property="team2ScoreLabel" destination="jjs-tW-lQZ" id="Sht-lZ-muO"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
                 <outlet property="win0Coef" destination="uZ8-X9-8JN" id="koz-as-FOA"/>
+                <outlet property="win0RingCoefTextField" destination="sXc-8F-ffO" id="w5u-SP-UB0"/>
                 <outlet property="win1Coef" destination="Auv-fU-7pH" id="8lf-9d-twQ"/>
+                <outlet property="win1RingCoefTextField" destination="wBA-KF-rZW" id="u1J-f1-QoT"/>
                 <outlet property="winXCoef" destination="pUs-Sh-Ke4" id="g10-fn-Ayv"/>
             </connections>
         </customObject>
@@ -50,18 +52,28 @@
                         <constraint firstAttribute="height" constant="20" id="RPT-Dx-bzx"/>
                         <constraint firstAttribute="width" constant="40" id="ge9-Fm-ml0"/>
                     </constraints>
-                    <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" alignment="center" title="0.0" drawsBackground="YES" usesSingleLineMode="YES" id="bDf-vj-Og4">
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" alignment="center" title="0.0" drawsBackground="YES" usesSingleLineMode="YES" id="bDf-vj-Og4">
+                        <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="69j-9S-esO">
+                            <real key="minimum" value="0.0"/>
+                            <real key="maximum" value="100"/>
+                        </numberFormatter>
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                     </textFieldCell>
+                    <connections>
+                        <action selector="takeFloatValueFrom:" target="g1w-Mw-WuB" id="tUp-ye-xCK"/>
+                    </connections>
                 </textField>
                 <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="g1w-Mw-WuB">
-                    <rect key="frame" x="70" y="10" width="19" height="27"/>
-                    <stepperCell key="cell" continuous="YES" alignment="left" maxValue="100" id="oF0-Vy-YEn"/>
+                    <rect key="frame" x="72" y="11" width="19" height="27"/>
+                    <stepperCell key="cell" continuous="YES" alignment="left" increment="0.10000000000000001" maxValue="100" id="oF0-Vy-YEn"/>
+                    <connections>
+                        <binding destination="-2" name="value" keyPath="self.win0RingCoefTextField.floatValue" id="PHK-xM-aBp"/>
+                    </connections>
                 </stepper>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yoY-p8-1Ss">
-                    <rect key="frame" x="84" y="17" width="138" height="17"/>
+                    <rect key="frame" x="86" y="17" width="136" height="17"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="17" id="CTR-Ky-F37"/>
                     </constraints>
@@ -96,7 +108,10 @@
                 </textField>
                 <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1LN-FT-GpK">
                     <rect key="frame" x="389" y="10" width="19" height="27"/>
-                    <stepperCell key="cell" continuous="YES" alignment="left" maxValue="100" id="7ZV-Yd-Tee"/>
+                    <stepperCell key="cell" continuous="YES" alignment="left" increment="0.10000000000000001" maxValue="100" id="7ZV-Yd-Tee"/>
+                    <connections>
+                        <binding destination="-2" name="value" keyPath="self.win1RingCoefTextField.floatValue" id="96y-lX-CrN"/>
+                    </connections>
                 </stepper>
                 <textField verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wBA-KF-rZW">
                     <rect key="frame" x="405" y="14" width="40" height="20"/>
@@ -104,11 +119,18 @@
                         <constraint firstAttribute="height" constant="20" id="6PI-nH-XQ7"/>
                         <constraint firstAttribute="width" constant="40" id="svU-5s-IjT"/>
                     </constraints>
-                    <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" alignment="center" title="0.0" drawsBackground="YES" id="yHg-We-Cga">
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" alignment="center" title="0.0" drawsBackground="YES" usesSingleLineMode="YES" id="yHg-We-Cga">
+                        <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="XhA-nS-K7X">
+                            <real key="minimum" value="0.0"/>
+                            <real key="maximum" value="100"/>
+                        </numberFormatter>
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                     </textFieldCell>
+                    <connections>
+                        <action selector="takeFloatValueFrom:" target="1LN-FT-GpK" id="jem-DV-1W8"/>
+                    </connections>
                 </textField>
                 <textField horizontalHuggingPriority="252" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Auv-fU-7pH">
                     <rect key="frame" x="448" y="17" width="11" height="17"/>
@@ -183,7 +205,7 @@
                 </button>
             </subviews>
             <constraints>
-                <constraint firstItem="g1w-Mw-WuB" firstAttribute="leading" secondItem="sXc-8F-ffO" secondAttribute="trailing" constant="-2" id="158-2v-WKd"/>
+                <constraint firstItem="g1w-Mw-WuB" firstAttribute="leading" secondItem="sXc-8F-ffO" secondAttribute="trailing" id="158-2v-WKd"/>
                 <constraint firstItem="sXc-8F-ffO" firstAttribute="leading" secondItem="uZ8-X9-8JN" secondAttribute="trailing" constant="5" id="6eb-v8-cYK"/>
                 <constraint firstItem="uDF-ri-D7s" firstAttribute="top" secondItem="uZ8-X9-8JN" secondAttribute="top" constant="4" id="9cB-f4-M1m"/>
                 <constraint firstItem="g1w-Mw-WuB" firstAttribute="centerY" secondItem="sXc-8F-ffO" secondAttribute="centerY" id="AIe-Gj-VAT"/>
