@@ -39,6 +39,14 @@
     self.stopGoalSoundButton.hidden = NO;
 }
 
+#pragma mark -
+
+- (void)clearWinsCoef {
+    self.win0Coef.stringValue = @"-";
+    self.winXCoef.stringValue = @"-";
+    self.win1Coef.stringValue = @"-";
+}
+
 #pragma mark - Actions
 
 - (IBAction)stopGoalSound:(id)sender {
@@ -72,9 +80,7 @@
     self.team1ScoreLabel.stringValue = @"-";
     self.team2ScoreLabel.stringValue = @"-";
     
-    self.win0Coef.stringValue = @"-";
-    self.winXCoef.stringValue = @"-";
-    self.win1Coef.stringValue = @"-";
+    [self clearWinsCoef];
     
     [self stopGoalSound:nil];
     
@@ -105,6 +111,8 @@
         self.win0Coef.stringValue = self.document.eventInfo.win1X2[0];
         self.winXCoef.stringValue = self.document.eventInfo.win1X2[1];
         self.win1Coef.stringValue = self.document.eventInfo.win1X2[2];
+    } else {
+        [self clearWinsCoef];
     }
 }
 
