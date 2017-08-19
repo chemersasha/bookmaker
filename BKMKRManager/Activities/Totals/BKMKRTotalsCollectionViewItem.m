@@ -33,6 +33,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+     [self loadNotices];
 }
 
 - (void)viewDidAppear {
@@ -60,6 +62,11 @@
     self.highlightView.hidden = !flag;
 }
 
+- (void)loadNotices {
+    self.noticeControl = [[BKMKRSoundNotice alloc] initWithResourceName:@"fork"];
+    [self.noticeContainer addSubview:self.noticeControl.view layout:BKMKRLayoutAligmentFit];
+}
+
 - (void)updateUI {
     Total *total = self.representedObject;
     self.betLCoefficientLabel.stringValue = (total.betL && total.betL != 0)
@@ -72,8 +79,6 @@
     self.betMWaitCoefficientLabel.stringValue = [NSString stringWithFormat:@"%.2f", [BKMKRTotalAnalyzer betMWaitCoefficientFromTotal:total]];
     [self updateBetMWait];
     [self updateWebViewUI];
-    
-    [self updateNotices];
 }
 
 - (void)updateBetMWait {
@@ -93,11 +98,6 @@
     self.betMCurrentCoefficientLabel.stringValue =  (totalInfo.mCoefficient)
                 ? [NSString stringWithFormat:@"%.2f", totalInfo.mCoefficient]
                 : @"-";
-}
-
-- (void)updateNotices {
-    self.noticeControl = [[BKMKRSoundNotice alloc] initWithResourceName:@"fork"];
-    [self.noticeContainer addSubview:self.noticeControl.view layout:BKMKRLayoutAligmentFit];
 }
 
 #pragma mark -

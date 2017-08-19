@@ -28,14 +28,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do view setup here.
+    
+    NSString *soundPath = [[NSBundle mainBundle] pathForResource:self.resourceName ofType: @"mp3"];
+    NSURL *URL = [[NSURL alloc] initFileURLWithPath:soundPath];
+    self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:URL error:nil];
+    self.player.numberOfLoops = -1;
 }
 
 #pragma mark - Actions
 
 - (IBAction)stopNotice:(id)sender {
     [self.player stop];
-    self.player = nil;
     
     self.stopNoticeButton.hidden = YES;
 }
@@ -43,11 +46,6 @@
 #pragma mark - Public
 
 - (void)startNotice {
-    NSString *soundPath = [[NSBundle mainBundle] pathForResource:self.resourceName ofType: @"mp3"];
-    NSURL *URL = [[NSURL alloc] initFileURLWithPath:soundPath];
-    self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:URL error:nil];
-    self.player.numberOfLoops = -1;
-
     [self.player play];
     self.stopNoticeButton.hidden = NO;
 }
