@@ -52,4 +52,8 @@
     self.stopNoticeButton.hidden = NO;
 }
 
+- (void)stopNotice {
+    [self stopNotice:nil];
+}
+
 @end

@@ -6,13 +6,15 @@
 //  Copyright © 2017 Chemer. All rights reserved.
 //
 
-#import <AVFoundation/AVFoundation.h>
 #import "BKMKRTotalsCollectionViewItem.h"
 #import "BKMKRTotalAnalyzer.h"
 #import "BKMKREventHandlerView.h"
+#import "BKMKRSoundNotice.h"
 #import "Document.h"
 #import "Total+CoreDataClass.h"
 #import "Event+CoreDataClass.h"
+#import "NSView+Layout.h"
+
 
 @interface BKMKRTotalsCollectionViewItem ()
 @property (weak) IBOutlet NSTextField *highlightView;
@@ -23,9 +25,8 @@
 @property (weak) IBOutlet NSTextField *betMWaitCoefficientLabel;
 @property (weak) IBOutlet NSTextField *betMWaitLabel;
 
-@property (weak) IBOutlet NSButton *stopSoundButton;
-@property (nonatomic, strong) AVAudioPlayer *audioPlayer;
-
+@property (weak) IBOutlet NSView *noticeContainer;
+@property (strong, nonatomic) BKMKRSoundNotice *noticeControl;
 @end
 
 @implementation BKMKRTotalsCollectionViewItem
@@ -38,6 +39,12 @@
     [super viewDidAppear];
     
     [self updateUI];
+}
+
+- (void)viewDidDisappear {
+    [super viewDidDisappear];
+    
+    [self.noticeControl stopNotice];
 }
 
 - (void)setRepresentedObject:(Total *)representedObject {
@@ -65,6 +72,8 @@
     self.betMWaitCoefficientLabel.stringValue = [NSString stringWithFormat:@"%.2f", [BKMKRTotalAnalyzer betMWaitCoefficientFromTotal:total]];
     [self updateBetMWait];
     [self updateWebViewUI];
+    
+    [self updateNotices];
 }
 
 - (void)updateBetMWait {
@@ -86,23 +95,9 @@
                 : @"-";
 }
 
-- (void)startSound {
-    NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"fork" ofType: @"mp3"];
-    NSURL *URL = [[NSURL alloc] initFileURLWithPath:soundPath];
-    self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:URL error:nil];
-    self.audioPlayer.numberOfLoops = -1;
-    [self.audioPlayer play];
-    
-    self.stopSoundButton.hidden = NO;
-}
-
-#pragma mark - Actions
-
-- (IBAction)stopSound:(id)sender {
-    [self.audioPlayer stop];
-    self.audioPlayer = nil;
-    
-    self.stopSoundButton.hidden = YES;
+- (void)updateNotices {
+    self.noticeControl = [[BKMKRSoundNotice alloc] initWithResourceName:@"fork"];
+    [self.noticeContainer addSubview:self.noticeControl.view layout:BKMKRLayoutAligmentFit];
 }
 
 #pragma mark -
@@ -124,7 +119,7 @@
             self.betMCurrentCoefficientLabel.stringValue = [NSString stringWithFormat:@"%.2f", currentCoefficient];
             
             if ([BKMKRTotalAnalyzer analyzeTotal:(Total *)self.representedObject withCoefficient:currentCoefficient]) {
-                [self startSound];
+                [self.noticeControl startNotice];
             }
         }
     } else {

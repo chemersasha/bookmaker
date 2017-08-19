@@ -219,20 +219,13 @@
                                 <binding destination="Sdm-W3-7vk" name="value" keyPath="self.representedObject.profit" id="gsX-WC-m1H"/>
                             </connections>
                         </textField>
-                        <button hidden="YES" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vLQ-r5-AsF">
-                            <rect key="frame" x="177" y="-1" width="13" height="15"/>
+                        <customView translatesAutoresizingMaskIntoConstraints="NO" id="2Xk-Nm-e5V">
+                            <rect key="frame" x="175" y="0.0" width="15" height="15"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="13" id="BhF-gM-6Sc"/>
-                                <constraint firstAttribute="width" constant="13" id="s5h-Qp-nlF"/>
+                                <constraint firstAttribute="height" constant="15" id="I9a-HW-2fH"/>
+                                <constraint firstAttribute="width" constant="15" id="e8I-dA-ASb"/>
                             </constraints>
-                            <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSStop" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hq4-Aj-Ebc">
-                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                <font key="font" metaFont="system"/>
-                            </buttonCell>
-                            <connections>
-                                <action selector="stopSound:" target="Sdm-W3-7vk" id="XpQ-lb-hwA"/>
-                            </connections>
-                        </button>
+                        </customView>
                     </subviews>
                     <constraints>
                         <constraint firstItem="Elq-Vm-F47" firstAttribute="centerY" secondItem="SdN-Fv-qOk" secondAttribute="centerY" id="0d3-Ns-1cN"/>
@@ -244,6 +237,7 @@
                         <constraint firstItem="pva-BM-Th8" firstAttribute="leading" secondItem="6KK-aZ-uwt" secondAttribute="trailing" id="6Xx-NM-leu"/>
                         <constraint firstItem="pva-BM-Th8" firstAttribute="centerY" secondItem="6KK-aZ-uwt" secondAttribute="centerY" id="8WI-Us-tTc"/>
                         <constraint firstItem="iTg-tE-CWX" firstAttribute="top" secondItem="Bss-rY-msj" secondAttribute="top" id="8tf-wH-zJE"/>
+                        <constraint firstAttribute="trailing" secondItem="2Xk-Nm-e5V" secondAttribute="trailing" id="9ae-PM-1wS"/>
                         <constraint firstItem="6KK-aZ-uwt" firstAttribute="leading" secondItem="Bss-rY-msj" secondAttribute="leading" id="Blg-Fk-LjJ"/>
                         <constraint firstItem="OwC-6H-c1y" firstAttribute="top" secondItem="Bss-rY-msj" secondAttribute="top" id="DLM-Oc-AFh"/>
                         <constraint firstItem="C7L-3U-OEB" firstAttribute="top" secondItem="qno-vY-dNY" secondAttribute="top" id="Df5-6b-6zX"/>
@@ -274,6 +268,7 @@
                         <constraint firstItem="K4N-oX-YLC" firstAttribute="leading" secondItem="CTa-wn-l11" secondAttribute="trailing" constant="5" id="sDk-ou-aFX"/>
                         <constraint firstItem="T9c-6P-7GJ" firstAttribute="centerY" secondItem="6KK-aZ-uwt" secondAttribute="centerY" id="tKq-Op-VgS"/>
                         <constraint firstItem="K4N-oX-YLC" firstAttribute="top" secondItem="Elq-Vm-F47" secondAttribute="bottom" id="tTB-Q8-8eZ"/>
+                        <constraint firstAttribute="bottom" secondItem="2Xk-Nm-e5V" secondAttribute="bottom" id="uhN-Ff-Pzw"/>
                     </constraints>
                 </customView>
             </subviews>
@@ -282,7 +277,6 @@
                 <constraint firstItem="U5B-4X-qva" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="EXE-Du-qlR"/>
                 <constraint firstAttribute="trailing" secondItem="Bss-rY-msj" secondAttribute="trailing" constant="5" id="GV4-CE-pbW"/>
                 <constraint firstItem="U5B-4X-qva" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="LE7-Fg-DaO"/>
-                <constraint firstAttribute="trailing" secondItem="vLQ-r5-AsF" secondAttribute="trailing" constant="5" id="NIe-aH-5h6"/>
                 <constraint firstItem="Bss-rY-msj" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="5" id="VdB-Ye-vxd"/>
                 <constraint firstItem="U5B-4X-qva" firstAttribute="height" secondItem="SIV-ny-Qpx" secondAttribute="height" id="Vxd-p5-QmW"/>
                 <constraint firstAttribute="trailing" secondItem="U5B-4X-qva" secondAttribute="trailing" id="YZz-3Q-9B7"/>
@@ -291,7 +285,6 @@
                 <constraint firstAttribute="trailing" secondItem="SIV-ny-Qpx" secondAttribute="trailing" id="fg9-JR-TFP"/>
                 <constraint firstAttribute="bottom" secondItem="Bss-rY-msj" secondAttribute="bottom" constant="5" id="hef-Ko-gNx"/>
                 <constraint firstAttribute="trailing" secondItem="U5B-4X-qva" secondAttribute="trailing" id="rLD-lR-B1c"/>
-                <constraint firstAttribute="bottom" secondItem="vLQ-r5-AsF" secondAttribute="bottom" constant="5" id="yoF-St-5wI"/>
             </constraints>
             <connections>
                 <outlet property="delegate" destination="Sdm-W3-7vk" id="RNL-3q-9kj"/>
@@ -307,12 +300,9 @@
                 <outlet property="betMWaitCoefficientLabel" destination="K4N-oX-YLC" id="3Et-Cl-bLX"/>
                 <outlet property="betMWaitLabel" destination="CTa-wn-l11" id="4F5-OY-Eou"/>
                 <outlet property="highlightView" destination="SIV-ny-Qpx" id="Bjv-qF-jnb"/>
-                <outlet property="stopSoundButton" destination="vLQ-r5-AsF" id="nE2-Fm-SfS"/>
+                <outlet property="noticeContainer" destination="2Xk-Nm-e5V" id="k4n-YL-Sms"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="X80-S1-pyQ"/>
             </connections>
         </collectionViewItem>
     </objects>
-    <resources>
-        <image name="NSStop" width="11" height="11"/>
-    </resources>
 </document>

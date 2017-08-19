@@ -6,7 +6,6 @@
 //  Copyright © 2017 Chemer. All rights reserved.
 //
 
-#import <AVFoundation/AVFoundation.h>
 #import "BKMKREventInfoViewController.h"
 #import "BKMKRSoundNotice.h"
 #import "NSView+Layout.h"
@@ -26,9 +25,12 @@
 @property (strong, nonatomic) BKMKRSoundNotice *win0NoticeControl;
 
 @property (weak) IBOutlet NSTextField *win1RingCoefTextField;
+@property (weak) IBOutlet NSView *win1NoticeContainer;
+@property (strong, nonatomic) BKMKRSoundNotice *win1NoticeControl;
 
-@property (weak) IBOutlet NSButton *stopGoalSoundButton;
-@property (nonatomic, strong) AVAudioPlayer *audioPlayer;
+@property (weak) IBOutlet NSView *goalNoticeContainer;
+@property (strong, nonatomic) BKMKRSoundNotice *goalNoticeControl;
+
 @end
 
 @implementation BKMKREventInfoViewController
@@ -36,15 +38,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self loadWin1X2UI];
+    [self loadWin1X2NoticeUI];
+    [self loadGoalNoticeUI];
 }
 
-- (void)loadWin1X2UI {
+- (void)loadWin1X2NoticeUI {
     self.win0NoticeControl = [[BKMKRSoundNotice alloc] initWithResourceName:@"fork"];
     [self.win0NoticeContainer addSubview:self.win0NoticeControl.view layout:BKMKRLayoutAligmentFit];
     self.win0RingCoefTextField.floatValue = 0.0;
-    
+
+    self.win1NoticeControl = [[BKMKRSoundNotice alloc] initWithResourceName:@"fork"];
+    [self.win1NoticeContainer addSubview:self.win0NoticeControl.view layout:BKMKRLayoutAligmentFit];
     self.win1RingCoefTextField.floatValue = 0.0;
+}
+
+- (void)loadGoalNoticeUI {
+    self.goalNoticeControl = [[BKMKRSoundNotice alloc] initWithResourceName:@"goal"];
+    [self.goalNoticeContainer addSubview:self.win0NoticeControl.view layout:BKMKRLayoutAligmentFit];
 }
 
 #pragma mark -
@@ -55,23 +65,10 @@
     self.win1Coef.stringValue = @"-";
 }
 
-#pragma mark - Actions
-
-- (IBAction)stopGoalSound:(id)sender {
-    [self.audioPlayer stop];
-    self.audioPlayer = nil;
-    
-    self.stopGoalSoundButton.hidden = YES;
-}
-
-- (void)startGoalSound {
-    NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"goal" ofType: @"mp3"];
-    NSURL *URL = [[NSURL alloc] initFileURLWithPath:soundPath];
-    self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:URL error:nil];
-    self.audioPlayer.numberOfLoops = -1;
-    [self.audioPlayer play];
-    
-    self.stopGoalSoundButton.hidden = NO;
+- (void)stopNotices {
+    [self.win0NoticeControl stopNotice];
+    [self.win1NoticeControl stopNotice];
+    [self.goalNoticeControl stopNotice];
 }
 
 #pragma mark - Overloaded
@@ -100,7 +97,7 @@
     
     [self clearWinsCoef];
     
-    [self stopGoalSound:nil];
+    [self stopNotices];
     
     NSNotificationCenter *defaultCenter = [NSNotificationCenter defaultCenter];
     [defaultCenter removeObserver:self name:self.document.webViewTeam1ScoreDidChangeNotification object:self.document];
@@ -112,14 +109,14 @@
 
 - (void)team1ScoreDidChangeNotification:(NSNotification *)notification {
     if (![self.team1ScoreLabel.stringValue isEqualToString:@"-"]) {
-        [self startGoalSound];
+        [self.goalNoticeControl startNotice];
     }
     self.team1ScoreLabel.stringValue = self.document.eventInfo.team1Score.stringValue;
 }
 
 - (void)team2ScoreDidChangeNotification:(NSNotification *)notification {
     if (![self.team2ScoreLabel.stringValue isEqualToString:@"-"]) {
-        [self startGoalSound];
+        [self.goalNoticeControl startNotice];
     }
     self.team2ScoreLabel.stringValue = self.document.eventInfo.team2Score.stringValue;
 }

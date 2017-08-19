@@ -14,7 +14,7 @@
 
 #pragma mark -
 
-- (IBAction)stopNotice:(id)sender;
+- (void)startNotice;
 - (void)stopNotice;
 
 @end
