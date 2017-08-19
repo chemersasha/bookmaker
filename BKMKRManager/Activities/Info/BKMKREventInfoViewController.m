@@ -46,15 +46,15 @@
     self.win0NoticeControl = [[BKMKRSoundNotice alloc] initWithResourceName:@"fork"];
     [self.win0NoticeContainer addSubview:self.win0NoticeControl.view layout:BKMKRLayoutAligmentFit];
     self.win0RingCoefTextField.floatValue = 0.0;
-
+    
     self.win1NoticeControl = [[BKMKRSoundNotice alloc] initWithResourceName:@"fork"];
-    [self.win1NoticeContainer addSubview:self.win0NoticeControl.view layout:BKMKRLayoutAligmentFit];
+    [self.win1NoticeContainer addSubview:self.win1NoticeControl.view layout:BKMKRLayoutAligmentFit];
     self.win1RingCoefTextField.floatValue = 0.0;
 }
 
 - (void)loadGoalNoticeUI {
     self.goalNoticeControl = [[BKMKRSoundNotice alloc] initWithResourceName:@"goal"];
-    [self.goalNoticeContainer addSubview:self.win0NoticeControl.view layout:BKMKRLayoutAligmentFit];
+    [self.goalNoticeContainer addSubview:self.goalNoticeControl.view layout:BKMKRLayoutAligmentFit];
 }
 
 #pragma mark -
