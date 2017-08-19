@@ -8,6 +8,8 @@
 
 #import <AVFoundation/AVFoundation.h>
 #import "BKMKREventInfoViewController.h"
+#import "BKMKRSoundNotice.h"
+#import "NSView+Layout.h"
 #import "Document+notifications.h"
 
 @interface BKMKREventInfoViewController ()
@@ -20,6 +22,9 @@
 @property (weak) IBOutlet NSTextField *winXCoef;
 
 @property (weak) IBOutlet NSTextField *win0RingCoefTextField;
+@property (weak) IBOutlet NSView *win0NoticeContainer;
+@property (strong, nonatomic) BKMKRSoundNotice *win0NoticeControl;
+
 @property (weak) IBOutlet NSTextField *win1RingCoefTextField;
 
 @property (weak) IBOutlet NSButton *stopGoalSoundButton;
@@ -31,18 +36,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.win0RingCoefTextField.floatValue = 0.0;
-    self.win1RingCoefTextField.floatValue = 0.0;
+    [self loadWin1X2UI];
 }
 
-- (void)startGoalSound {
-    NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"goal" ofType: @"mp3"];
-    NSURL *URL = [[NSURL alloc] initFileURLWithPath:soundPath];
-    self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:URL error:nil];
-    self.audioPlayer.numberOfLoops = -1;
-    [self.audioPlayer play];
+- (void)loadWin1X2UI {
+    self.win0NoticeControl = [[BKMKRSoundNotice alloc] initWithResourceName:@"fork"];
+    [self.win0NoticeContainer addSubview:self.win0NoticeControl.view layout:BKMKRLayoutAligmentFit];
+    self.win0RingCoefTextField.floatValue = 0.0;
     
-    self.stopGoalSoundButton.hidden = NO;
+    self.win1RingCoefTextField.floatValue = 0.0;
 }
 
 #pragma mark -
@@ -60,6 +62,16 @@
     self.audioPlayer = nil;
     
     self.stopGoalSoundButton.hidden = YES;
+}
+
+- (void)startGoalSound {
+    NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"goal" ofType: @"mp3"];
+    NSURL *URL = [[NSURL alloc] initFileURLWithPath:soundPath];
+    self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:URL error:nil];
+    self.audioPlayer.numberOfLoops = -1;
+    [self.audioPlayer play];
+    
+    self.stopGoalSoundButton.hidden = NO;
 }
 
 #pragma mark - Overloaded

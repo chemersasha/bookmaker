@@ -12,6 +12,8 @@
 		960DFDA51ED5A4F80051B522 /* BKMKRTotalsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 960DFDA31ED5A4F80051B522 /* BKMKRTotalsViewController.xib */; };
 		960DFDB71ED858CA0051B522 /* BKMKRTotalsCollectionViewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 960DFDB51ED858CA0051B522 /* BKMKRTotalsCollectionViewItem.m */; };
 		960DFDB81ED858CA0051B522 /* BKMKRTotalsCollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 960DFDB61ED858CA0051B522 /* BKMKRTotalsCollectionViewItem.xib */; };
+		961105C21F472052006A407C /* BKMKRSoundNotice.m in Sources */ = {isa = PBXBuildFile; fileRef = 961105C01F472052006A407C /* BKMKRSoundNotice.m */; };
+		961105C31F472052006A407C /* BKMKRSoundNotice.xib in Resources */ = {isa = PBXBuildFile; fileRef = 961105C11F472052006A407C /* BKMKRSoundNotice.xib */; };
 		9611F2B11EE03C38003BFBDC /* BKMKRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9611F2B01EE03C38003BFBDC /* BKMKRViewController.m */; };
 		961C34F61ED4F9170057C611 /* score.js in Resources */ = {isa = PBXBuildFile; fileRef = 961C34F41ED4F9170057C611 /* score.js */; };
 		961C34F71ED4F9170057C611 /* total.js in Resources */ = {isa = PBXBuildFile; fileRef = 961C34F51ED4F9170057C611 /* total.js */; };
@@ -62,6 +64,9 @@
 		960DFDB41ED858CA0051B522 /* BKMKRTotalsCollectionViewItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BKMKRTotalsCollectionViewItem.h; path = Activities/Totals/BKMKRTotalsCollectionViewItem.h; sourceTree = "<group>"; };
 		960DFDB51ED858CA0051B522 /* BKMKRTotalsCollectionViewItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BKMKRTotalsCollectionViewItem.m; path = Activities/Totals/BKMKRTotalsCollectionViewItem.m; sourceTree = "<group>"; };
 		960DFDB61ED858CA0051B522 /* BKMKRTotalsCollectionViewItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BKMKRTotalsCollectionViewItem.xib; path = Activities/Totals/BKMKRTotalsCollectionViewItem.xib; sourceTree = "<group>"; };
+		961105BF1F472052006A407C /* BKMKRSoundNotice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BKMKRSoundNotice.h; path = Common/Controls/SoundNotice/BKMKRSoundNotice.h; sourceTree = "<group>"; };
+		961105C01F472052006A407C /* BKMKRSoundNotice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BKMKRSoundNotice.m; path = Common/Controls/SoundNotice/BKMKRSoundNotice.m; sourceTree = "<group>"; };
+		961105C11F472052006A407C /* BKMKRSoundNotice.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BKMKRSoundNotice.xib; path = Common/Controls/SoundNotice/BKMKRSoundNotice.xib; sourceTree = "<group>"; };
 		9611F2AF1EE03C38003BFBDC /* BKMKRViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BKMKRViewController.h; path = Common/BKMKRViewController.h; sourceTree = "<group>"; };
 		9611F2B01EE03C38003BFBDC /* BKMKRViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BKMKRViewController.m; path = Common/BKMKRViewController.m; sourceTree = "<group>"; };
 		961C34F41ED4F9170057C611 /* score.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = score.js; sourceTree = "<group>"; };
@@ -149,6 +154,24 @@
 				9651B5C81ED9D10700281BF7 /* BKMKRTotalDetailViewController.xib */,
 			);
 			name = Totals;
+			sourceTree = "<group>";
+		};
+		961105BD1F471ECE006A407C /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				961105BE1F471FE4006A407C /* SoundNotice */,
+			);
+			name = Controls;
+			sourceTree = "<group>";
+		};
+		961105BE1F471FE4006A407C /* SoundNotice */ = {
+			isa = PBXGroup;
+			children = (
+				961105BF1F472052006A407C /* BKMKRSoundNotice.h */,
+				961105C01F472052006A407C /* BKMKRSoundNotice.m */,
+				961105C11F472052006A407C /* BKMKRSoundNotice.xib */,
+			);
+			name = SoundNotice;
 			sourceTree = "<group>";
 		};
 		9611F2B21EE0461F003BFBDC /* Model */ = {
@@ -264,6 +287,7 @@
 		9651B5BF1ED9C42100281BF7 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				961105BD1F471ECE006A407C /* Controls */,
 				9611F2AF1EE03C38003BFBDC /* BKMKRViewController.h */,
 				9611F2B01EE03C38003BFBDC /* BKMKRViewController.m */,
 				9651B5C31ED9CE2B00281BF7 /* BKMKRViewControllerAnimator.h */,
@@ -449,6 +473,7 @@
 				963EF4F41EAB7B3E00DE39F4 /* Assets.xcassets in Resources */,
 				963EF4F71EAB7B3E00DE39F4 /* Main.storyboard in Resources */,
 				963C38391EE0BE1A0007E06C /* goal.mp3 in Resources */,
+				961105C31F472052006A407C /* BKMKRSoundNotice.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,6 +498,7 @@
 				963EF4F21EAB7B3E00DE39F4 /* Document.xcdatamodeld in Sources */,
 				96E58C441ED4AB66004D988F /* Document+notifications.m in Sources */,
 				9651B5C21ED9C47600281BF7 /* BKMKREventHandlerView.m in Sources */,
+				961105C21F472052006A407C /* BKMKRSoundNotice.m in Sources */,
 				960DFDB71ED858CA0051B522 /* BKMKRTotalsCollectionViewItem.m in Sources */,
 				96EBABE11EE535BA00D0397A /* BKMKRTotalAnalyzer.m in Sources */,
 				9651B5C51ED9CE2B00281BF7 /* BKMKRViewControllerAnimator.m in Sources */,
