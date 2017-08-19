@@ -8,6 +8,7 @@
 
 #import "BKMKREventInfoViewController.h"
 #import "BKMKRSoundNotice.h"
+#import "BKMKRTotalAnalyzer.h"
 #import "NSView+Layout.h"
 #import "Document+notifications.h"
 
@@ -45,11 +46,11 @@
 - (void)loadWin1X2NoticeUI {
     self.win0NoticeControl = [[BKMKRSoundNotice alloc] initWithResourceName:@"fork"];
     [self.win0NoticeContainer addSubview:self.win0NoticeControl.view layout:BKMKRLayoutAligmentFit];
-    self.win0RingCoefTextField.floatValue = 0.0;
+    self.win0RingCoefTextField.floatValue = 100.0;
     
     self.win1NoticeControl = [[BKMKRSoundNotice alloc] initWithResourceName:@"fork"];
     [self.win1NoticeContainer addSubview:self.win1NoticeControl.view layout:BKMKRLayoutAligmentFit];
-    self.win1RingCoefTextField.floatValue = 0.0;
+    self.win1RingCoefTextField.floatValue = 100.0;
 }
 
 - (void)loadGoalNoticeUI {
@@ -124,8 +125,15 @@
 - (void)win1X2DidReceiveNotification:(NSNotification *)notification {
     if (self.document.eventInfo.win1X2.count == 3) {
         self.win0Coef.stringValue = self.document.eventInfo.win1X2[0];
+        if ([BKMKRTotalAnalyzer analyzeWin:self.win0Coef.floatValue withCoefficient:self.win0RingCoefTextField.floatValue]) {
+            [self.win0NoticeControl startNotice];
+        }
         self.winXCoef.stringValue = self.document.eventInfo.win1X2[1];
         self.win1Coef.stringValue = self.document.eventInfo.win1X2[2];
+        if ([BKMKRTotalAnalyzer analyzeWin:self.win1Coef.floatValue withCoefficient:self.win1RingCoefTextField.floatValue]) {
+            [self.win1NoticeControl startNotice];
+        }
+
     } else {
         [self clearWinsCoef];
     }
