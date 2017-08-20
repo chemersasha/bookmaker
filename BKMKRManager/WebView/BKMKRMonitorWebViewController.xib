@@ -19,44 +19,43 @@
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView id="Hz6-mo-xeY">
-            <rect key="frame" x="0.0" y="0.0" width="740" height="312"/>
+            <rect key="frame" x="0.0" y="0.0" width="500" height="312"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <textField verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6fL-iZ-Xef">
-                    <rect key="frame" x="20" y="270" width="400" height="22"/>
+                    <rect key="frame" x="20" y="280" width="283" height="12"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="400" id="Wli-Op-Uel"/>
-                        <constraint firstAttribute="height" constant="22" id="tyS-W5-15N"/>
+                        <constraint firstAttribute="height" constant="12" id="tyS-W5-15N"/>
                     </constraints>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="https://www.favoritsport.com.ua/ru/live/" drawsBackground="YES" id="URk-T5-7k8">
-                        <font key="font" metaFont="system"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" title="https://www.favoritsport.com.ua/ru/live/" drawsBackground="YES" id="URk-T5-7k8">
+                        <font key="font" metaFont="system" size="10"/>
                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rc6-6z-buK">
-                    <rect key="frame" x="422" y="264" width="81" height="32"/>
+                    <rect key="frame" x="311" y="278" width="50" height="15"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="21" id="K2l-bz-Ixe"/>
-                        <constraint firstAttribute="width" constant="69" id="LfP-Y3-xN6"/>
+                        <constraint firstAttribute="height" constant="12" id="K2l-bz-Ixe"/>
+                        <constraint firstAttribute="width" constant="50" id="LfP-Y3-xN6"/>
                     </constraints>
-                    <buttonCell key="cell" type="push" title="Load" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="J7J-lc-3I1">
+                    <buttonCell key="cell" type="roundTextured" title="Load" bezelStyle="texturedRounded" alignment="center" borderStyle="border" inset="2" id="J7J-lc-3I1">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="system"/>
+                        <font key="font" metaFont="system" size="10"/>
                     </buttonCell>
                     <connections>
                         <action selector="load:" target="-2" id="mz5-Sk-3pK"/>
                     </connections>
                 </button>
                 <progressIndicator hidden="YES" wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="fa2-78-caj">
-                    <rect key="frame" x="505" y="273" width="16" height="16"/>
+                    <rect key="frame" x="369" y="280" width="12" height="12"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="16" id="S3r-Yh-hU3"/>
-                        <constraint firstAttribute="height" constant="16" id="hZf-W5-aTE"/>
+                        <constraint firstAttribute="width" constant="12" id="S3r-Yh-hU3"/>
+                        <constraint firstAttribute="height" constant="12" id="hZf-W5-aTE"/>
                     </constraints>
                 </progressIndicator>
                 <webView translatesAutoresizingMaskIntoConstraints="NO" id="7bm-ob-z6z">
-                    <rect key="frame" x="20" y="20" width="700" height="230"/>
+                    <rect key="frame" x="20" y="20" width="460" height="240"/>
                     <webPreferences key="preferences" defaultFontSize="16" defaultFixedFontSize="13" minimumFontSize="0">
                         <nil key="identifier"/>
                     </webPreferences>
@@ -65,7 +64,11 @@
                     </connections>
                 </webView>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="81M-3I-n9D">
-                    <rect key="frame" x="694" y="272" width="13" height="21"/>
+                    <rect key="frame" x="454" y="279" width="13" height="14"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="13" id="Lij-rS-Wmm"/>
+                        <constraint firstAttribute="height" constant="12" id="ijI-TM-t4L"/>
+                    </constraints>
                     <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSAddTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="DE5-O3-ofm">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
@@ -80,7 +83,11 @@
                     </connections>
                 </button>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="v4A-z8-CwT">
-                    <rect key="frame" x="707" y="272" width="13" height="21"/>
+                    <rect key="frame" x="467" y="279" width="13" height="14"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="13" id="LmO-aS-fJh"/>
+                        <constraint firstAttribute="height" constant="12" id="yPv-Jv-2Hp"/>
+                    </constraints>
                     <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSRemoveTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="nlt-Qk-l0R">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
@@ -95,10 +102,13 @@
                     </connections>
                 </button>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Dug-hf-xBt">
-                    <rect key="frame" x="527" y="272" width="59" height="18"/>
+                    <rect key="frame" x="387" y="277" width="64" height="18"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="aff-7N-J8S"/>
+                    </constraints>
                     <buttonCell key="cell" type="check" title="Listen" bezelStyle="regularSquare" imagePosition="left" inset="2" id="qkG-4f-ZJu">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                        <font key="font" metaFont="system"/>
+                        <font key="font" metaFont="system" size="10"/>
                     </buttonCell>
                     <connections>
                         <action selector="listen:" target="-2" id="LfJ-iI-PlK"/>
@@ -111,6 +121,7 @@
                 </button>
             </subviews>
             <constraints>
+                <constraint firstItem="81M-3I-n9D" firstAttribute="leading" secondItem="Dug-hf-xBt" secondAttribute="trailing" constant="5" id="0j0-EE-4bJ"/>
                 <constraint firstItem="Dug-hf-xBt" firstAttribute="centerY" secondItem="fa2-78-caj" secondAttribute="centerY" id="1bo-kY-f0J"/>
                 <constraint firstItem="rc6-6z-buK" firstAttribute="leading" secondItem="6fL-iZ-Xef" secondAttribute="trailing" constant="8" id="37g-2t-nkK"/>
                 <constraint firstItem="v4A-z8-CwT" firstAttribute="top" secondItem="81M-3I-n9D" secondAttribute="top" id="6hj-Ai-Unj"/>
