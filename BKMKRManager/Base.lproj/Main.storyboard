@@ -669,7 +669,7 @@
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="680" height="470"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
-                        <value key="minSize" type="size" width="500" height="250"/>
+                        <value key="minSize" type="size" width="500" height="225"/>
                     </window>
                     <connections>
                         <segue destination="qr3-zz-Xhu" kind="relationship" relationship="window.shadowedContentViewController" id="Wn8-qb-9yM"/>
@@ -710,13 +710,13 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="a3X-6H-YNz">
-                                <rect key="frame" x="0.0" y="266" width="450" height="34"/>
+                                <rect key="frame" x="0.0" y="270" width="450" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="34" id="2zP-Pn-QvB"/>
+                                    <constraint firstAttribute="height" constant="30" id="2zP-Pn-QvB"/>
                                 </constraints>
                             </customView>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="TVl-hm-s4R">
-                                <rect key="frame" x="0.0" y="0.0" width="450" height="266"/>
+                                <rect key="frame" x="0.0" y="0.0" width="450" height="270"/>
                             </customView>
                         </subviews>
                         <constraints>
