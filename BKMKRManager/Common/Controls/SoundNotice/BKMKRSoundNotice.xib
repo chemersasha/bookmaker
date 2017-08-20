@@ -15,15 +15,11 @@
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView id="Hz6-mo-xeY">
-            <rect key="frame" x="0.0" y="0.0" width="15" height="15"/>
+            <rect key="frame" x="0.0" y="0.0" width="15" height="19"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <button hidden="YES" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Kha-1D-kez">
-                    <rect key="frame" x="1" y="0.0" width="13" height="15"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="13" id="G55-xg-p08"/>
-                        <constraint firstAttribute="width" constant="13" id="gEb-Kh-R49"/>
-                    </constraints>
+                    <rect key="frame" x="0.0" y="-1" width="15" height="21"/>
                     <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSStop" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="B5y-kO-kC9">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
@@ -34,8 +30,10 @@
                 </button>
             </subviews>
             <constraints>
-                <constraint firstItem="Kha-1D-kez" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="6Xw-8H-PKo"/>
-                <constraint firstItem="Kha-1D-kez" firstAttribute="centerY" secondItem="Hz6-mo-xeY" secondAttribute="centerY" id="8QE-3l-6Ie"/>
+                <constraint firstItem="Kha-1D-kez" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="Idf-3t-5rP"/>
+                <constraint firstAttribute="bottom" secondItem="Kha-1D-kez" secondAttribute="bottom" id="UDQ-if-KhF"/>
+                <constraint firstItem="Kha-1D-kez" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="W62-Cs-ZfN"/>
+                <constraint firstAttribute="trailing" secondItem="Kha-1D-kez" secondAttribute="trailing" id="oC7-Pu-yS2"/>
             </constraints>
             <point key="canvasLocation" x="-111" y="111.5"/>
         </customView>
