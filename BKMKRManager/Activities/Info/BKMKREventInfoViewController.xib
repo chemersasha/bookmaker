@@ -151,6 +151,17 @@
                         <constraint firstAttribute="width" constant="12" id="44J-lq-ggG"/>
                     </constraints>
                 </customView>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="78z-8d-sJH">
+                    <rect key="frame" x="22" y="1" width="10" height="12"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="10" id="R5I-bI-Zkw"/>
+                        <constraint firstAttribute="width" constant="10" id="lZJ-Ge-9gA"/>
+                    </constraints>
+                    <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSAddTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="gi9-JL-BTc">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                </button>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lqu-Ls-zZ2">
                     <rect key="frame" x="170" y="5" width="60" height="12"/>
                     <constraints>
@@ -183,7 +194,7 @@
                         <constraint firstAttribute="width" constant="56" id="h1R-vh-0Sw"/>
                     </constraints>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="-" id="hWP-ID-qVB">
-                        <font key="font" metaFont="system" size="11"/>
+                        <font key="font" metaFont="smallSystem"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -212,6 +223,7 @@
                 <constraint firstItem="QA9-do-u9i" firstAttribute="leading" secondItem="pUs-Sh-Ke4" secondAttribute="trailing" id="PPk-cS-o3f"/>
                 <constraint firstItem="jjs-tW-lQZ" firstAttribute="leading" secondItem="QA9-do-u9i" secondAttribute="leading" id="Pqe-Ax-XFc"/>
                 <constraint firstItem="uZ8-X9-8JN" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="5" id="RF6-xS-d83"/>
+                <constraint firstItem="78z-8d-sJH" firstAttribute="centerY" secondItem="EjM-sr-wgl" secondAttribute="centerY" id="THZ-Fw-PVg"/>
                 <constraint firstItem="jjs-tW-lQZ" firstAttribute="top" secondItem="QA9-do-u9i" secondAttribute="bottom" id="TbK-8S-fq6"/>
                 <constraint firstAttribute="bottom" secondItem="EjM-sr-wgl" secondAttribute="bottom" constant="1" id="VkZ-Rn-Bfr"/>
                 <constraint firstItem="Fh7-4d-KCb" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="5" id="Z41-HL-NfH"/>
@@ -226,6 +238,7 @@
                 <constraint firstItem="1rM-Ge-igA" firstAttribute="centerX" secondItem="pUs-Sh-Ke4" secondAttribute="centerX" id="pxr-x7-0bF"/>
                 <constraint firstItem="1LN-FT-GpK" firstAttribute="centerY" secondItem="wBA-KF-rZW" secondAttribute="centerY" id="qPc-jN-Q5s"/>
                 <constraint firstItem="QA9-do-u9i" firstAttribute="top" secondItem="pUs-Sh-Ke4" secondAttribute="top" id="qdh-Jn-Zeg"/>
+                <constraint firstItem="78z-8d-sJH" firstAttribute="leading" secondItem="EjM-sr-wgl" secondAttribute="trailing" constant="5" id="qfo-ma-H6f"/>
                 <constraint firstItem="Lqu-Ls-zZ2" firstAttribute="top" secondItem="yoY-p8-1Ss" secondAttribute="bottom" id="xfL-CU-joe"/>
                 <constraint firstItem="pUs-Sh-Ke4" firstAttribute="leading" secondItem="yoY-p8-1Ss" secondAttribute="trailing" id="yO2-MZ-rHV"/>
                 <constraint firstItem="yoY-p8-1Ss" firstAttribute="leading" secondItem="g1w-Mw-WuB" secondAttribute="trailing" id="zrc-Vn-tsi"/>
@@ -233,4 +246,7 @@
             <point key="canvasLocation" x="137" y="33"/>
         </customView>
     </objects>
+    <resources>
+        <image name="NSAddTemplate" width="11" height="11"/>
+    </resources>
 </document>

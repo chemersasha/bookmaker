@@ -36,17 +36,4 @@
     [self.context deleteObject:event];
 }
 
-#pragma mark - Total
-
-- (void)addTotalWithEventId:(NSString *)eventId error:(NSError **)error {
-    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Event"];
-    [request setPredicate:[NSPredicate predicateWithFormat:@"eventId == %@", eventId]];
-    
-    NSArray *fetchResults = [self.context executeFetchRequest:request error:error];
-    for (id event in fetchResults) {
-        Total *total = [NSEntityDescription insertNewObjectForEntityForName:@"Total" inManagedObjectContext:self.context];
-        total.event = event;
-    }
-}
-
 @end
