@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11762" systemVersion="16F73" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="BKMKRWinViewController">
+            <connections>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+                <outlet property="win0Coef" destination="jeo-6f-sRN" id="5yv-bR-UKh"/>
+                <outlet property="win0NoticeContainer" destination="1em-Il-jBS" id="jOk-2h-1wk"/>
+                <outlet property="win0RingCoefTextField" destination="9qs-Ri-0tk" id="vi6-ib-ZkU"/>
+                <outlet property="win1Coef" destination="ryA-ZV-Ne0" id="sBZ-qw-jAT"/>
+                <outlet property="win1NoticeContainer" destination="iKU-ft-cgZ" id="I1B-A0-QLo"/>
+                <outlet property="win1RingCoefTextField" destination="mUl-hZ-J20" id="oXQ-LR-XNy"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="450" height="20"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="1em-Il-jBS">
+                    <rect key="frame" x="5" y="5" width="10" height="10"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="10" id="B1W-NK-Avg"/>
+                        <constraint firstAttribute="height" constant="10" id="dgE-8W-3M0"/>
+                    </constraints>
+                </customView>
+                <textField horizontalHuggingPriority="252" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jeo-6f-sRN">
+                    <rect key="frame" x="18" y="4" width="9" height="13"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="-" id="fLp-IV-Nsk">
+                        <font key="font" metaFont="system" size="10"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9qs-Ri-0tk">
+                    <rect key="frame" x="30" y="4" width="30" height="12"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="12" id="3ta-Sc-qSf"/>
+                        <constraint firstAttribute="width" constant="30" id="yAm-wD-gDf"/>
+                    </constraints>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" alignment="center" title="0" drawsBackground="YES" usesSingleLineMode="YES" id="lJy-5p-sBN">
+                        <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="fdg-WH-19a">
+                            <real key="minimum" value="0.0"/>
+                            <real key="maximum" value="100"/>
+                        </numberFormatter>
+                        <font key="font" metaFont="system" size="10"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                    </textFieldCell>
+                    <connections>
+                        <action selector="takeFloatValueFrom:" target="0bQ-yI-RoX" id="sMw-4K-GPu"/>
+                    </connections>
+                </textField>
+                <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0bQ-yI-RoX">
+                    <rect key="frame" x="57" y="3" width="19" height="14"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="10" id="vp8-By-GKg"/>
+                    </constraints>
+                    <stepperCell key="cell" continuous="YES" alignment="left" increment="0.10000000000000001" maxValue="100" id="7fs-Yx-Vxz"/>
+                    <connections>
+                        <binding destination="-2" name="value" keyPath="self.win0RingCoefTextField.floatValue" id="WbU-aP-soh"/>
+                    </connections>
+                </stepper>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="UA6-m1-g8Q">
+                    <rect key="frame" x="84" y="4" width="10" height="12"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="10" id="MVt-mD-1yq"/>
+                        <constraint firstAttribute="width" constant="10" id="oeV-fQ-4cL"/>
+                    </constraints>
+                    <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSAddTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="4s3-hG-6Hf">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                </button>
+                <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Zcf-Qc-gAN">
+                    <rect key="frame" x="373" y="3" width="19" height="14"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="10" id="mRw-TS-Q4y"/>
+                    </constraints>
+                    <stepperCell key="cell" continuous="YES" alignment="left" increment="0.10000000000000001" maxValue="100" id="iRH-Ab-mxB"/>
+                    <connections>
+                        <binding destination="-2" name="value" keyPath="self.win1RingCoefTextField.floatValue" id="gbX-mp-gbN"/>
+                    </connections>
+                </stepper>
+                <textField verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mUl-hZ-J20">
+                    <rect key="frame" x="389" y="4" width="30" height="12"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="12" id="JxD-Bd-qqK"/>
+                        <constraint firstAttribute="width" constant="30" id="g6k-mW-fA7"/>
+                    </constraints>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" alignment="center" title="0" drawsBackground="YES" usesSingleLineMode="YES" id="SWE-6V-m6f">
+                        <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="Lmd-gx-kg3">
+                            <real key="minimum" value="0.0"/>
+                            <real key="maximum" value="100"/>
+                        </numberFormatter>
+                        <font key="font" metaFont="system" size="10"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                    </textFieldCell>
+                    <connections>
+                        <action selector="takeFloatValueFrom:" target="Zcf-Qc-gAN" id="nsa-4i-6lW"/>
+                    </connections>
+                </textField>
+                <textField horizontalHuggingPriority="252" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ryA-ZV-Ne0">
+                    <rect key="frame" x="422" y="4" width="9" height="13"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="-" id="dKG-zs-Oi8">
+                        <font key="font" metaFont="system" size="10"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="iKU-ft-cgZ">
+                    <rect key="frame" x="434" y="5" width="10" height="10"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="10" id="dAw-Xk-ifn"/>
+                        <constraint firstAttribute="height" constant="10" id="prB-di-gBb"/>
+                    </constraints>
+                </customView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="0bQ-yI-RoX" firstAttribute="centerY" secondItem="Hz6-mo-xeY" secondAttribute="centerY" id="2le-VY-wxY"/>
+                <constraint firstItem="jeo-6f-sRN" firstAttribute="leading" secondItem="1em-Il-jBS" secondAttribute="trailing" constant="5" id="AtS-ug-h06"/>
+                <constraint firstItem="iKU-ft-cgZ" firstAttribute="leading" secondItem="ryA-ZV-Ne0" secondAttribute="trailing" constant="5" id="F8Y-A1-wMk"/>
+                <constraint firstItem="jeo-6f-sRN" firstAttribute="centerY" secondItem="Hz6-mo-xeY" secondAttribute="centerY" id="FM0-NS-hGn"/>
+                <constraint firstItem="mUl-hZ-J20" firstAttribute="centerY" secondItem="Hz6-mo-xeY" secondAttribute="centerY" id="MlM-Jz-AKg"/>
+                <constraint firstItem="0bQ-yI-RoX" firstAttribute="leading" secondItem="9qs-Ri-0tk" secondAttribute="trailing" id="SLV-sN-Hj1"/>
+                <constraint firstItem="1em-Il-jBS" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="5" id="SSE-Tx-VRV"/>
+                <constraint firstItem="ryA-ZV-Ne0" firstAttribute="leading" secondItem="mUl-hZ-J20" secondAttribute="trailing" constant="5" id="U4F-ay-7SA"/>
+                <constraint firstItem="1em-Il-jBS" firstAttribute="centerY" secondItem="Hz6-mo-xeY" secondAttribute="centerY" id="UPf-RE-0sF"/>
+                <constraint firstItem="9qs-Ri-0tk" firstAttribute="leading" secondItem="jeo-6f-sRN" secondAttribute="trailing" constant="5" id="VNt-un-hYx"/>
+                <constraint firstItem="UA6-m1-g8Q" firstAttribute="leading" secondItem="0bQ-yI-RoX" secondAttribute="trailing" constant="11" id="VX6-Lg-tUh"/>
+                <constraint firstItem="ryA-ZV-Ne0" firstAttribute="centerY" secondItem="Hz6-mo-xeY" secondAttribute="centerY" id="ZOD-JB-XDj"/>
+                <constraint firstAttribute="trailing" secondItem="iKU-ft-cgZ" secondAttribute="trailing" constant="6" id="h99-Sd-LGU"/>
+                <constraint firstItem="9qs-Ri-0tk" firstAttribute="centerY" secondItem="Hz6-mo-xeY" secondAttribute="centerY" id="hat-zp-tbG"/>
+                <constraint firstItem="UA6-m1-g8Q" firstAttribute="centerY" secondItem="Hz6-mo-xeY" secondAttribute="centerY" id="olg-TP-4W0"/>
+                <constraint firstItem="mUl-hZ-J20" firstAttribute="leading" secondItem="Zcf-Qc-gAN" secondAttribute="trailing" id="reX-Eg-WB9"/>
+                <constraint firstItem="Zcf-Qc-gAN" firstAttribute="centerY" secondItem="Hz6-mo-xeY" secondAttribute="centerY" id="yf3-jP-utF"/>
+                <constraint firstItem="iKU-ft-cgZ" firstAttribute="centerY" secondItem="Hz6-mo-xeY" secondAttribute="centerY" id="z23-F4-xoN"/>
+            </constraints>
+        </customView>
+    </objects>
+    <resources>
+        <image name="NSAddTemplate" width="11" height="11"/>
+    </resources>
+</document>

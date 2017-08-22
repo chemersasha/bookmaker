@@ -710,28 +710,38 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="a3X-6H-YNz">
-                                <rect key="frame" x="0.0" y="270" width="450" height="30"/>
+                                <rect key="frame" x="0.0" y="280" width="450" height="20"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="2zP-Pn-QvB"/>
+                                    <constraint firstAttribute="height" constant="20" id="2zP-Pn-QvB"/>
+                                </constraints>
+                            </customView>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="fO5-YM-BJl">
+                                <rect key="frame" x="0.0" y="260" width="450" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="Tdq-Le-gTZ"/>
                                 </constraints>
                             </customView>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="TVl-hm-s4R">
-                                <rect key="frame" x="0.0" y="0.0" width="450" height="270"/>
+                                <rect key="frame" x="0.0" y="0.0" width="450" height="260"/>
                             </customView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="a3X-6H-YNz" firstAttribute="leading" secondItem="hDR-fl-8ue" secondAttribute="leading" id="0cM-T8-Hhx"/>
                             <constraint firstAttribute="trailing" secondItem="TVl-hm-s4R" secondAttribute="trailing" id="1Hs-EI-tRp"/>
                             <constraint firstItem="a3X-6H-YNz" firstAttribute="top" secondItem="hDR-fl-8ue" secondAttribute="top" id="8TF-gZ-miF"/>
+                            <constraint firstItem="TVl-hm-s4R" firstAttribute="top" secondItem="fO5-YM-BJl" secondAttribute="bottom" id="PgM-1T-v5H"/>
                             <constraint firstAttribute="trailing" secondItem="a3X-6H-YNz" secondAttribute="trailing" id="TnM-Zc-L1m"/>
                             <constraint firstAttribute="bottom" secondItem="TVl-hm-s4R" secondAttribute="bottom" id="X0k-Hl-nul"/>
+                            <constraint firstAttribute="trailing" secondItem="fO5-YM-BJl" secondAttribute="trailing" id="X3L-VT-4d1"/>
                             <constraint firstItem="TVl-hm-s4R" firstAttribute="leading" secondItem="hDR-fl-8ue" secondAttribute="leading" id="czu-bW-fm9"/>
-                            <constraint firstItem="TVl-hm-s4R" firstAttribute="top" secondItem="a3X-6H-YNz" secondAttribute="bottom" id="mAB-Dn-Eb1"/>
+                            <constraint firstItem="fO5-YM-BJl" firstAttribute="top" secondItem="a3X-6H-YNz" secondAttribute="bottom" id="irB-l9-0ke"/>
+                            <constraint firstItem="fO5-YM-BJl" firstAttribute="leading" secondItem="hDR-fl-8ue" secondAttribute="leading" id="nIX-Td-42s"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="infoContainer" destination="a3X-6H-YNz" id="mRA-3S-KWA"/>
                         <outlet property="totalsContainer" destination="TVl-hm-s4R" id="vx5-vn-b5q"/>
+                        <outlet property="winContainer" destination="fO5-YM-BJl" id="K4a-Sl-eko"/>
                     </connections>
                 </viewController>
             </objects>

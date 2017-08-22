@@ -33,6 +33,8 @@
 		9651B5CA1ED9D10700281BF7 /* BKMKRTotalDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9651B5C81ED9D10700281BF7 /* BKMKRTotalDetailViewController.xib */; };
 		9653B8631EE409DB009BC849 /* BKMKREventInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9653B8621EE409DB009BC849 /* BKMKREventInfo.m */; };
 		96540A2F1EAB809100255866 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96540A2E1EAB809100255866 /* WebKit.framework */; };
+		96736C301F4B4A71009AFD24 /* BKMKRWinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96736C2E1F4B4A71009AFD24 /* BKMKRWinViewController.m */; };
+		96736C311F4B4A71009AFD24 /* BKMKRWinViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96736C2F1F4B4A71009AFD24 /* BKMKRWinViewController.xib */; };
 		967F8C291F28EABF0050DD09 /* win1X2.js in Resources */ = {isa = PBXBuildFile; fileRef = 967F8C281F28EABF0050DD09 /* win1X2.js */; };
 		96BC65571ED0DCF600F013E2 /* BKMKREventInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96BC65551ED0DCF600F013E2 /* BKMKREventInfoViewController.m */; };
 		96BC65581ED0DCF600F013E2 /* BKMKREventInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96BC65561ED0DCF600F013E2 /* BKMKREventInfoViewController.xib */; };
@@ -100,6 +102,9 @@
 		9653B8611EE409DB009BC849 /* BKMKREventInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BKMKREventInfo.h; path = Model/WebViewModel/BKMKREventInfo.h; sourceTree = "<group>"; };
 		9653B8621EE409DB009BC849 /* BKMKREventInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BKMKREventInfo.m; path = Model/WebViewModel/BKMKREventInfo.m; sourceTree = "<group>"; };
 		96540A2E1EAB809100255866 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		96736C2D1F4B4A71009AFD24 /* BKMKRWinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BKMKRWinViewController.h; path = Activities/Win/BKMKRWinViewController.h; sourceTree = "<group>"; };
+		96736C2E1F4B4A71009AFD24 /* BKMKRWinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BKMKRWinViewController.m; path = Activities/Win/BKMKRWinViewController.m; sourceTree = "<group>"; };
+		96736C2F1F4B4A71009AFD24 /* BKMKRWinViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BKMKRWinViewController.xib; path = Activities/Win/BKMKRWinViewController.xib; sourceTree = "<group>"; };
 		967F8C281F28EABF0050DD09 /* win1X2.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = win1X2.js; sourceTree = "<group>"; };
 		96BC65541ED0DCF600F013E2 /* BKMKREventInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BKMKREventInfoViewController.h; path = Activities/Info/BKMKREventInfoViewController.h; sourceTree = "<group>"; };
 		96BC65551ED0DCF600F013E2 /* BKMKREventInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BKMKREventInfoViewController.m; path = Activities/Info/BKMKREventInfoViewController.m; sourceTree = "<group>"; };
@@ -317,6 +322,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		96736C2C1F4B4A2D009AFD24 /* Win */ = {
+			isa = PBXGroup;
+			children = (
+				96736C2D1F4B4A71009AFD24 /* BKMKRWinViewController.h */,
+				96736C2E1F4B4A71009AFD24 /* BKMKRWinViewController.m */,
+				96736C2F1F4B4A71009AFD24 /* BKMKRWinViewController.xib */,
+			);
+			name = Win;
+			sourceTree = "<group>";
+		};
 		96BC65491ED0C52500F013E2 /* WebView */ = {
 			isa = PBXGroup;
 			children = (
@@ -331,6 +346,7 @@
 		96BC65501ED0DB0B00F013E2 /* Activities */ = {
 			isa = PBXGroup;
 			children = (
+				96736C2C1F4B4A2D009AFD24 /* Win */,
 				960DFDA01ED5A4920051B522 /* Totals */,
 				96BC65591ED0DF0D00F013E2 /* Info */,
 			);
@@ -463,6 +479,7 @@
 				967F8C291F28EABF0050DD09 /* win1X2.js in Resources */,
 				96BC656A1ED1814100F013E2 /* BKMKRMonitorWebViewController.xib in Resources */,
 				961C34F61ED4F9170057C611 /* score.js in Resources */,
+				96736C311F4B4A71009AFD24 /* BKMKRWinViewController.xib in Resources */,
 				9651B5CA1ED9D10700281BF7 /* BKMKRTotalDetailViewController.xib in Resources */,
 				960DFD9F1ED58D7A0051B522 /* teamsInfo.js in Resources */,
 				960DFDA51ED5A4F80051B522 /* BKMKRTotalsViewController.xib in Resources */,
@@ -508,6 +525,7 @@
 				9611F2B11EE03C38003BFBDC /* BKMKRViewController.m in Sources */,
 				960DFDA41ED5A4F80051B522 /* BKMKRTotalsViewController.m in Sources */,
 				96BC65621ED17CCA00F013E2 /* BKMKRWebViewSection.m in Sources */,
+				96736C301F4B4A71009AFD24 /* BKMKRWinViewController.m in Sources */,
 				9653B8631EE409DB009BC849 /* BKMKREventInfo.m in Sources */,
 				961C34FA1ED4F97F0057C611 /* BKMKRWebParser.m in Sources */,
 				9651B5C91ED9D10700281BF7 /* BKMKRTotalDetailViewController.m in Sources */,
