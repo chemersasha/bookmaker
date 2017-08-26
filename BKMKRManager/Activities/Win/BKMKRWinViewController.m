@@ -20,11 +20,11 @@
 
 @property (strong, nonatomic) BKMKRStepperTextField *win0RingCoefTextField;
 @property (weak) IBOutlet NSView *win0RingContainer;
-
 @property (weak) IBOutlet NSView *win0NoticeContainer;
 @property (strong, nonatomic) BKMKRSoundNotice *win0NoticeControl;
 
-@property (weak) IBOutlet NSTextField *win1RingCoefTextField;
+@property (strong, nonatomic) BKMKRStepperTextField *win1RingCoefTextField;
+@property (weak) IBOutlet NSView *win1RingContainer;
 @property (weak) IBOutlet NSView *win1NoticeContainer;
 @property (strong, nonatomic) BKMKRSoundNotice *win1NoticeControl;
 
@@ -45,13 +45,16 @@
     
     self.win1NoticeControl = [[BKMKRSoundNotice alloc] initWithResourceName:@"fork"];
     [self.win1NoticeContainer addSubview:self.win1NoticeControl.view layout:BKMKRLayoutAligmentFit];
-    self.win1RingCoefTextField.floatValue = 100.0;
 }
 
 - (void)loadRingFields {
     self.win0RingCoefTextField = [BKMKRStepperTextField new];
-    self.win0RingCoefTextField.textField.floatValue = 100.0;
     [self.win0RingContainer addSubview:self.win0RingCoefTextField.view layout:BKMKRLayoutAligmentFit];
+    self.win0RingCoefTextField.textField.floatValue = 100.0;
+    
+    self.win1RingCoefTextField = [BKMKRStepperTextField new];
+    [self.win1RingContainer addSubview:self.win1RingCoefTextField.view layout:BKMKRLayoutAligmentFit];
+    self.win1RingCoefTextField.textField.floatValue = 100.0;
 }
 
 #pragma mark -
@@ -90,7 +93,7 @@
             [self.win0NoticeControl startNotice];
         }
         self.win1Coef.stringValue = self.document.eventInfo.win1X2[2];
-        if ([BKMKRTotalAnalyzer analyzeWin:self.win1Coef.floatValue withCoefficient:self.win1RingCoefTextField.floatValue]) {
+        if ([BKMKRTotalAnalyzer analyzeWin:self.win1Coef.floatValue withCoefficient:self.win1RingCoefTextField.textField.floatValue]) {
             [self.win1NoticeControl startNotice];
         }
 
