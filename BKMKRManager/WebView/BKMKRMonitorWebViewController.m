@@ -82,7 +82,7 @@ static NSString * const kBKMKRWebViewUrl = @"https://www.favoritsport.com.ua/ru/
 }
 
 #pragma mark -
-
+//@TODO remove dataModelManager property and create event load manager
 - (void)load {
     self.document = self.view.window.windowController.document;
     self.dataModelManager = [[BKMKRDataModelManager alloc]
@@ -95,7 +95,7 @@ static NSString * const kBKMKRWebViewUrl = @"https://www.favoritsport.com.ua/ru/
     }
 
     self.document.event ? [self loadEvent:self.document.event] : [self clean];
-    [self load:nil];
+//    [self load:nil];
 }
 
 - (void)loadEvent:(Event *)event {

@@ -17,12 +17,13 @@
     </entity>
     <entity name="Win" representedClassName="Win" syncable="YES" codeGenerationType="class">
         <attribute name="bet" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="position" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="column" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="profit" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="profitCoef" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
     </entity>
     <elements>
         <element name="Event" positionX="-155" positionY="-54" width="128" height="103"/>
         <element name="Total" positionX="72" positionY="-117" width="128" height="148"/>
-        <element name="Win" positionX="-45" positionY="-45" width="128" height="30"/>
+        <element name="Win" positionX="-45" positionY="-45" width="128" height="105"/>
     </elements>
 </model>

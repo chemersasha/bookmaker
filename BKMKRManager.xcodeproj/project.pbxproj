@@ -12,6 +12,8 @@
 		960DFDA51ED5A4F80051B522 /* BKMKRTotalsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 960DFDA31ED5A4F80051B522 /* BKMKRTotalsViewController.xib */; };
 		960DFDB71ED858CA0051B522 /* BKMKRTotalsCollectionViewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 960DFDB51ED858CA0051B522 /* BKMKRTotalsCollectionViewItem.m */; };
 		960DFDB81ED858CA0051B522 /* BKMKRTotalsCollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 960DFDB61ED858CA0051B522 /* BKMKRTotalsCollectionViewItem.xib */; };
+		9610479B1F4C4D5D002B6228 /* BKMKRStepperTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 961047991F4C4D5D002B6228 /* BKMKRStepperTextField.m */; };
+		9610479C1F4C4D5D002B6228 /* BKMKRStepperTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9610479A1F4C4D5D002B6228 /* BKMKRStepperTextField.xib */; };
 		961105C21F472052006A407C /* BKMKRSoundNotice.m in Sources */ = {isa = PBXBuildFile; fileRef = 961105C01F472052006A407C /* BKMKRSoundNotice.m */; };
 		961105C31F472052006A407C /* BKMKRSoundNotice.xib in Resources */ = {isa = PBXBuildFile; fileRef = 961105C11F472052006A407C /* BKMKRSoundNotice.xib */; };
 		9611F2B11EE03C38003BFBDC /* BKMKRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9611F2B01EE03C38003BFBDC /* BKMKRViewController.m */; };
@@ -66,6 +68,9 @@
 		960DFDB41ED858CA0051B522 /* BKMKRTotalsCollectionViewItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BKMKRTotalsCollectionViewItem.h; path = Activities/Totals/BKMKRTotalsCollectionViewItem.h; sourceTree = "<group>"; };
 		960DFDB51ED858CA0051B522 /* BKMKRTotalsCollectionViewItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BKMKRTotalsCollectionViewItem.m; path = Activities/Totals/BKMKRTotalsCollectionViewItem.m; sourceTree = "<group>"; };
 		960DFDB61ED858CA0051B522 /* BKMKRTotalsCollectionViewItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BKMKRTotalsCollectionViewItem.xib; path = Activities/Totals/BKMKRTotalsCollectionViewItem.xib; sourceTree = "<group>"; };
+		961047981F4C4D5D002B6228 /* BKMKRStepperTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BKMKRStepperTextField.h; path = Common/Controls/StepperTextField/BKMKRStepperTextField.h; sourceTree = "<group>"; };
+		961047991F4C4D5D002B6228 /* BKMKRStepperTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BKMKRStepperTextField.m; path = Common/Controls/StepperTextField/BKMKRStepperTextField.m; sourceTree = "<group>"; };
+		9610479A1F4C4D5D002B6228 /* BKMKRStepperTextField.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BKMKRStepperTextField.xib; path = Common/Controls/StepperTextField/BKMKRStepperTextField.xib; sourceTree = "<group>"; };
 		961105BF1F472052006A407C /* BKMKRSoundNotice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BKMKRSoundNotice.h; path = Common/Controls/SoundNotice/BKMKRSoundNotice.h; sourceTree = "<group>"; };
 		961105C01F472052006A407C /* BKMKRSoundNotice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BKMKRSoundNotice.m; path = Common/Controls/SoundNotice/BKMKRSoundNotice.m; sourceTree = "<group>"; };
 		961105C11F472052006A407C /* BKMKRSoundNotice.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BKMKRSoundNotice.xib; path = Common/Controls/SoundNotice/BKMKRSoundNotice.xib; sourceTree = "<group>"; };
@@ -161,9 +166,20 @@
 			name = Totals;
 			sourceTree = "<group>";
 		};
+		961047971F4C4BFE002B6228 /* StepperTextField */ = {
+			isa = PBXGroup;
+			children = (
+				961047981F4C4D5D002B6228 /* BKMKRStepperTextField.h */,
+				961047991F4C4D5D002B6228 /* BKMKRStepperTextField.m */,
+				9610479A1F4C4D5D002B6228 /* BKMKRStepperTextField.xib */,
+			);
+			name = StepperTextField;
+			sourceTree = "<group>";
+		};
 		961105BD1F471ECE006A407C /* Controls */ = {
 			isa = PBXGroup;
 			children = (
+				961047971F4C4BFE002B6228 /* StepperTextField */,
 				961105BE1F471FE4006A407C /* SoundNotice */,
 			);
 			name = Controls;
@@ -489,6 +505,7 @@
 				96EBABDD1EE5305E00D0397A /* fork.mp3 in Resources */,
 				963EF4F41EAB7B3E00DE39F4 /* Assets.xcassets in Resources */,
 				963EF4F71EAB7B3E00DE39F4 /* Main.storyboard in Resources */,
+				9610479C1F4C4D5D002B6228 /* BKMKRStepperTextField.xib in Resources */,
 				963C38391EE0BE1A0007E06C /* goal.mp3 in Resources */,
 				961105C31F472052006A407C /* BKMKRSoundNotice.xib in Resources */,
 			);
@@ -527,6 +544,7 @@
 				96BC65621ED17CCA00F013E2 /* BKMKRWebViewSection.m in Sources */,
 				96736C301F4B4A71009AFD24 /* BKMKRWinViewController.m in Sources */,
 				9653B8631EE409DB009BC849 /* BKMKREventInfo.m in Sources */,
+				9610479B1F4C4D5D002B6228 /* BKMKRStepperTextField.m in Sources */,
 				961C34FA1ED4F97F0057C611 /* BKMKRWebParser.m in Sources */,
 				9651B5C91ED9D10700281BF7 /* BKMKRTotalDetailViewController.m in Sources */,
 				963EF4E61EAB7B3E00DE39F4 /* AppDelegate.m in Sources */,
