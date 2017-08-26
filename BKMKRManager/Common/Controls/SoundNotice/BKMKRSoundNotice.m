@@ -46,8 +46,10 @@
 #pragma mark - Public
 
 - (void)startNotice {
-    [self.player play];
-    self.stopNoticeButton.hidden = NO;
+    if (!self.player.playing) {
+        [self.player play];
+        self.stopNoticeButton.hidden = NO;
+    }
 }
 
 - (void)stopNotice {
