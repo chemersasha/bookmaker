@@ -19,13 +19,13 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <scrollView wantsLayer="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XL2-w1-FuR">
-                    <rect key="frame" x="20" y="47" width="440" height="215"/>
+                    <rect key="frame" x="20" y="31" width="440" height="231"/>
                     <clipView key="contentView" drawsBackground="NO" id="lPU-gs-W4C">
-                        <rect key="frame" x="1" y="1" width="438" height="213"/>
+                        <rect key="frame" x="1" y="1" width="423" height="214"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView selectable="YES" allowsMultipleSelection="YES" id="Xeo-Lc-qqs">
-                                <rect key="frame" x="0.0" y="0.0" width="438" height="213"/>
+                                <rect key="frame" x="0.0" y="0.0" width="423" height="220"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10">
                                     <size key="itemSize" width="200" height="45"/>
@@ -39,33 +39,56 @@
                         </subviews>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </clipView>
-                    <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="y3x-Ik-cdD">
-                        <rect key="frame" x="1" y="195" width="438" height="16"/>
+                    <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="y3x-Ik-cdD">
+                        <rect key="frame" x="1" y="215" width="423" height="15"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
-                    <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="Tiw-Ms-vJ8">
-                        <rect key="frame" x="423" y="1" width="16" height="203"/>
+                    <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="Tiw-Ms-vJ8">
+                        <rect key="frame" x="424" y="1" width="15" height="214"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                 </scrollView>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dFq-28-Sm6">
-                    <rect key="frame" x="20" y="19" width="13" height="21"/>
+                    <rect key="frame" x="20" y="9" width="13" height="15"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="13" id="Jdd-u7-MIH"/>
+                        <constraint firstAttribute="height" constant="13" id="aMH-Bu-mKj"/>
+                    </constraints>
                     <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSAddTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="VUd-L9-5Hm">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
                     <connections>
                         <action selector="add:" target="-2" id="dJh-in-GxZ"/>
+                        <binding destination="-2" name="enabled" keyPath="self.document.event" id="VSV-nL-Xln">
+                            <dictionary key="options">
+                                <string key="NSValueTransformerName">NSIsNotNil</string>
+                            </dictionary>
+                        </binding>
                     </connections>
                 </button>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2Hd-o3-xIe">
-                    <rect key="frame" x="33" y="19" width="13" height="21"/>
+                    <rect key="frame" x="33" y="9" width="13" height="15"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="13" id="fTf-dg-65i"/>
+                        <constraint firstAttribute="height" constant="13" id="qXs-v6-9Fx"/>
+                    </constraints>
                     <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSRemoveTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="MtK-Nf-LmZ">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
                     <connections>
                         <action selector="remove:" target="-2" id="Etb-oh-c9j"/>
+                        <binding destination="-2" name="enabled2" keyPath="self.document.event" previousBinding="yIW-HE-PKN" id="O4k-oh-cVW">
+                            <dictionary key="options">
+                                <integer key="NSMultipleValuesPlaceholder" value="-1"/>
+                                <integer key="NSNoSelectionPlaceholder" value="-1"/>
+                                <integer key="NSNotApplicablePlaceholder" value="-1"/>
+                                <integer key="NSNullPlaceholder" value="-1"/>
+                                <string key="NSValueTransformerName">NSIsNotNil</string>
+                            </dictionary>
+                        </binding>
+                        <binding destination="-2" name="enabled" keyPath="self.selectedItems" id="yIW-HE-PKN"/>
                     </connections>
                 </button>
             </subviews>
@@ -75,12 +98,11 @@
                 <constraint firstItem="XL2-w1-FuR" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="10" id="HSi-5g-F2A"/>
                 <constraint firstAttribute="trailing" secondItem="XL2-w1-FuR" secondAttribute="trailing" constant="20" id="Neq-X3-WxC"/>
                 <constraint firstItem="dFq-28-Sm6" firstAttribute="top" secondItem="XL2-w1-FuR" secondAttribute="bottom" constant="8" id="b6Q-gm-Lhl"/>
-                <constraint firstAttribute="bottom" secondItem="dFq-28-Sm6" secondAttribute="bottom" constant="20" id="kcf-5x-z7x"/>
+                <constraint firstAttribute="bottom" secondItem="dFq-28-Sm6" secondAttribute="bottom" constant="10" id="cZD-pW-hUY"/>
                 <constraint firstItem="dFq-28-Sm6" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="km0-UM-qUM"/>
                 <constraint firstItem="2Hd-o3-xIe" firstAttribute="leading" secondItem="dFq-28-Sm6" secondAttribute="trailing" id="tND-AW-U5J"/>
             </constraints>
         </customView>
-        <userDefaultsController representsSharedInstance="YES" id="4h4-97-yWH"/>
     </objects>
     <resources>
         <image name="NSAddTemplate" width="11" height="11"/>

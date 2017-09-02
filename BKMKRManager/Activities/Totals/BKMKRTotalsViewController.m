@@ -19,6 +19,7 @@
 @property (nonatomic, strong) NSArray *totals;
 @property (weak) IBOutlet NSCollectionView *totalsCollectionView;
 @property (nonatomic, strong) BKMKRTotalsCollectionViewItem *totalsCollectionViewItem;
+@property BOOL selectedItems;
 @end
 
 @implementation BKMKRTotalsViewController
@@ -63,6 +64,7 @@
     [totals addObject:total];
     self.document.event.totals = totals.copy;
     
+    self.selectedItems = NO;
     [self update];
 }
 
@@ -74,6 +76,7 @@
     }
     self.document.event.totals = totals.copy;
     
+    self.selectedItems = NO;
     [self update];
 }
 
@@ -113,6 +116,14 @@
     item.representedObject = self.totals[indexPath.item];
 
     return item;
+}
+
+- (void)collectionView:(NSCollectionView *)collectionView didSelectItemsAtIndexPaths:(NSSet<NSIndexPath *> *)indexPaths {
+    self.selectedItems = self.totalsCollectionView.selectionIndexPaths.anyObject ? YES : NO;
+}
+
+- (void)collectionView:(NSCollectionView *)collectionView didDeselectItemsAtIndexPaths:(NSSet<NSIndexPath *> *)indexPaths {
+    self.selectedItems = self.totalsCollectionView.selectionIndexPaths.anyObject ? YES : NO;
 }
 
 #pragma mark - BKMKRTotalsCollectionViewItemDelegate
