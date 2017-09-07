@@ -9,7 +9,6 @@
 #import "Document.h"
 
 @interface Document ()
-
 @end
 
 @implementation Document
@@ -37,6 +36,20 @@
         [savePanel setNameFieldStringValue:[NSString stringWithFormat:@"%@ - %@", self.event.team1Name, self.event.team2Name]];
     }
     return [super prepareSavePanel:savePanel];
+}
+
+#pragma mark -
+
+- (Win *)eventWinAtColumnKey:(NSString *)key {
+    Win *result = nil;
+    NSArray *wins = [self.event.wins allObjects];
+    for (Win *win in wins) {
+        if ([win.column isEqualToString:key]) {
+            result = win;
+            break;
+        }
+    }
+    return result;
 }
 
 @end

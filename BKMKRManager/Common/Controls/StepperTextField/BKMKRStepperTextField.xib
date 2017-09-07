@@ -30,13 +30,14 @@
                         <color key="backgroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                     </textFieldCell>
                     <connections>
-                        <action selector="takeFloatValueFrom:" target="3z5-dW-BYq" id="zis-n8-Kkb"/>
+                        <action selector="textFieldValueDidChange:" target="-2" id="WA1-4O-uxF"/>
                     </connections>
                 </textField>
                 <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3z5-dW-BYq">
                     <rect key="frame" x="28" y="-7" width="19" height="27"/>
                     <stepperCell key="cell" continuous="YES" alignment="left" increment="0.10000000000000001" maxValue="100" id="VXX-vI-i0K"/>
                     <connections>
+                        <action selector="stepperValueDidChange:" target="-2" id="7iA-Z1-8OK"/>
                         <binding destination="-2" name="value" keyPath="self.textField.floatValue" id="bKT-9E-Cde"/>
                     </connections>
                 </stepper>

@@ -8,6 +8,13 @@
 
 #import <Cocoa/Cocoa.h>
 
+@class BKMKRStepperTextField;
+
+@protocol BKMKRStepperTextFieldDelegate <NSObject>
+- (void)stepperTextFieldValueDidChange:(BKMKRStepperTextField *)textField;
+@end
+
 @interface BKMKRStepperTextField : NSViewController
+- (instancetype)initWithDelegate:(id<BKMKRStepperTextFieldDelegate>)delegate;
 @property (weak) IBOutlet NSTextField *textField;
 @end
