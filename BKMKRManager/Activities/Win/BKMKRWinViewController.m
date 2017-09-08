@@ -31,6 +31,8 @@
 @property (weak) IBOutlet NSView *win1RingContainer;
 @property (weak) IBOutlet NSView *win1NoticeContainer;
 @property (strong, nonatomic) BKMKRSoundNotice *win1NoticeControl;
+@property (weak) IBOutlet NSTextField *win1BetTextField;
+@property (weak) IBOutlet NSTextField *win1ProfitTextField;
 
 @end
 
@@ -73,8 +75,8 @@
         [self.win1RingContainer addSubview:self.win1RingCoefTextField.view layout:BKMKRLayoutAligmentFit];
         self.win1RingCoefTextField.textField.floatValue = (self.win1) ? self.win1.profitCoef : 100.0;
         
-//        self.win1BetTextField.floatValue = self.win1.bet;
-//        self.win1ProfitTextField.floatValue = self.win1.profit;
+        self.win1BetTextField.floatValue = self.win1.bet;
+        self.win1ProfitTextField.floatValue = self.win1.profit;
     }
 }
 
@@ -137,11 +139,9 @@
     [self.win1NoticeControl stopNotice];
 }
 
-#pragma mark - Actions
-
-- (IBAction)addWin0:(id)sender {
+- (Win *)addWinAtColumnKey:(NSString *)columnKey {
     Win *win = [NSEntityDescription insertNewObjectForEntityForName:@"Win" inManagedObjectContext:[self.document managedObjectContext]];
-    win.column = kBKMKRWin0ColumnKey;
+    win.column = columnKey;
     win.bet = 0.0;
     win.profit = 0.0;
     win.profitCoef = 100.0;
@@ -150,16 +150,25 @@
     [wins addObject:win];
     self.document.event.wins = wins.copy;
     
-    self.win0 = win;
+    return win;
+}
+
+- (void)removeWin:(Win *)win {
+    NSMutableSet *wins = self.document.event.wins.mutableCopy;
+    [wins removeObject:win];
+    self.document.event.wins = wins.copy;
+}
+
+#pragma mark - Actions
+
+- (IBAction)addWin0:(id)sender {
+    self.win0 = [self addWinAtColumnKey:kBKMKRWin0ColumnKey];
     [self loadWin0UI];
 }
 
 - (IBAction)removeWin0:(id)sender {
-    NSMutableSet *wins = self.document.event.wins.mutableCopy;
-    [wins removeObject:self.win0];
-    self.document.event.wins = wins.copy;
+    [self removeWin:self.win0];
     self.win0 = nil;
-
     [self unloadWin0UI];
 }
 
@@ -169,6 +178,25 @@
 
 - (IBAction)win0ProfitValueDidChange:(NSTextField *)sender {
     self.win0.profit = sender.floatValue;
+}
+
+- (IBAction)addWin1:(id)sender {
+    self.win1 = [self addWinAtColumnKey:kBKMKRWin1ColumnKey];
+    [self loadWin1UI];
+}
+
+- (IBAction)removeWin1:(id)sender {
+    [self removeWin:self.win1];
+    self.win1 = nil;
+    [self unloadWin1UI];
+}
+
+- (IBAction)win1BetValueDidChange:(NSTextField *)sender {
+    self.win1.bet = sender.floatValue;
+}
+
+- (IBAction)win1ProfitValueDidChange:(NSTextField *)sender {
+    self.win1.profit = sender.floatValue;
 }
 
 #pragma mark - Stepper text field delegate
