@@ -45,6 +45,7 @@
 		96BC65651ED17F8400F013E2 /* MKBKRBetViewSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 96BC65641ED17F8400F013E2 /* MKBKRBetViewSection.m */; };
 		96BC65691ED1814100F013E2 /* BKMKRMonitorWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96BC65671ED1814100F013E2 /* BKMKRMonitorWebViewController.m */; };
 		96BC656A1ED1814100F013E2 /* BKMKRMonitorWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96BC65681ED1814100F013E2 /* BKMKRMonitorWebViewController.xib */; };
+		96CAAE5E1F63390E00A6F971 /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 96CAAE5D1F63390E00A6F971 /* icon.icns */; };
 		96E58C441ED4AB66004D988F /* Document+notifications.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E58C431ED4AB66004D988F /* Document+notifications.m */; };
 		96EBABDD1EE5305E00D0397A /* fork.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 96EBABDC1EE5305E00D0397A /* fork.mp3 */; };
 		96EBABE11EE535BA00D0397A /* BKMKRTotalAnalyzer.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EBABE01EE535BA00D0397A /* BKMKRTotalAnalyzer.m */; };
@@ -123,6 +124,7 @@
 		96BC65661ED1814100F013E2 /* BKMKRMonitorWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BKMKRMonitorWebViewController.h; path = WebView/BKMKRMonitorWebViewController.h; sourceTree = "<group>"; };
 		96BC65671ED1814100F013E2 /* BKMKRMonitorWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BKMKRMonitorWebViewController.m; path = WebView/BKMKRMonitorWebViewController.m; sourceTree = "<group>"; };
 		96BC65681ED1814100F013E2 /* BKMKRMonitorWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BKMKRMonitorWebViewController.xib; path = WebView/BKMKRMonitorWebViewController.xib; sourceTree = "<group>"; };
+		96CAAE5D1F63390E00A6F971 /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icon.icns; sourceTree = "<group>"; };
 		96E58C401ED346C3004D988F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		96E58C421ED4AB66004D988F /* Document+notifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Document+notifications.h"; path = "Categories/Document+notifications.h"; sourceTree = "<group>"; };
 		96E58C431ED4AB66004D988F /* Document+notifications.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Document+notifications.m"; path = "Categories/Document+notifications.m"; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 		963C38371EE0BE1A0007E06C /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				96CAAE5D1F63390E00A6F971 /* icon.icns */,
 				96EBABDC1EE5305E00D0397A /* fork.mp3 */,
 				963C38381EE0BE1A0007E06C /* goal.mp3 */,
 			);
@@ -492,6 +495,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96CAAE5E1F63390E00A6F971 /* icon.icns in Resources */,
 				967F8C291F28EABF0050DD09 /* win1X2.js in Resources */,
 				96BC656A1ED1814100F013E2 /* BKMKRMonitorWebViewController.xib in Resources */,
 				961C34F61ED4F9170057C611 /* score.js in Resources */,
