@@ -54,10 +54,11 @@ static NSString * const kBKMKRWebViewUrl = @"https://www.favoritsport.com.ua/ru/
     NSString *url = self.webView.mainFrameURL;
     NSArray *urlComponents = [url componentsSeparatedByString:@"event="];
     if(urlComponents.count>1) {
+        urlComponents = [urlComponents[1] componentsSeparatedByString:@"&"];
         BKMKRWebParser *webParser = [[BKMKRWebParser alloc] initWithWebView:self.webView];
         [webParser parseTeamNamesWithCompletion:^(NSArray *data) {
             Event *event = [NSEntityDescription insertNewObjectForEntityForName:@"Event" inManagedObjectContext:self.dataModelManager.context];
-            event.eventId = urlComponents[1];
+            event.eventId = urlComponents[0];
             event.team1Name = data[0];
             event.team2Name = data[1];
             
