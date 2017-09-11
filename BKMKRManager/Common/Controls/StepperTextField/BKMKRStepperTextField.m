@@ -15,8 +15,7 @@
 
 @implementation BKMKRStepperTextField
 
-- (instancetype)initWithDelegate:(id<BKMKRStepperTextFieldDelegate>)delegate;
-{
+- (instancetype)initWithDelegate:(id<BKMKRStepperTextFieldDelegate>)delegate {
     self = [super init];
     if (self) {
         self.delegate = delegate;
@@ -30,6 +29,7 @@
 }
 
 #pragma mark - Actions
+
 - (IBAction)textFieldValueDidChange:(NSTextField *)sender {
     if ([self.delegate respondsToSelector:@selector(stepperTextFieldValueDidChange:)]) {
         [self.delegate stepperTextFieldValueDidChange:self];

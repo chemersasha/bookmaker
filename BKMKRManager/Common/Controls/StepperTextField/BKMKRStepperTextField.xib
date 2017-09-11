@@ -30,7 +30,7 @@
                         <color key="backgroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                     </textFieldCell>
                     <connections>
-                        <action selector="takeFloatValueFrom:" target="3z5-dW-BYq" id="xg5-hC-ras"/>
+                        <action selector="textFieldValueDidChange:" target="-2" id="NM5-bc-Uty"/>
                     </connections>
                 </textField>
                 <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3z5-dW-BYq">
