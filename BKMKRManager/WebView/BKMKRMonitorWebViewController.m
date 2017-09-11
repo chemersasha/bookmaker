@@ -14,7 +14,7 @@
 #import "Event+CoreDataClass.h"
 #import "BKMKREventInfo.h"
 
-static NSString * const kBKMKRWebViewUrl = @"https://www.favoritsport.com.ua/ru/live/";
+static NSString * const kBKMKRWebViewUrl = @"https://www.favoritsport.com.ua/ru/";
 
 @interface BKMKRMonitorWebViewController ()
 @property (nonatomic, strong) BKMKRDataModelManager *dataModelManager;
