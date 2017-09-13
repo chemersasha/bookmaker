@@ -96,11 +96,10 @@ static NSString * const kBKMKRWebViewUrl = @"https://www.favoritsport.com.ua/ru/
     }
 
     self.document.event ? [self loadEvent:self.document.event] : [self clean];
-//    [self load:nil];
 }
 
 - (void)loadEvent:(Event *)event {
-    self.urlTextField.stringValue = [NSString stringWithFormat:@"%@#event=%@", kBKMKRWebViewUrl, event.eventId];
+    self.urlTextField.stringValue = [NSString stringWithFormat:@"%@live/#event=%@", kBKMKRWebViewUrl, event.eventId];
 
     [[NSNotificationCenter defaultCenter] postNotificationName:self.document.eventDidLoadNotification
                                                        object:self.document];
