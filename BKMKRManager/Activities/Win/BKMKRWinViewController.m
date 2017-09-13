@@ -130,7 +130,15 @@
 #pragma mark -
 
 - (void)clearWinsCoef {
+    [self clearWins0Coef];
+    [self clearWins0Coef];
+}
+
+- (void)clearWins0Coef {
     self.win0Coef.stringValue = @"-";
+}
+
+- (void)clearWins1Coef {
     self.win1Coef.stringValue = @"-";
 }
 
@@ -213,17 +221,32 @@
 
 - (void)win1X2DidReceiveNotification:(NSNotification *)notification {
     if (self.document.eventInfo.win1X2.count == 3) {
-        self.win0Coef.stringValue = self.document.eventInfo.win1X2[0];
+        [self updateWin0Value:self.document.eventInfo.win1X2[0]];
+        [self updateWin1Value:self.document.eventInfo.win1X2[2]];
+    } else {
+        [self clearWinsCoef];
+    }
+}
+
+- (void)updateWin0Value:(NSString *)value {
+    if ([value isEqualToString:@"undefined"]) {
+        [self clearWins0Coef];
+    } else {
+        self.win0Coef.stringValue = value;
         if ([BKMKRTotalAnalyzer analyzeWin:self.win0Coef.floatValue withCoefficient:self.win0RingCoefTextField.textField.floatValue]) {
             [self.win0NoticeControl startNotice];
         }
-        self.win1Coef.stringValue = self.document.eventInfo.win1X2[2];
+    }
+}
+
+- (void)updateWin1Value:(NSString *)value {
+    if ([value isEqualToString:@"undefined"]) {
+        [self clearWins1Coef];
+    } else {
+        self.win1Coef.stringValue = value;
         if ([BKMKRTotalAnalyzer analyzeWin:self.win1Coef.floatValue withCoefficient:self.win1RingCoefTextField.textField.floatValue]) {
             [self.win1NoticeControl startNotice];
         }
-
-    } else {
-        [self clearWinsCoef];
     }
 }
 
