@@ -10,6 +10,8 @@
 
 @interface BKMKRStepperTextField ()
 @property (weak, nonatomic) id<BKMKRStepperTextFieldDelegate> delegate;
+@property (weak) IBOutlet NSStepper *stepper;
+
 @end
 
 
@@ -31,6 +33,7 @@
 #pragma mark - Actions
 
 - (IBAction)textFieldValueDidChange:(NSTextField *)sender {
+    self.stepper.floatValue = sender.floatValue;
     if ([self.delegate respondsToSelector:@selector(stepperTextFieldValueDidChange:)]) {
         [self.delegate stepperTextFieldValueDidChange:self];
     }

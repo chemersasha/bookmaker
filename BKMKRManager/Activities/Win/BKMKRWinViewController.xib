@@ -8,6 +8,8 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="BKMKRWinViewController">
             <connections>
+                <outlet property="betWin0Coefficient" destination="bUY-eY-NkB" id="O41-GV-fbc"/>
+                <outlet property="betWin1Coefficient" destination="any-Xd-jpp" id="Z7w-wy-nJc"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
                 <outlet property="win0BetTextField" destination="kYL-cw-dha" id="ywd-uU-OKD"/>
                 <outlet property="win0Coef" destination="jeo-6f-sRN" id="5yv-bR-UKh"/>
@@ -97,10 +99,10 @@
                     </constraints>
                 </customView>
                 <textField verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kYL-cw-dha">
-                    <rect key="frame" x="97" y="2" width="40" height="15"/>
+                    <rect key="frame" x="97" y="2" width="30" height="15"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="15" id="JXn-Wy-uKx"/>
-                        <constraint firstAttribute="width" constant="40" id="fGv-Dr-qfe"/>
+                        <constraint firstAttribute="width" constant="30" id="fGv-Dr-qfe"/>
                     </constraints>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="RCu-xn-L7G">
                         <font key="font" metaFont="miniSystem"/>
@@ -117,9 +119,9 @@
                     </connections>
                 </textField>
                 <textField verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o7p-tX-qwe">
-                    <rect key="frame" x="139" y="2" width="40" height="15"/>
+                    <rect key="frame" x="129" y="2" width="30" height="15"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="40" id="8au-VX-mV6"/>
+                        <constraint firstAttribute="width" constant="30" id="8au-VX-mV6"/>
                         <constraint firstAttribute="height" constant="15" id="eHg-wy-ULQ"/>
                     </constraints>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="zhf-Y4-5i1">
@@ -130,6 +132,76 @@
                     <connections>
                         <action selector="win0ProfitValueDidChange:" target="-2" id="WhN-b1-jt0"/>
                         <binding destination="-2" name="hidden" keyPath="self.win0" id="c4l-r1-xfP">
+                            <dictionary key="options">
+                                <string key="NSValueTransformerName">NSIsNil</string>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bUY-eY-NkB">
+                    <rect key="frame" x="159" y="4" width="9" height="13"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="-" id="dru-wm-Mgq">
+                        <font key="font" metaFont="system" size="10"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <binding destination="-2" name="hidden" keyPath="self.win0" id="Y9A-WO-8wN">
+                            <dictionary key="options">
+                                <string key="NSValueTransformerName">NSIsNil</string>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="any-Xd-jpp">
+                    <rect key="frame" x="281" y="4" width="9" height="13"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="-" id="y3E-w1-VlW">
+                        <font key="font" metaFont="system" size="10"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <binding destination="-2" name="hidden" keyPath="self.win1" id="bL4-qQ-SMk">
+                            <dictionary key="options">
+                                <string key="NSValueTransformerName">NSIsNil</string>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </textField>
+                <textField verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ORw-DW-8Ht">
+                    <rect key="frame" x="290" y="2" width="30" height="15"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="30" id="o9F-Ic-2l2"/>
+                        <constraint firstAttribute="height" constant="15" id="oWW-bw-9Iu"/>
+                    </constraints>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="9XB-Hn-Ak8">
+                        <font key="font" metaFont="miniSystem"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <action selector="win1BetValueDidChange:" target="-2" id="Xtj-iD-xb4"/>
+                        <binding destination="-2" name="hidden" keyPath="self.win1" id="Le7-gh-nvC">
+                            <dictionary key="options">
+                                <string key="NSValueTransformerName">NSIsNil</string>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </textField>
+                <textField verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fk0-u8-EGv">
+                    <rect key="frame" x="322" y="2" width="30" height="15"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="30" id="6Fx-53-s3h"/>
+                        <constraint firstAttribute="height" constant="15" id="gS1-tb-vnQ"/>
+                    </constraints>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="THM-Uz-wts">
+                        <font key="font" metaFont="miniSystem"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <action selector="win1ProfitValueDidChange:" target="-2" id="gxy-cR-7py"/>
+                        <binding destination="-2" name="hidden" keyPath="self.win1" id="XzI-Qf-Lxo">
                             <dictionary key="options">
                                 <string key="NSValueTransformerName">NSIsNil</string>
                             </dictionary>
@@ -205,46 +277,6 @@
                         <constraint firstAttribute="height" constant="10" id="prB-di-gBb"/>
                     </constraints>
                 </customView>
-                <textField verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ORw-DW-8Ht">
-                    <rect key="frame" x="270" y="2" width="40" height="15"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="40" id="o9F-Ic-2l2"/>
-                        <constraint firstAttribute="height" constant="15" id="oWW-bw-9Iu"/>
-                    </constraints>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="9XB-Hn-Ak8">
-                        <font key="font" metaFont="miniSystem"/>
-                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                    <connections>
-                        <action selector="win1BetValueDidChange:" target="-2" id="Xtj-iD-xb4"/>
-                        <binding destination="-2" name="hidden" keyPath="self.win1" id="Le7-gh-nvC">
-                            <dictionary key="options">
-                                <string key="NSValueTransformerName">NSIsNil</string>
-                            </dictionary>
-                        </binding>
-                    </connections>
-                </textField>
-                <textField verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fk0-u8-EGv">
-                    <rect key="frame" x="312" y="2" width="40" height="15"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="40" id="6Fx-53-s3h"/>
-                        <constraint firstAttribute="height" constant="15" id="gS1-tb-vnQ"/>
-                    </constraints>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="THM-Uz-wts">
-                        <font key="font" metaFont="miniSystem"/>
-                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                    <connections>
-                        <action selector="win1ProfitValueDidChange:" target="-2" id="gxy-cR-7py"/>
-                        <binding destination="-2" name="hidden" keyPath="self.win1" id="XzI-Qf-Lxo">
-                            <dictionary key="options">
-                                <string key="NSValueTransformerName">NSIsNil</string>
-                            </dictionary>
-                        </binding>
-                    </connections>
-                </textField>
             </subviews>
             <constraints>
                 <constraint firstItem="1Iz-ME-SO9" firstAttribute="centerY" secondItem="Hz6-mo-xeY" secondAttribute="centerY" id="0Yi-b1-mA7"/>
@@ -259,7 +291,9 @@
                 <constraint firstItem="jeo-6f-sRN" firstAttribute="centerY" secondItem="Hz6-mo-xeY" secondAttribute="centerY" id="FM0-NS-hGn"/>
                 <constraint firstItem="Fk0-u8-EGv" firstAttribute="leading" secondItem="ORw-DW-8Ht" secondAttribute="trailing" constant="2" id="FYW-Jh-v8d"/>
                 <constraint firstItem="kYL-cw-dha" firstAttribute="centerY" secondItem="Hz6-mo-xeY" secondAttribute="centerY" id="GC1-Op-C0g"/>
+                <constraint firstItem="ORw-DW-8Ht" firstAttribute="leading" secondItem="any-Xd-jpp" secondAttribute="trailing" constant="2" id="Kvr-kU-86c"/>
                 <constraint firstItem="ryA-ZV-Ne0" firstAttribute="leading" secondItem="2LK-Nc-rNJ" secondAttribute="trailing" constant="5" id="MPk-Ff-ncO"/>
+                <constraint firstItem="bUY-eY-NkB" firstAttribute="centerY" secondItem="Hz6-mo-xeY" secondAttribute="centerY" id="P9i-ZF-KEx"/>
                 <constraint firstItem="1Iz-ME-SO9" firstAttribute="leading" secondItem="U8V-Yh-d6D" secondAttribute="trailing" constant="5" id="Q6h-4n-dzJ"/>
                 <constraint firstItem="1em-Il-jBS" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="5" id="SSE-Tx-VRV"/>
                 <constraint firstItem="1em-Il-jBS" firstAttribute="centerY" secondItem="Hz6-mo-xeY" secondAttribute="centerY" id="UPf-RE-0sF"/>
@@ -269,6 +303,7 @@
                 <constraint firstItem="2LK-Nc-rNJ" firstAttribute="leading" secondItem="1Iz-ME-SO9" secondAttribute="trailing" id="ZmA-Yy-3HM"/>
                 <constraint firstItem="2LK-Nc-rNJ" firstAttribute="top" secondItem="1Iz-ME-SO9" secondAttribute="top" id="dLm-td-ztL"/>
                 <constraint firstItem="pQ0-nR-JNS" firstAttribute="centerY" secondItem="Hz6-mo-xeY" secondAttribute="centerY" id="eFL-dC-aVQ"/>
+                <constraint firstItem="any-Xd-jpp" firstAttribute="centerY" secondItem="Hz6-mo-xeY" secondAttribute="centerY" id="gUd-nj-mds"/>
                 <constraint firstItem="o7p-tX-qwe" firstAttribute="centerY" secondItem="Hz6-mo-xeY" secondAttribute="centerY" id="gqB-1h-Ty0"/>
                 <constraint firstAttribute="trailing" secondItem="iKU-ft-cgZ" secondAttribute="trailing" constant="6" id="h99-Sd-LGU"/>
                 <constraint firstItem="pQ0-nR-JNS" firstAttribute="leading" secondItem="Ahe-CJ-qGJ" secondAttribute="trailing" constant="5" id="oFZ-T9-kD9"/>
@@ -276,6 +311,7 @@
                 <constraint firstItem="UA6-m1-g8Q" firstAttribute="leading" secondItem="jeo-6f-sRN" secondAttribute="trailing" constant="5" id="omy-zn-G50"/>
                 <constraint firstItem="ORw-DW-8Ht" firstAttribute="centerY" secondItem="Hz6-mo-xeY" secondAttribute="centerY" id="sLP-Ye-F2j"/>
                 <constraint firstItem="iKU-ft-cgZ" firstAttribute="centerY" secondItem="Hz6-mo-xeY" secondAttribute="centerY" id="z23-F4-xoN"/>
+                <constraint firstItem="bUY-eY-NkB" firstAttribute="leading" secondItem="o7p-tX-qwe" secondAttribute="trailing" constant="2" id="zm3-B1-kNv"/>
             </constraints>
         </customView>
     </objects>

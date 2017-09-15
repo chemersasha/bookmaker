@@ -8,6 +8,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="BKMKRStepperTextField">
             <connections>
+                <outlet property="stepper" destination="3z5-dW-BYq" id="eyY-ZK-bf8"/>
                 <outlet property="textField" destination="t7s-lz-wgb" id="lv4-cM-YXB"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
@@ -30,7 +31,7 @@
                         <color key="backgroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                     </textFieldCell>
                     <connections>
-                        <action selector="takeFloatValueFrom:" target="3z5-dW-BYq" id="TUC-cr-T1F"/>
+                        <action selector="textFieldValueDidChange:" target="-2" id="4Eo-Gd-573"/>
                     </connections>
                 </textField>
                 <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3z5-dW-BYq">

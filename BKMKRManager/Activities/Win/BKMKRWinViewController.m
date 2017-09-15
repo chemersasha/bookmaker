@@ -25,6 +25,7 @@
 @property (strong, nonatomic) BKMKRSoundNotice *win0NoticeControl;
 @property (weak) IBOutlet NSTextField *win0BetTextField;
 @property (weak) IBOutlet NSTextField *win0ProfitTextField;
+@property (weak) IBOutlet NSTextField *betWin0Coefficient;
 
 @property (strong, nonatomic) Win *win1;
 @property (strong, nonatomic) BKMKRStepperTextField *win1RingCoefTextField;
@@ -33,6 +34,7 @@
 @property (strong, nonatomic) BKMKRSoundNotice *win1NoticeControl;
 @property (weak) IBOutlet NSTextField *win1BetTextField;
 @property (weak) IBOutlet NSTextField *win1ProfitTextField;
+@property (weak) IBOutlet NSTextField *betWin1Coefficient;
 
 @end
 
@@ -63,6 +65,7 @@
         
         self.win0BetTextField.floatValue = self.win0.bet;
         self.win0ProfitTextField.floatValue = self.win0.profit;
+        [self updateBetWin0Coefficient];
     }
 }
 
@@ -77,6 +80,7 @@
         
         self.win1BetTextField.floatValue = self.win1.bet;
         self.win1ProfitTextField.floatValue = self.win1.profit;
+        [self updateBetWin1Coefficient];
     }
 }
 
@@ -100,6 +104,16 @@
 - (void)unloadWin1UI {
     [self.win1RingCoefTextField.view removeFromSuperview];
     self.win1RingCoefTextField = nil;
+}
+
+#pragma mark -
+
+- (void)updateBetWin0Coefficient {
+    self.betWin0Coefficient.stringValue = [NSString stringWithFormat:@"%.2f", (self.win0.profit/self.win0.bet)];
+}
+
+- (void)updateBetWin1Coefficient {
+    self.betWin1Coefficient.stringValue = [NSString stringWithFormat:@"%.2f", (self.win1.profit/self.win1.bet)];
 }
 
 #pragma mark - Overloaded
@@ -131,7 +145,7 @@
 
 - (void)clearWinsCoef {
     [self clearWins0Coef];
-    [self clearWins0Coef];
+    [self clearWins1Coef];
 }
 
 - (void)clearWins0Coef {
@@ -182,10 +196,12 @@
 
 - (IBAction)win0BetValueDidChange:(NSTextField *)sender {
     self.win0.bet = sender.floatValue;
+    [self updateBetWin0Coefficient];
 }
 
 - (IBAction)win0ProfitValueDidChange:(NSTextField *)sender {
     self.win0.profit = sender.floatValue;
+    [self updateBetWin0Coefficient];
 }
 
 - (IBAction)addWin1:(id)sender {
@@ -201,10 +217,12 @@
 
 - (IBAction)win1BetValueDidChange:(NSTextField *)sender {
     self.win1.bet = sender.floatValue;
+    [self updateBetWin1Coefficient];
 }
 
 - (IBAction)win1ProfitValueDidChange:(NSTextField *)sender {
     self.win1.profit = sender.floatValue;
+    [self updateBetWin1Coefficient];
 }
 
 #pragma mark - Stepper text field delegate
