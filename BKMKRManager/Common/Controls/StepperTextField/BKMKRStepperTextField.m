@@ -11,7 +11,6 @@
 @interface BKMKRStepperTextField ()
 @property (weak, nonatomic) id<BKMKRStepperTextFieldDelegate> delegate;
 @property (weak) IBOutlet NSStepper *stepper;
-
 @end
 
 
