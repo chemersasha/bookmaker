@@ -13,6 +13,18 @@ static const float kBKMKRDefaultNotificationVolumeLevelValue = 0.5;
 
 @implementation BKMKRPreferencesManager
 
++ (instancetype)sharedInstance {
+    static BKMKRPreferencesManager *sharedInstance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedInstance = [[BKMKRPreferencesManager alloc] init];
+    });
+
+     return sharedInstance;
+}
+
+#pragma mark -
+
 - (float)notificationVolumeLevel {
     float result;
 	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
@@ -28,6 +40,15 @@ static const float kBKMKRDefaultNotificationVolumeLevelValue = 0.5;
 	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     [userDefaults setObject:[NSNumber numberWithFloat:volume] forKey:kBKMKRNotificationVolumeLevelKey];
     [userDefaults synchronize];
+    
+    NSDictionary *userInfo = @{kBKMKRNoticeVolumeLevelUserInfoDataKey:[NSNumber numberWithFloat:volume]};
+    [[NSNotificationCenter defaultCenter] postNotificationName:kBKMKRNoticeVolumeLevelDidChange object:self userInfo:userInfo];
+}
+
+#pragma mark - BKMKRSoundNoticeDataSource
+
+- (float)noticeVolumeLevel {
+    return [self notificationVolumeLevel];
 }
 
 @end

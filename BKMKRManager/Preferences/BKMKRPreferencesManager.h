@@ -7,8 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BKMKRSoundNotice.h"
 
-@interface BKMKRPreferencesManager : NSObject
+@interface BKMKRPreferencesManager : NSObject <BKMKRSoundNoticeDataSource>
++ (instancetype)sharedInstance;
+
 - (float)notificationVolumeLevel;
 - (void)updateNotificationVolumeLevel:(float)volume;
 @end

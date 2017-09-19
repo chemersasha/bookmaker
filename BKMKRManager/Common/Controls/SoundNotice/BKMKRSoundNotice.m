@@ -9,11 +9,13 @@
 #import <AVFoundation/AVFoundation.h>
 #import "BKMKRSoundNotice.h"
 
-@interface BKMKRSoundNotice ()
-@property (nonatomic, strong) NSString *resourceName;
-@property (nonatomic, strong) AVAudioPlayer *player;
-@property (weak) IBOutlet NSButton *stopNoticeButton;
+NSString * const kBKMKRNoticeVolumeLevelDidChange = @"kBKMKRNoticeVolumeLevelDidChange";
+NSString * const kBKMKRNoticeVolumeLevelUserInfoDataKey = @"kBKMKRNoticeVolumeLevelUserInfoDataKey";
 
+@interface BKMKRSoundNotice ()
+@property (strong, nonatomic) NSString *resourceName;
+@property (strong, nonatomic) AVAudioPlayer *player;
+@property (weak) IBOutlet NSButton *stopNoticeButton;
 @end
 
 @implementation BKMKRSoundNotice
@@ -26,6 +28,8 @@
     return self;
 }
 
+#pragma mark -
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -33,6 +37,14 @@
     NSURL *URL = [[NSURL alloc] initFileURLWithPath:soundPath];
     self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:URL error:nil];
     self.player.numberOfLoops = -1;
+    
+    id notifier;
+    if ([self.dataSource conformsToProtocol:@protocol(BKMKRSoundNoticeDataSource)] && [self.dataSource respondsToSelector:@selector(noticeVolumeLevel)]) {
+        self.player.volume = [self.dataSource noticeVolumeLevel];
+        notifier = self.dataSource;
+    }
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(noticeVolumeLevelDidChange:) name:kBKMKRNoticeVolumeLevelDidChange object:notifier];
+    
 }
 
 #pragma mark - Actions
@@ -54,6 +66,12 @@
 
 - (void)stopNotice {
     [self stopNotice:nil];
+}
+
+#pragma mark - Notifications handler
+
+- (void)noticeVolumeLevelDidChange:(NSNotification *)notification {
+    self.player.volume = [[notification.userInfo objectForKey:kBKMKRNoticeVolumeLevelUserInfoDataKey] floatValue];
 }
 
 @end

@@ -10,6 +10,7 @@
 #import "BKMKRTotalAnalyzer.h"
 #import "BKMKRSoundNotice.h"
 #import "BKMKRStepperTextField.h"
+#import "BKMKRPreferencesManager.h"
 #import "Win+CoreDataClass.h"
 #import "NSView+Layout.h"
 #import "Document+notifications.h"
@@ -57,6 +58,7 @@
 - (void)loadWin0UI {
     if(self.win0) {
         self.win0NoticeControl = [[BKMKRSoundNotice alloc] initWithResourceName:@"fork"];
+        self.win0NoticeControl.dataSource = [BKMKRPreferencesManager sharedInstance];
         [self.win0NoticeContainer addSubview:self.win0NoticeControl.view layout:BKMKRLayoutAligmentFit];
         
         self.win0RingCoefTextField = [[BKMKRStepperTextField alloc] initWithDelegate:self];
@@ -72,6 +74,7 @@
 - (void)loadWin1UI {
     if(self.win1) {
         self.win1NoticeControl = [[BKMKRSoundNotice alloc] initWithResourceName:@"fork"];
+        self.win1NoticeControl.dataSource = [BKMKRPreferencesManager sharedInstance];
         [self.win1NoticeContainer addSubview:self.win1NoticeControl.view layout:BKMKRLayoutAligmentFit];
 
         self.win1RingCoefTextField = [[BKMKRStepperTextField alloc] initWithDelegate:self];

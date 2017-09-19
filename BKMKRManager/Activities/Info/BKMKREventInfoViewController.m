@@ -8,6 +8,7 @@
 
 #import "BKMKREventInfoViewController.h"
 #import "BKMKRSoundNotice.h"
+#import "BKMKRPreferencesManager.h"
 #import "NSView+Layout.h"
 #import "Document+notifications.h"
 
@@ -32,6 +33,7 @@
 
 - (void)loadGoalNoticeUI {
     self.goalNoticeControl = [[BKMKRSoundNotice alloc] initWithResourceName:@"goal"];
+    self.goalNoticeControl.dataSource = [BKMKRPreferencesManager sharedInstance];
     [self.goalNoticeContainer addSubview:self.goalNoticeControl.view layout:BKMKRLayoutAligmentFit];
 }
 

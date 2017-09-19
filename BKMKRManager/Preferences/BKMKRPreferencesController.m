@@ -12,7 +12,6 @@
 static const int kBKMKRVolumeLevelScale = 100;
 
 @interface BKMKRPreferencesController ()
-@property (strong, nonatomic) BKMKRPreferencesManager *preferencesManager;
 @property (weak) IBOutlet NSSlider *notificationVolumeLevel;
 @end
 
@@ -21,14 +20,13 @@ static const int kBKMKRVolumeLevelScale = 100;
 - (void)windowDidLoad {
     [super windowDidLoad];
     
-    self.preferencesManager = [BKMKRPreferencesManager new];
-    self.notificationVolumeLevel.floatValue = ([self.preferencesManager notificationVolumeLevel]*kBKMKRVolumeLevelScale);
+    self.notificationVolumeLevel.floatValue = ([[BKMKRPreferencesManager sharedInstance] notificationVolumeLevel]*kBKMKRVolumeLevelScale);
 }
 
 #pragma mark - Actions
 
 - (IBAction)slideVolumeLevel:(NSSlider *)sender {
-    [self.preferencesManager updateNotificationVolumeLevel:(sender.floatValue/kBKMKRVolumeLevelScale)];
+    [[BKMKRPreferencesManager sharedInstance] updateNotificationVolumeLevel:(sender.floatValue/kBKMKRVolumeLevelScale)];
 }
 
 @end

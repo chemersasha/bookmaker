@@ -10,6 +10,7 @@
 #import "BKMKRTotalAnalyzer.h"
 #import "BKMKREventHandlerView.h"
 #import "BKMKRSoundNotice.h"
+#import "BKMKRPreferencesManager.h"
 #import "Document.h"
 #import "Total+CoreDataClass.h"
 #import "Event+CoreDataClass.h"
@@ -64,6 +65,7 @@
 
 - (void)loadNotices {
     self.noticeControl = [[BKMKRSoundNotice alloc] initWithResourceName:@"fork"];
+    self.noticeControl.dataSource = [BKMKRPreferencesManager sharedInstance];
     [self.noticeContainer addSubview:self.noticeControl.view layout:BKMKRLayoutAligmentFit];
 }
 

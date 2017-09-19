@@ -8,13 +8,23 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface BKMKRSoundNotice : NSViewController
+@protocol BKMKRSoundNoticeDataSource <NSObject>
+@optional
+- (float)noticeVolumeLevel;
+@end
 
-- (instancetype)initWithResourceName:(NSString *)resourceName;
+
+@interface BKMKRSoundNotice : NSViewController
+@property (weak, nonatomic) id <BKMKRSoundNoticeDataSource> dataSource;
 
 #pragma mark -
+
+- (instancetype)initWithResourceName:(NSString *)resourceName;
 
 - (void)startNotice;
 - (void)stopNotice;
 
 @end
+
+extern NSString * const kBKMKRNoticeVolumeLevelDidChange;
+extern NSString * const kBKMKRNoticeVolumeLevelUserInfoDataKey;
