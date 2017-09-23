@@ -16,6 +16,7 @@ typedef struct BKMKRTotalInfo {
 @interface BKMKREventInfo : NSObject
 @property (nonatomic, strong) NSNumber *team1Score;
 @property (nonatomic, strong) NSNumber *team2Score;
+@property (nonatomic, strong) NSString *time;
 @property (nonatomic, strong) NSDictionary *totals;
 @property (nonatomic, strong) NSArray *win1X2;
 

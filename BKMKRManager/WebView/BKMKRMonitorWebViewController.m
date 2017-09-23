@@ -152,8 +152,20 @@ static NSString * const kBKMKRWebViewUrl = @"https://www.favoritsport.com.ua/ru/
 
 - (void)parseWebViewDynamicInfo {
     [self parseScore];
+    [self parseTime];
     [self parseTotals];
     [self parse1X2];
+}
+
+- (void)parseTime {
+    BKMKRWebParser *webParser = [[BKMKRWebParser alloc] initWithWebView:self.webView];
+    __weak BKMKRMonitorWebViewController *wSelf = self;
+    [webParser parseTimeWithCompletion:^(NSString *time) {
+        self.document.eventInfo.time = time;
+        [[NSNotificationCenter defaultCenter] postNotificationName:wSelf.document.webViewTimeDidReceiveNotification
+                                                        object:wSelf.document
+                                                      userInfo:@{wSelf.document.userInfoDataKey:time}];
+    }];
 }
 
 - (void)parseScore {

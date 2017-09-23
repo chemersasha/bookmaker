@@ -41,6 +41,7 @@
 		96736C301F4B4A71009AFD24 /* BKMKRWinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96736C2E1F4B4A71009AFD24 /* BKMKRWinViewController.m */; };
 		96736C311F4B4A71009AFD24 /* BKMKRWinViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96736C2F1F4B4A71009AFD24 /* BKMKRWinViewController.xib */; };
 		967F8C291F28EABF0050DD09 /* win1X2.js in Resources */ = {isa = PBXBuildFile; fileRef = 967F8C281F28EABF0050DD09 /* win1X2.js */; };
+		969569FE1F72E902007A974A /* time.js in Resources */ = {isa = PBXBuildFile; fileRef = 969569FD1F72E902007A974A /* time.js */; };
 		96BC65571ED0DCF600F013E2 /* BKMKREventInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96BC65551ED0DCF600F013E2 /* BKMKREventInfoViewController.m */; };
 		96BC65581ED0DCF600F013E2 /* BKMKREventInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96BC65561ED0DCF600F013E2 /* BKMKREventInfoViewController.xib */; };
 		96BC655D1ED0E2AA00F013E2 /* NSView+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = 96BC655C1ED0E2AA00F013E2 /* NSView+Layout.m */; };
@@ -120,6 +121,7 @@
 		96736C2E1F4B4A71009AFD24 /* BKMKRWinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BKMKRWinViewController.m; path = Activities/Win/BKMKRWinViewController.m; sourceTree = "<group>"; };
 		96736C2F1F4B4A71009AFD24 /* BKMKRWinViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BKMKRWinViewController.xib; path = Activities/Win/BKMKRWinViewController.xib; sourceTree = "<group>"; };
 		967F8C281F28EABF0050DD09 /* win1X2.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = win1X2.js; sourceTree = "<group>"; };
+		969569FD1F72E902007A974A /* time.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = time.js; sourceTree = "<group>"; };
 		96BC65541ED0DCF600F013E2 /* BKMKREventInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BKMKREventInfoViewController.h; path = Activities/Info/BKMKREventInfoViewController.h; sourceTree = "<group>"; };
 		96BC65551ED0DCF600F013E2 /* BKMKREventInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BKMKREventInfoViewController.m; path = Activities/Info/BKMKREventInfoViewController.m; sourceTree = "<group>"; };
 		96BC65561ED0DCF600F013E2 /* BKMKREventInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BKMKREventInfoViewController.xib; path = Activities/Info/BKMKREventInfoViewController.xib; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 		961C34F31ED4F9170057C611 /* js */ = {
 			isa = PBXGroup;
 			children = (
+				969569FD1F72E902007A974A /* time.js */,
 				967F8C281F28EABF0050DD09 /* win1X2.js */,
 				960DFD9E1ED58D7A0051B522 /* teamsInfo.js */,
 				961C34F41ED4F9170057C611 /* score.js */,
@@ -524,6 +527,7 @@
 				9651B5CA1ED9D10700281BF7 /* BKMKRTotalDetailViewController.xib in Resources */,
 				960DFD9F1ED58D7A0051B522 /* teamsInfo.js in Resources */,
 				960DFDA51ED5A4F80051B522 /* BKMKRTotalsViewController.xib in Resources */,
+				969569FE1F72E902007A974A /* time.js in Resources */,
 				960DFDB81ED858CA0051B522 /* BKMKRTotalsCollectionViewItem.xib in Resources */,
 				96BC65581ED0DCF600F013E2 /* BKMKREventInfoViewController.xib in Resources */,
 				961C34F71ED4F9170057C611 /* total.js in Resources */,

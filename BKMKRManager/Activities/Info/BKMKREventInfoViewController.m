@@ -17,6 +17,7 @@
 @property (weak) IBOutlet NSTextField *team2ScoreLabel;
 @property (weak) IBOutlet NSTextField *team1NameLabel;
 @property (weak) IBOutlet NSTextField *team2NameLabel;
+@property (weak) IBOutlet NSTextField *timeLabel;
 
 @property (weak) IBOutlet NSView *goalNoticeContainer;
 @property (strong, nonatomic) BKMKRSoundNotice *goalNoticeControl;
@@ -59,6 +60,7 @@
     NSNotificationCenter *defaultCenter = [NSNotificationCenter defaultCenter];
     [defaultCenter addObserver:self selector:@selector(team1ScoreDidChangeNotification:) name:self.document.webViewTeam1ScoreDidChangeNotification object:self.document];
     [defaultCenter addObserver:self selector:@selector(team2ScoreDidChangeNotification:) name:self.document.webViewTeam2ScoreDidChangeNotification object:self.document];
+    [defaultCenter addObserver:self selector:@selector(timeDidChangeNotification:) name:self.document.webViewTimeDidReceiveNotification object:self.document];
 }
 
 - (void)eventListenDidStop {
@@ -70,6 +72,7 @@
     NSNotificationCenter *defaultCenter = [NSNotificationCenter defaultCenter];
     [defaultCenter removeObserver:self name:self.document.webViewTeam1ScoreDidChangeNotification object:self.document];
     [defaultCenter removeObserver:self name:self.document.webViewTeam2ScoreDidChangeNotification object:self.document];
+    [defaultCenter removeObserver:self name:self.document.webViewTimeDidReceiveNotification object:self.document];
 }
 
 #pragma mark - Notifications
@@ -86,6 +89,10 @@
         [self.goalNoticeControl startNotice];
     }
     self.team2ScoreLabel.stringValue = self.document.eventInfo.team2Score.stringValue;
+}
+
+- (void)timeDidChangeNotification:(NSNotification *)notification {
+    self.timeLabel.stringValue = self.document.eventInfo.time;
 }
 
 @end

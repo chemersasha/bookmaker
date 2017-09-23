@@ -46,6 +46,17 @@
     });
 }
 
+- (void)parseTimeWithCompletion:(void (^)(NSString *time))completionHandler {
+    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"time" ofType:@"js"];
+        NSString *callback = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSString *time = [self.webView stringByEvaluatingJavaScriptFromString:callback];
+            completionHandler(time);
+        });
+    });
+}
+
 - (void)parseScoreWithCompletion:(void (^)(NSArray *score))completionHandler {
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
         NSString *path = [[NSBundle mainBundle] pathForResource:@"score" ofType:@"js"];
