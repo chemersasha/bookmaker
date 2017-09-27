@@ -71,7 +71,7 @@
                                 <constraint firstAttribute="height" constant="14" id="5pR-0G-JYa"/>
                                 <constraint firstAttribute="width" constant="45" id="dgK-Zj-XOS"/>
                             </constraints>
-                            <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="9" id="Pzc-M1-dRx">
+                            <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="4" id="Pzc-M1-dRx">
                                 <font key="font" metaFont="system" size="10"/>
                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -80,15 +80,10 @@
                                     <string>1.5</string>
                                     <string>2.5</string>
                                     <string>3.5</string>
-                                    <string>4.5</string>
-                                    <string>5.5</string>
-                                    <string>6.5</string>
-                                    <string>7.5</string>
-                                    <string>8.5</string>
-                                    <string>9.5</string>
                                 </objectValues>
                             </comboBoxCell>
                             <connections>
+                                <action selector="updateTotal:" target="-2" id="hvF-ss-A7G"/>
                                 <outlet property="delegate" destination="-2" id="anF-jY-slR"/>
                                 <outlet property="nextKeyView" destination="79K-zh-bLi" id="aWo-4F-tlR"/>
                             </connections>

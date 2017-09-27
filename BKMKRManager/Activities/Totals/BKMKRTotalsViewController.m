@@ -14,6 +14,8 @@
 #import "Document+notifications.h"
 #import "Total+CoreDataClass.h"
 
+static const float kBKMKRDefaultTotalValue = 3.5;
+
 @interface BKMKRTotalsViewController () <NSCollectionViewDelegate, NSCollectionViewDataSource, BKMKRTotalsCollectionViewItemDelegate>
 @property (nonatomic, strong) BKMKRDataModelManager *dataModelManager;
 @property (nonatomic, strong) NSArray *totals;
@@ -59,6 +61,7 @@
 
 - (IBAction)add:(id)sender {
     Total *total = [NSEntityDescription insertNewObjectForEntityForName:@"Total" inManagedObjectContext:self.dataModelManager.context];
+    total.total = kBKMKRDefaultTotalValue;
     
     NSMutableSet *totals = self.document.event.totals.mutableCopy;
     [totals addObject:total];

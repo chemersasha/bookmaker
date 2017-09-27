@@ -48,19 +48,27 @@
     self.profitTextField.stringValue = [[NSNumber numberWithFloat:self.total.profit] stringValue];
 }
 
+- (void)updateTotalValue:(float)value {
+    self.total.total = value;
+}
+
 #pragma mark - NSComboBoxDelegate
 
 - (void)comboBoxSelectionDidChange:(NSNotification *)notification {
     NSComboBox *combobox = notification.object;
     NSString *newValue = [combobox itemObjectValueAtIndex:[combobox indexOfSelectedItem]];
     
-    self.total.total = [newValue floatValue];
+    [self updateTotalValue:[newValue floatValue]];
 }
 
 #pragma mark - Actions
 
 - (IBAction)close:(id)sender {
     [self.presentingViewController dismissViewController:self];
+}
+
+- (IBAction)updateTotal:(NSComboBox *)sender {
+    [self updateTotalValue:sender.floatValue];
 }
 
 - (IBAction)updateProfit:(NSTextField *)sender {
