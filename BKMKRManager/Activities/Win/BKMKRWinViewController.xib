@@ -8,6 +8,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="BKMKRWinViewController">
             <connections>
+                <outlet property="betSumTextField" destination="uUw-bt-ARo" id="cow-sj-Xmf"/>
                 <outlet property="betWin0Coefficient" destination="bUY-eY-NkB" id="O41-GV-fbc"/>
                 <outlet property="betWin1Coefficient" destination="any-Xd-jpp" id="Z7w-wy-nJc"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
@@ -153,6 +154,21 @@
                         </binding>
                     </connections>
                 </textField>
+                <textField verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uUw-bt-ARo">
+                    <rect key="frame" x="210" y="2" width="30" height="15"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="15" id="r5w-FG-5xR"/>
+                        <constraint firstAttribute="width" constant="30" id="xGO-D5-UMD"/>
+                    </constraints>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" enabled="NO" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" drawsBackground="YES" id="DGP-lD-lug">
+                        <font key="font" metaFont="miniSystem"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <action selector="updateBetSumModel:" target="-2" id="tr0-gn-CV1"/>
+                    </connections>
+                </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="any-Xd-jpp">
                     <rect key="frame" x="281" y="4" width="9" height="13"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="-" id="y3E-w1-VlW">
@@ -294,6 +310,7 @@
                 <constraint firstItem="ORw-DW-8Ht" firstAttribute="leading" secondItem="any-Xd-jpp" secondAttribute="trailing" constant="2" id="Kvr-kU-86c"/>
                 <constraint firstItem="ryA-ZV-Ne0" firstAttribute="leading" secondItem="2LK-Nc-rNJ" secondAttribute="trailing" constant="5" id="MPk-Ff-ncO"/>
                 <constraint firstItem="bUY-eY-NkB" firstAttribute="centerY" secondItem="Hz6-mo-xeY" secondAttribute="centerY" id="P9i-ZF-KEx"/>
+                <constraint firstItem="uUw-bt-ARo" firstAttribute="centerY" secondItem="Hz6-mo-xeY" secondAttribute="centerY" id="PzC-Yf-hrw"/>
                 <constraint firstItem="1Iz-ME-SO9" firstAttribute="leading" secondItem="U8V-Yh-d6D" secondAttribute="trailing" constant="5" id="Q6h-4n-dzJ"/>
                 <constraint firstItem="1em-Il-jBS" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="5" id="SSE-Tx-VRV"/>
                 <constraint firstItem="1em-Il-jBS" firstAttribute="centerY" secondItem="Hz6-mo-xeY" secondAttribute="centerY" id="UPf-RE-0sF"/>
@@ -301,6 +318,7 @@
                 <constraint firstItem="Ahe-CJ-qGJ" firstAttribute="leading" secondItem="UA6-m1-g8Q" secondAttribute="trailing" id="Yc1-Bs-FL7"/>
                 <constraint firstItem="ryA-ZV-Ne0" firstAttribute="centerY" secondItem="Hz6-mo-xeY" secondAttribute="centerY" id="ZOD-JB-XDj"/>
                 <constraint firstItem="2LK-Nc-rNJ" firstAttribute="leading" secondItem="1Iz-ME-SO9" secondAttribute="trailing" id="ZmA-Yy-3HM"/>
+                <constraint firstItem="uUw-bt-ARo" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="c4k-Dx-TDh"/>
                 <constraint firstItem="2LK-Nc-rNJ" firstAttribute="top" secondItem="1Iz-ME-SO9" secondAttribute="top" id="dLm-td-ztL"/>
                 <constraint firstItem="pQ0-nR-JNS" firstAttribute="centerY" secondItem="Hz6-mo-xeY" secondAttribute="centerY" id="eFL-dC-aVQ"/>
                 <constraint firstItem="any-Xd-jpp" firstAttribute="centerY" secondItem="Hz6-mo-xeY" secondAttribute="centerY" id="gUd-nj-mds"/>

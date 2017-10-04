@@ -18,6 +18,7 @@
 @interface BKMKRWinViewController () <BKMKRStepperTextFieldDelegate>
 @property (weak) IBOutlet NSTextField *win0Coef;
 @property (weak) IBOutlet NSTextField *win1Coef;
+@property (weak) IBOutlet NSTextField *betSumTextField;
 
 @property (strong, nonatomic) Win *win0;
 @property (strong, nonatomic) BKMKRStepperTextField *win0RingCoefTextField;
@@ -109,6 +110,16 @@
     self.win1RingCoefTextField = nil;
 }
 
+- (void)loadBetSum {
+    self.betSumTextField.enabled = YES;
+    self.betSumTextField.floatValue = self.document.event.winsBetSum;
+}
+
+- (void)unloadBetSum {
+    self.betSumTextField.enabled = NO;
+    self.betSumTextField.stringValue = @"";
+}
+
 #pragma mark -
 
 - (void)updateBetWin0Coefficient {
@@ -124,11 +135,13 @@
 - (void)eventDidLoad {
     [self loadWinModel];
     [self loadWin1X2UI];
+    [self loadBetSum];
 }
 
 - (void)eventDidUnload {
     [self unloadWinModel];
     [self unloadWin1X2UI];
+    [self unloadBetSum];
 }
 
 - (void)eventListenDidStart {
@@ -226,6 +239,10 @@
 - (IBAction)win1ProfitValueDidChange:(NSTextField *)sender {
     self.win1.profit = sender.floatValue;
     [self updateBetWin1Coefficient];
+}
+
+- (IBAction)updateBetSumModel:(NSTextField *)sender {
+    self.document.event.winsBetSum = sender.floatValue;
 }
 
 #pragma mark - Stepper text field delegate

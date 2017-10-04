@@ -19,9 +19,13 @@ static const float kBKMKRDefaultTotalValue = 3.5;
 @interface BKMKRTotalsViewController () <NSCollectionViewDelegate, NSCollectionViewDataSource, BKMKRTotalsCollectionViewItemDelegate>
 @property (nonatomic, strong) BKMKRDataModelManager *dataModelManager;
 @property (nonatomic, strong) NSArray *totals;
+
 @property (weak) IBOutlet NSCollectionView *totalsCollectionView;
 @property (nonatomic, strong) BKMKRTotalsCollectionViewItem *totalsCollectionViewItem;
 @property BOOL selectedItems;
+
+@property (weak) IBOutlet NSTextField *betSumTextField;
+
 @end
 
 @implementation BKMKRTotalsViewController
@@ -37,15 +41,28 @@ static const float kBKMKRDefaultTotalValue = 3.5;
     [self.totalsCollectionView reloadData];
 }
 
+- (void)loadBetSum {
+    self.betSumTextField.enabled = YES;
+    self.betSumTextField.floatValue = self.document.event.totalsBetSum;
+}
+
+- (void)unloadBetSum {
+    self.betSumTextField.enabled = NO;
+    self.betSumTextField.stringValue = @"";
+}
+
 #pragma mark - Overloaded
 
 - (void)eventDidLoad {
     [self update];
+    [self loadBetSum];
 }
 
 - (void)eventDidUnload {
     self.totals = nil;
     [self.totalsCollectionView reloadData];
+    
+    [self unloadBetSum];
 }
 
 - (void)eventListenDidStart {
@@ -81,6 +98,10 @@ static const float kBKMKRDefaultTotalValue = 3.5;
     
     self.selectedItems = NO;
     [self update];
+}
+
+- (IBAction)updateBetSumModel:(NSTextField *)sender {
+    self.document.event.totalsBetSum = sender.floatValue;
 }
 
 #pragma mark - Getters

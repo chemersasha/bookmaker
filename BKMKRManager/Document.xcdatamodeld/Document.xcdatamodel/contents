@@ -4,6 +4,8 @@
         <attribute name="eventId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="team1Name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="team2Name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="totalsBetSum" optional="YES" attributeType="Float" minValueString="0" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="winsBetSum" optional="YES" attributeType="Float" minValueString="0" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="totals" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Total" inverseName="event" inverseEntity="Total" syncable="YES"/>
         <relationship name="wins" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Win" inverseName="event" inverseEntity="Win" syncable="YES"/>
     </entity>
@@ -24,8 +26,8 @@
         <relationship name="event" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Event" inverseName="wins" inverseEntity="Event" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Event" positionX="-155" positionY="-54" width="128" height="120"/>
-        <element name="Total" positionX="72" positionY="-117" width="128" height="148"/>
-        <element name="Win" positionX="-45" positionY="-45" width="128" height="120"/>
+        <element name="Event" positionX="-245" positionY="-36" width="128" height="148"/>
+        <element name="Total" positionX="-65" positionY="-94" width="128" height="148"/>
+        <element name="Win" positionX="-63" positionY="90" width="128" height="120"/>
     </elements>
 </model>

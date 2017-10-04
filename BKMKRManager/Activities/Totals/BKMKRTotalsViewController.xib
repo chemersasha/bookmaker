@@ -8,6 +8,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="BKMKRTotalsViewController">
             <connections>
+                <outlet property="betSumTextField" destination="kxP-yM-CHW" id="Oo8-Ru-ft7"/>
                 <outlet property="totalsCollectionView" destination="Xeo-Lc-qqs" id="iOk-5P-3fJ"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
@@ -21,11 +22,11 @@
                 <scrollView wantsLayer="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XL2-w1-FuR">
                     <rect key="frame" x="20" y="31" width="440" height="231"/>
                     <clipView key="contentView" drawsBackground="NO" id="lPU-gs-W4C">
-                        <rect key="frame" x="1" y="1" width="423" height="214"/>
+                        <rect key="frame" x="1" y="1" width="438" height="229"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView selectable="YES" allowsMultipleSelection="YES" id="Xeo-Lc-qqs">
-                                <rect key="frame" x="0.0" y="0.0" width="423" height="220"/>
+                                <rect key="frame" x="0.0" y="0.0" width="438" height="235"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10">
                                     <size key="itemSize" width="200" height="45"/>
@@ -39,12 +40,12 @@
                         </subviews>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </clipView>
-                    <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="y3x-Ik-cdD">
+                    <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="y3x-Ik-cdD">
                         <rect key="frame" x="1" y="215" width="423" height="15"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                     <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="Tiw-Ms-vJ8">
-                        <rect key="frame" x="424" y="1" width="15" height="214"/>
+                        <rect key="frame" x="423" y="1" width="16" height="229"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                 </scrollView>
@@ -91,9 +92,26 @@
                         <binding destination="-2" name="enabled" keyPath="self.selectedItems" id="yIW-HE-PKN"/>
                     </connections>
                 </button>
+                <textField verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kxP-yM-CHW">
+                    <rect key="frame" x="430" y="10" width="30" height="15"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="15" id="DSt-ZH-OV2"/>
+                        <constraint firstAttribute="width" constant="30" id="dNH-Mt-OL9"/>
+                    </constraints>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" enabled="NO" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" drawsBackground="YES" id="CIZ-or-2jv">
+                        <font key="font" metaFont="miniSystem"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <action selector="updateBetSumModel:" target="-2" id="NT2-j9-HDW"/>
+                    </connections>
+                </textField>
             </subviews>
             <constraints>
                 <constraint firstItem="2Hd-o3-xIe" firstAttribute="top" secondItem="dFq-28-Sm6" secondAttribute="top" id="176-gl-Z5l"/>
+                <constraint firstAttribute="trailing" secondItem="kxP-yM-CHW" secondAttribute="trailing" constant="20" id="2Ga-pC-9hq"/>
+                <constraint firstItem="kxP-yM-CHW" firstAttribute="top" secondItem="XL2-w1-FuR" secondAttribute="bottom" constant="6" id="DE1-yF-SOe"/>
                 <constraint firstItem="XL2-w1-FuR" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="FQb-zn-BAU"/>
                 <constraint firstItem="XL2-w1-FuR" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="10" id="HSi-5g-F2A"/>
                 <constraint firstAttribute="trailing" secondItem="XL2-w1-FuR" secondAttribute="trailing" constant="20" id="Neq-X3-WxC"/>
