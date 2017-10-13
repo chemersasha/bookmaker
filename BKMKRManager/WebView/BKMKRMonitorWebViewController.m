@@ -24,7 +24,7 @@ static NSString * const kBKMKRWebViewUrl = @"https://www.favoritsport.com.ua/ru/
 @property (weak) IBOutlet WebView *webView;
 @property (weak) IBOutlet NSTextField *urlTextField;
 @property (weak) IBOutlet NSProgressIndicator *webViewIndicator;
-@property (weak) IBOutlet NSButton *listenCheckbox;
+@property (weak) IBOutlet NSButton *parseCheckbox;
 @end
 
 @implementation BKMKRMonitorWebViewController
@@ -74,7 +74,7 @@ static NSString * const kBKMKRWebViewUrl = @"https://www.favoritsport.com.ua/ru/
     [self clean];
 }
 
-- (IBAction)listen:(NSButton *)sender {
+- (IBAction)parse:(NSButton *)sender {
     if (sender.state == NSOnState) {
         [self startMonitor];
     } else {
@@ -124,7 +124,7 @@ static NSString * const kBKMKRWebViewUrl = @"https://www.favoritsport.com.ua/ru/
 - (void)clean {
     self.document.event = nil;
     self.urlTextField.stringValue = kBKMKRWebViewUrl;
-    self.listenCheckbox.state = NSOffState;
+    self.parseCheckbox.state = NSOffState;
     
     [[NSNotificationCenter defaultCenter] postNotificationName:self.document.eventDidUnloadNotification
                                                        object:self.document];
