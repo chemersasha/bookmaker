@@ -14,9 +14,14 @@
 - (void)colleItemViewItemDidDoubleClick:(BKMKRTotalsCollectionViewItem *)item;
 @end
 
+@protocol BKMKRTotalsCollectionViewItemDataSource <NSObject>
+- (BOOL)enabledNotifying;
+@end
+
 
 @interface BKMKRTotalsCollectionViewItem : NSCollectionViewItem
 @property (nonatomic, weak) id<BKMKRTotalsCollectionViewItemDelegate> delegate;
+@property (nonatomic, weak) id<BKMKRTotalsCollectionViewItemDataSource> dataSource;
 
 - (void)betLCurrentCoefficientDidReceive:(float)currentCoefficient;
 - (void)betMCurrentCoefficientDidReceive:(float)currentCoefficient;

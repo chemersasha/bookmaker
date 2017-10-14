@@ -9,6 +9,7 @@
         <customObject id="-2" userLabel="File's Owner" customClass="BKMKREventInfoViewController">
             <connections>
                 <outlet property="goalNoticeContainer" destination="EjM-sr-wgl" id="3RN-1x-zoi"/>
+                <outlet property="notifyCheckbox" destination="eH4-hr-f4N" id="M4x-DV-2yS"/>
                 <outlet property="team1NameLabel" destination="yoY-p8-1Ss" id="LUi-c9-HOU"/>
                 <outlet property="team1ScoreLabel" destination="Lqu-Ls-zZ2" id="iVm-aS-0UQ"/>
                 <outlet property="team2NameLabel" destination="QA9-do-u9i" id="zbs-lw-Pxh"/>
@@ -30,6 +31,28 @@
                         <constraint firstAttribute="width" constant="12" id="44J-lq-ggG"/>
                     </constraints>
                 </customView>
+                <button translatesAutoresizingMaskIntoConstraints="NO" id="eH4-hr-f4N">
+                    <rect key="frame" x="17" y="4" width="12" height="12"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="8" id="hxb-8f-fHY"/>
+                        <constraint firstAttribute="height" constant="8" id="imY-bD-kaA"/>
+                    </constraints>
+                    <buttonCell key="cell" type="check" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="JvF-cj-ybj">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                </button>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Q1-hN-CXq">
+                    <rect key="frame" x="29" y="4" width="9" height="12"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="12" id="Ltf-lB-zWK"/>
+                    </constraints>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="-" id="VXH-IN-JjG">
+                        <font key="font" metaFont="system" size="10"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yoY-p8-1Ss">
                     <rect key="frame" x="193" y="4" width="19" height="12"/>
                     <constraints>
@@ -88,24 +111,15 @@
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Q1-hN-CXq">
-                    <rect key="frame" x="23" y="4" width="13" height="12"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="12" id="Ltf-lB-zWK"/>
-                    </constraints>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="-" id="VXH-IN-JjG">
-                        <font key="font" metaFont="system" size="10"/>
-                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
             </subviews>
             <constraints>
+                <constraint firstItem="eH4-hr-f4N" firstAttribute="centerY" secondItem="Hz6-mo-xeY" secondAttribute="centerY" id="0cw-mD-cOz"/>
                 <constraint firstItem="1rM-Ge-igA" firstAttribute="centerY" secondItem="Hz6-mo-xeY" secondAttribute="centerY" id="3FB-ji-WNL"/>
                 <constraint firstItem="EjM-sr-wgl" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="5" id="6DD-y1-yFk"/>
                 <constraint firstItem="1rM-Ge-igA" firstAttribute="leading" secondItem="Lqu-Ls-zZ2" secondAttribute="trailing" constant="10" id="LXs-7T-Oec"/>
                 <constraint firstItem="QA9-do-u9i" firstAttribute="leading" secondItem="jjs-tW-lQZ" secondAttribute="trailing" id="Mr5-qZ-mUJ"/>
                 <constraint firstItem="QA9-do-u9i" firstAttribute="centerY" secondItem="Hz6-mo-xeY" secondAttribute="centerY" id="Oo6-LN-c5K"/>
+                <constraint firstItem="eH4-hr-f4N" firstAttribute="leading" secondItem="EjM-sr-wgl" secondAttribute="trailing" constant="2" id="P1d-6R-fhu"/>
                 <constraint firstItem="jjs-tW-lQZ" firstAttribute="centerY" secondItem="Hz6-mo-xeY" secondAttribute="centerY" id="RKY-VQ-yFC"/>
                 <constraint firstItem="7Q1-hN-CXq" firstAttribute="centerY" secondItem="Hz6-mo-xeY" secondAttribute="centerY" id="Tif-cr-ps7"/>
                 <constraint firstItem="yoY-p8-1Ss" firstAttribute="centerY" secondItem="Hz6-mo-xeY" secondAttribute="centerY" id="eK3-dw-aSl"/>
@@ -114,10 +128,10 @@
                 <constraint firstItem="Lqu-Ls-zZ2" firstAttribute="leading" secondItem="yoY-p8-1Ss" secondAttribute="trailing" id="rKT-19-F2t"/>
                 <constraint firstItem="1rM-Ge-igA" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="rsl-r3-gPe"/>
                 <constraint firstItem="EjM-sr-wgl" firstAttribute="centerY" secondItem="Hz6-mo-xeY" secondAttribute="centerY" id="t6f-t0-usD"/>
-                <constraint firstItem="7Q1-hN-CXq" firstAttribute="leading" secondItem="EjM-sr-wgl" secondAttribute="trailing" constant="8" id="tue-RR-0SX"/>
+                <constraint firstItem="7Q1-hN-CXq" firstAttribute="leading" secondItem="eH4-hr-f4N" secondAttribute="trailing" constant="4" id="vOv-E5-M8y"/>
                 <constraint firstAttribute="trailing" secondItem="QA9-do-u9i" secondAttribute="trailing" id="xSH-Ce-vJ4"/>
             </constraints>
-            <point key="canvasLocation" x="137" y="27.5"/>
+            <point key="canvasLocation" x="137" y="27"/>
         </customView>
     </objects>
 </document>

@@ -9,6 +9,7 @@
         <customObject id="-2" userLabel="File's Owner" customClass="BKMKRTotalsViewController">
             <connections>
                 <outlet property="betSumTextField" destination="kxP-yM-CHW" id="Oo8-Ru-ft7"/>
+                <outlet property="notifyCheckbox" destination="BdG-f9-1Rn" id="P7J-eL-LDA"/>
                 <outlet property="totalsCollectionView" destination="Xeo-Lc-qqs" id="iOk-5P-3fJ"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
@@ -44,7 +45,7 @@
                         <rect key="frame" x="1" y="215" width="423" height="15"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
-                    <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="Tiw-Ms-vJ8">
+                    <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="Tiw-Ms-vJ8">
                         <rect key="frame" x="423" y="1" width="16" height="229"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
@@ -92,6 +93,17 @@
                         <binding destination="-2" name="enabled" keyPath="self.selectedItems" id="yIW-HE-PKN"/>
                     </connections>
                 </button>
+                <button translatesAutoresizingMaskIntoConstraints="NO" id="BdG-f9-1Rn">
+                    <rect key="frame" x="415" y="11" width="12" height="12"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="8" id="Ezy-15-W8H"/>
+                        <constraint firstAttribute="height" constant="8" id="Nbb-Ml-u96"/>
+                    </constraints>
+                    <buttonCell key="cell" type="check" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="D3g-an-oFZ">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                </button>
                 <textField verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kxP-yM-CHW">
                     <rect key="frame" x="430" y="10" width="30" height="15"/>
                     <constraints>
@@ -111,12 +123,14 @@
             <constraints>
                 <constraint firstItem="2Hd-o3-xIe" firstAttribute="top" secondItem="dFq-28-Sm6" secondAttribute="top" id="176-gl-Z5l"/>
                 <constraint firstAttribute="trailing" secondItem="kxP-yM-CHW" secondAttribute="trailing" constant="20" id="2Ga-pC-9hq"/>
+                <constraint firstItem="kxP-yM-CHW" firstAttribute="leading" secondItem="BdG-f9-1Rn" secondAttribute="trailing" constant="5" id="2dG-4X-sWv"/>
                 <constraint firstItem="kxP-yM-CHW" firstAttribute="top" secondItem="XL2-w1-FuR" secondAttribute="bottom" constant="6" id="DE1-yF-SOe"/>
                 <constraint firstItem="XL2-w1-FuR" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="FQb-zn-BAU"/>
                 <constraint firstItem="XL2-w1-FuR" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="10" id="HSi-5g-F2A"/>
                 <constraint firstAttribute="trailing" secondItem="XL2-w1-FuR" secondAttribute="trailing" constant="20" id="Neq-X3-WxC"/>
                 <constraint firstItem="dFq-28-Sm6" firstAttribute="top" secondItem="XL2-w1-FuR" secondAttribute="bottom" constant="8" id="b6Q-gm-Lhl"/>
                 <constraint firstAttribute="bottom" secondItem="dFq-28-Sm6" secondAttribute="bottom" constant="10" id="cZD-pW-hUY"/>
+                <constraint firstItem="BdG-f9-1Rn" firstAttribute="centerY" secondItem="kxP-yM-CHW" secondAttribute="centerY" id="ftm-AN-OIw"/>
                 <constraint firstItem="dFq-28-Sm6" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="km0-UM-qUM"/>
                 <constraint firstItem="2Hd-o3-xIe" firstAttribute="leading" secondItem="dFq-28-Sm6" secondAttribute="trailing" id="tND-AW-U5J"/>
             </constraints>

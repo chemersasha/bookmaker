@@ -19,6 +19,7 @@
 @property (weak) IBOutlet NSTextField *team2NameLabel;
 @property (weak) IBOutlet NSTextField *timeLabel;
 
+@property (weak) IBOutlet NSButton *notifyCheckbox;
 @property (weak) IBOutlet NSView *goalNoticeContainer;
 @property (strong, nonatomic) BKMKRSoundNotice *goalNoticeControl;
 
@@ -78,14 +79,18 @@
 #pragma mark - Notifications
 
 - (void)team1ScoreDidChangeNotification:(NSNotification *)notification {
-    if (![self.team1ScoreLabel.stringValue isEqualToString:@"-"]) {
+    if (![self.team1ScoreLabel.stringValue isEqualToString:@"-"]
+        && self.notifyCheckbox.state == NSOnState
+    ) {
         [self.goalNoticeControl startNotice];
     }
     self.team1ScoreLabel.stringValue = self.document.eventInfo.team1Score.stringValue;
 }
 
 - (void)team2ScoreDidChangeNotification:(NSNotification *)notification {
-    if (![self.team2ScoreLabel.stringValue isEqualToString:@"-"]) {
+    if (![self.team2ScoreLabel.stringValue isEqualToString:@"-"]
+        && self.notifyCheckbox.state == NSOnState
+    ) {
         [self.goalNoticeControl startNotice];
     }
     self.team2ScoreLabel.stringValue = self.document.eventInfo.team2Score.stringValue;

@@ -19,6 +19,7 @@
 @property (weak) IBOutlet NSTextField *win0Coef;
 @property (weak) IBOutlet NSTextField *win1Coef;
 @property (weak) IBOutlet NSTextField *betSumTextField;
+@property (weak) IBOutlet NSButton *notifyCheckbox;
 
 @property (strong, nonatomic) Win *win0;
 @property (strong, nonatomic) BKMKRStepperTextField *win0RingCoefTextField;
@@ -271,7 +272,9 @@
         [self clearWins0Coef];
     } else {
         self.win0Coef.stringValue = value;
-        if ([BKMKRTotalAnalyzer analyzeWin:self.win0Coef.floatValue withCoefficient:self.win0RingCoefTextField.textField.floatValue]) {
+        if ([BKMKRTotalAnalyzer analyzeWin:self.win0Coef.floatValue withCoefficient:self.win0RingCoefTextField.textField.floatValue]
+            && self.notifyCheckbox.state == NSOnState
+        ) {
             [self.win0NoticeControl startNotice];
         }
     }
@@ -282,7 +285,9 @@
         [self clearWins1Coef];
     } else {
         self.win1Coef.stringValue = value;
-        if ([BKMKRTotalAnalyzer analyzeWin:self.win1Coef.floatValue withCoefficient:self.win1RingCoefTextField.textField.floatValue]) {
+        if ([BKMKRTotalAnalyzer analyzeWin:self.win1Coef.floatValue withCoefficient:self.win1RingCoefTextField.textField.floatValue]
+            && self.notifyCheckbox.state == NSOnState
+        ) {
             [self.win1NoticeControl startNotice];
         }
     }

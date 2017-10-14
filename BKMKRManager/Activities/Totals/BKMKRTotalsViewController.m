@@ -16,7 +16,7 @@
 
 static const float kBKMKRDefaultTotalValue = 3.5;
 
-@interface BKMKRTotalsViewController () <NSCollectionViewDelegate, NSCollectionViewDataSource, BKMKRTotalsCollectionViewItemDelegate>
+@interface BKMKRTotalsViewController () <NSCollectionViewDelegate, NSCollectionViewDataSource, BKMKRTotalsCollectionViewItemDelegate, BKMKRTotalsCollectionViewItemDataSource>
 @property (nonatomic, strong) BKMKRDataModelManager *dataModelManager;
 @property (nonatomic, strong) NSArray *totals;
 
@@ -24,6 +24,7 @@ static const float kBKMKRDefaultTotalValue = 3.5;
 @property (nonatomic, strong) BKMKRTotalsCollectionViewItem *totalsCollectionViewItem;
 @property BOOL selectedItems;
 
+@property (weak) IBOutlet NSButton *notifyCheckbox;
 @property (weak) IBOutlet NSTextField *betSumTextField;
 
 @end
@@ -137,6 +138,7 @@ static const float kBKMKRDefaultTotalValue = 3.5;
 - (NSCollectionViewItem *)collectionView:(NSCollectionView *)collectionView itemForRepresentedObjectAtIndexPath:(NSIndexPath *)indexPath {
     BKMKRTotalsCollectionViewItem *item = [self.totalsCollectionView makeItemWithIdentifier:@"BKMKRTotalsCollectionViewItem" forIndexPath:indexPath];
     item.delegate = self;
+    item.dataSource = self;
     item.representedObject = self.totals[indexPath.item];
 
     return item;
@@ -150,11 +152,16 @@ static const float kBKMKRDefaultTotalValue = 3.5;
     self.selectedItems = self.totalsCollectionView.selectionIndexPaths.anyObject ? YES : NO;
 }
 
-#pragma mark - BKMKRTotalsCollectionViewItemDelegate
+#pragma mark - BKMKRTotalsCollectionViewItemDelegate, BKMKRTotalsCollectionViewItemDataSource
 
 - (void)colleItemViewItemDidDoubleClick:(BKMKRTotalsCollectionViewItem *)item {
     BKMKRTotalDetailViewController *totalDetailViewController = [[BKMKRTotalDetailViewController alloc] initWithTotal:item.representedObject];
     [self presentViewController:totalDetailViewController animator:[BKMKRViewControllerAnimator new]];
+}
+
+- (BOOL)enabledNotifying {
+    BOOL result = ((self.notifyCheckbox.state == NSOnState) ? YES : NO);
+    return result;
 }
 
 @end
