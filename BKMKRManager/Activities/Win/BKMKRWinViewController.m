@@ -7,7 +7,7 @@
 //
 
 #import "BKMKRWinViewController.h"
-#import "BKMKRTotalAnalyzer.h"
+#import "BKMKRWinAnalyzer.h"
 #import "BKMKRSoundNotice.h"
 #import "BKMKRStepperTextField.h"
 #import "BKMKRPreferencesManager.h"
@@ -272,7 +272,7 @@
         [self clearWins0Coef];
     } else {
         self.win0Coef.stringValue = value;
-        if ([BKMKRTotalAnalyzer analyzeWin:self.win0Coef.floatValue withCoefficient:self.win0RingCoefTextField.textField.floatValue]
+        if ([BKMKRWinAnalyzer analyzeWin:self.win0Coef.floatValue withCoefficient:self.win0RingCoefTextField.textField.floatValue]
             && self.notifyCheckbox.state == NSOnState
         ) {
             [self.win0NoticeControl startNotice];
@@ -285,7 +285,7 @@
         [self clearWins1Coef];
     } else {
         self.win1Coef.stringValue = value;
-        if ([BKMKRTotalAnalyzer analyzeWin:self.win1Coef.floatValue withCoefficient:self.win1RingCoefTextField.textField.floatValue]
+        if ([BKMKRWinAnalyzer analyzeWin:self.win1Coef.floatValue withCoefficient:self.win1RingCoefTextField.textField.floatValue]
             && self.notifyCheckbox.state == NSOnState
         ) {
             [self.win1NoticeControl startNotice];

@@ -14,5 +14,4 @@
 + (BOOL)analyzeTotal:(Total *)total withCoefficient:(float)coefficient;
 + (float)betMWaitCoefficientFromTotal:(Total *)total;
 + (float)betMWaitFromTotal:(Total *)total withCoefficient:(float)k;
-+ (BOOL)analyzeWin:(float)winCoefficient withCoefficient:(float)coefficient;
 @end

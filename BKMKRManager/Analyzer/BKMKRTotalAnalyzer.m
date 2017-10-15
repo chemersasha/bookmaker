@@ -37,12 +37,4 @@
     return result;
 }
 
-+ (BOOL)analyzeWin:(float)winCoefficient withCoefficient:(float)coefficient {
-    BOOL result = NO;
-    if ((winCoefficient > coefficient)) {
-        result = YES;
-    }
-    return result;
-}
-
 @end
