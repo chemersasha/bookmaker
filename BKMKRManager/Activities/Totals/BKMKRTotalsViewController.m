@@ -11,6 +11,7 @@
 #import "BKMKRTotalDetailViewController.h"
 #import "BKMKRDataModelManager.h"
 #import "BKMKRViewControllerAnimator.h"
+#import "BKMKRAutopilot.h"
 #import "Document+notifications.h"
 #import "Total+CoreDataClass.h"
 
@@ -24,6 +25,7 @@ static const float kBKMKRDefaultTotalValue = 3.5;
 @property (nonatomic, strong) BKMKRTotalsCollectionViewItem *totalsCollectionViewItem;
 @property BOOL selectedItems;
 
+@property (weak) IBOutlet NSButton *autopilotCheckbox;
 @property (weak) IBOutlet NSButton *notifyCheckbox;
 @property (weak) IBOutlet NSTextField *betSumTextField;
 
@@ -152,12 +154,21 @@ static const float kBKMKRDefaultTotalValue = 3.5;
     self.selectedItems = self.totalsCollectionView.selectionIndexPaths.anyObject ? YES : NO;
 }
 
-#pragma mark - BKMKRTotalsCollectionViewItemDelegate, BKMKRTotalsCollectionViewItemDataSource
+#pragma mark - BKMKRTotalsCollectionViewItemDelegate
 
 - (void)colleItemViewItemDidDoubleClick:(BKMKRTotalsCollectionViewItem *)item {
     BKMKRTotalDetailViewController *totalDetailViewController = [[BKMKRTotalDetailViewController alloc] initWithTotal:item.representedObject];
     [self presentViewController:totalDetailViewController animator:[BKMKRViewControllerAnimator new]];
 }
+
+- (void)processBetTotalOver:(Total *)total completionBlock:(void (^)())completion {
+    if (self.autopilotCheckbox.state == NSOnState) {
+        [self.document.autopilot processBetTotalOver:total];
+    }
+    completion();
+}
+
+#pragma mark - BKMKRTotalsCollectionViewItemDataSource
 
 - (BOOL)enabledNotifying {
     BOOL result = ((self.notifyCheckbox.state == NSOnState) ? YES : NO);

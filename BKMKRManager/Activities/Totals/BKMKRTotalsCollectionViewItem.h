@@ -9,8 +9,12 @@
 #import <Cocoa/Cocoa.h>
 
 @class BKMKRTotalsCollectionViewItem;
+@class Total;
 
 @protocol BKMKRTotalsCollectionViewItemDelegate <NSObject>
+@required
+- (void)processBetTotalOver:(Total *)total completionBlock:(void (^)())completion;
+@optional
 - (void)colleItemViewItemDidDoubleClick:(BKMKRTotalsCollectionViewItem *)item;
 @end
 
