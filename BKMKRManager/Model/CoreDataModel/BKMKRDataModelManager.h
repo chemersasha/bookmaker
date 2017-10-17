@@ -18,6 +18,9 @@
 - (instancetype)initWithContext:(NSManagedObjectContext *)context;
 
 - (NSArray *)fetchEvents:(NSError **)error;
+- (Event *)createEventWithId:(NSString *)identifier team1Name:(NSString *)teame1Name team2Name:(NSString *)teame2Name;
 - (void)removeEvent:(Event *)event;
+
+- (Total *)createTotal;
 
 @end

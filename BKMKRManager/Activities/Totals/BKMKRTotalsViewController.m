@@ -9,16 +9,14 @@
 #import "BKMKRTotalsViewController.h"
 #import "BKMKRTotalsCollectionViewItem.h"
 #import "BKMKRTotalDetailViewController.h"
-#import "BKMKRDataModelManager.h"
 #import "BKMKRViewControllerAnimator.h"
 #import "BKMKRAutopilot.h"
 #import "Document+notifications.h"
 #import "Total+CoreDataClass.h"
+#import "Event+CoreDataClass.h"
 
-static const float kBKMKRDefaultTotalValue = 3.5;
 
 @interface BKMKRTotalsViewController () <NSCollectionViewDelegate, NSCollectionViewDataSource, BKMKRTotalsCollectionViewItemDelegate, BKMKRTotalsCollectionViewItemDataSource>
-@property (nonatomic, strong) BKMKRDataModelManager *dataModelManager;
 @property (nonatomic, strong) NSArray *totals;
 
 @property (weak) IBOutlet NSCollectionView *totalsCollectionView;
@@ -80,42 +78,25 @@ static const float kBKMKRDefaultTotalValue = 3.5;
 #pragma mark - Actions
 
 - (IBAction)add:(id)sender {
-    Total *total = [NSEntityDescription insertNewObjectForEntityForName:@"Total" inManagedObjectContext:self.dataModelManager.context];
-    total.total = kBKMKRDefaultTotalValue;
-    
-    NSMutableSet *totals = self.document.event.totals.mutableCopy;
-    [totals addObject:total];
-    self.document.event.totals = totals.copy;
-    
+    [self.document createTotal];
     self.selectedItems = NO;
     [self update];
 }
 
 - (IBAction)remove:(id)sender {
     NSSet<NSIndexPath *> *selectedPaths = self.totalsCollectionView.selectionIndexPaths;
-    NSMutableSet *totals = self.document.event.totals.mutableCopy;
+    NSMutableArray *removedTotals = [NSMutableArray new];
     for (NSIndexPath *index in selectedPaths) {
-        [totals removeObject:self.totals[index.item]];
+        [removedTotals addObject:self.totals[index.item]];
     }
-    self.document.event.totals = totals.copy;
-    
+    [self.document removeTotals:removedTotals];
+
     self.selectedItems = NO;
     [self update];
 }
 
 - (IBAction)updateBetSumModel:(NSTextField *)sender {
     self.document.event.totalsBetSum = sender.floatValue;
-}
-
-#pragma mark - Getters
-
-- (BKMKRDataModelManager *)dataModelManager {
-    if(!_dataModelManager) {
-        _dataModelManager = [[BKMKRDataModelManager alloc]
-            initWithContext:[self.document managedObjectContext]
-        ];
-    }
-    return _dataModelManager;
 }
 
 #pragma mark - Notifications

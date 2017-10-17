@@ -7,10 +7,12 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "Event+CoreDataClass.h"
-#import "Win+CoreDataClass.h"
 #import "BKMKREventInfo.h"
-#import "BKMKRAutopilot.h"
+
+@class Event;
+@class Total;
+@class Win;
+@class BKMKRAutopilot;
 
 static NSString * const kBKMKRWin0ColumnKey = @"1";
 static NSString * const kBKMKRWin1ColumnKey = @"2";
@@ -20,5 +22,13 @@ static NSString * const kBKMKRWin1ColumnKey = @"2";
 @property (nonatomic, strong) BKMKREventInfo *eventInfo;
 @property (nonatomic, strong) BKMKRAutopilot *autopilot;
 
+- (void)loadEvent;
+- (Event *)createEventWithId:(NSString *)identifier team1Name:(NSString *)teame1Name team2Name:(NSString *)teame2Name;
+- (void)removeEvent;
+
+- (Total *)createTotal;
+- (void)removeTotals:(NSArray *)totals;
+
 - (Win *)eventWinAtColumnKey:(NSString *)key;
+
 @end

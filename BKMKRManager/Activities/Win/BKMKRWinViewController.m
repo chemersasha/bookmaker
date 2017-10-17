@@ -12,6 +12,7 @@
 #import "BKMKRStepperTextField.h"
 #import "BKMKRPreferencesManager.h"
 #import "Win+CoreDataClass.h"
+#import "Event+CoreDataClass.h"
 #import "NSView+Layout.h"
 #import "Document+notifications.h"
 

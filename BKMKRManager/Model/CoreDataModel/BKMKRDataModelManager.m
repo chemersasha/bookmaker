@@ -10,6 +10,10 @@
 #import "Event+CoreDataClass.h"
 #import "Total+CoreDataClass.h"
 
+static NSString * const kBKMKREventEntityName = @"Event";
+static NSString * const kBKMKRTotalEntityName = @"Total";
+static const float kBKMKRDefaultTotalValue = 3.5;
+
 @interface BKMKRDataModelManager ()
 @end
 
@@ -27,13 +31,29 @@
 #pragma mark - Event
 
 - (NSArray *)fetchEvents:(NSError **)error  {
-    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Event"];
+    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:kBKMKREventEntityName];
 
     return [self.context executeFetchRequest:request error:error];
 }
 
+- (Event *)createEventWithId:(NSString *)identifier team1Name:(NSString *)teame1Name team2Name:(NSString *)teame2Name {
+    Event *event = [NSEntityDescription insertNewObjectForEntityForName:kBKMKREventEntityName inManagedObjectContext:self.context];
+    event.eventId = identifier;
+    event.team1Name = teame1Name;
+    event.team2Name = teame2Name;
+    
+    return event;
+}
+
 - (void)removeEvent:(Event *)event {
     [self.context deleteObject:event];
+}
+
+- (Total *)createTotal {
+    Total *total = [NSEntityDescription insertNewObjectForEntityForName:kBKMKRTotalEntityName inManagedObjectContext:self.context];
+    total.total = kBKMKRDefaultTotalValue;
+    
+    return total;
 }
 
 @end

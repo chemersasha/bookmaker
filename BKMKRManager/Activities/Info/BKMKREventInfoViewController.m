@@ -11,6 +11,7 @@
 #import "BKMKRPreferencesManager.h"
 #import "NSView+Layout.h"
 #import "Document+notifications.h"
+#import "Event+CoreDataClass.h"
 
 @interface BKMKREventInfoViewController ()
 @property (weak) IBOutlet NSTextField *team1ScoreLabel;

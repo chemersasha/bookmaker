@@ -46,7 +46,7 @@
                         <rect key="frame" x="1" y="215" width="423" height="15"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
-                    <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="Tiw-Ms-vJ8">
+                    <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="Tiw-Ms-vJ8">
                         <rect key="frame" x="423" y="1" width="16" height="229"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
@@ -124,10 +124,17 @@
                     <constraints>
                         <constraint firstAttribute="width" constant="60" id="hqw-mF-LPP"/>
                     </constraints>
-                    <buttonCell key="cell" type="check" title="Autopilot" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="fbx-Rg-cbf">
+                    <buttonCell key="cell" type="check" title="Autopilot" bezelStyle="regularSquare" imagePosition="left" inset="2" id="fbx-Rg-cbf">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="miniSystem"/>
                     </buttonCell>
+                    <connections>
+                        <binding destination="-2" name="enabled" keyPath="self.document.event" id="xKF-Ld-Xtb">
+                            <dictionary key="options">
+                                <string key="NSValueTransformerName">NSIsNotNil</string>
+                            </dictionary>
+                        </binding>
+                    </connections>
                 </button>
             </subviews>
             <constraints>

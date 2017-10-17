@@ -8,16 +8,14 @@
 #import <WebKit/WebKit.h>
 
 #import "BKMKRMonitorWebViewController.h"
-#import "Document+notifications.h"
 #import "BKMKRWebParser.h"
-#import "BKMKRDataModelManager.h"
+#import "Document+notifications.h"
 #import "Event+CoreDataClass.h"
 #import "BKMKREventInfo.h"
 
 static NSString * const kBKMKRWebViewUrl = @"https://www.favoritsport.com.ua/ru/";
 
 @interface BKMKRMonitorWebViewController ()
-@property (nonatomic, strong) BKMKRDataModelManager *dataModelManager;
 @property (weak) Document *document;
 @property (nonatomic, strong) NSTimer *monitorWebViewTimer;
 
@@ -57,20 +55,14 @@ static NSString * const kBKMKRWebViewUrl = @"https://www.favoritsport.com.ua/ru/
         urlComponents = [urlComponents[1] componentsSeparatedByString:@"&"];
         BKMKRWebParser *webParser = [[BKMKRWebParser alloc] initWithWebView:self.webView];
         [webParser parseTeamNamesWithCompletion:^(NSArray *data) {
-            Event *event = [NSEntityDescription insertNewObjectForEntityForName:@"Event" inManagedObjectContext:self.dataModelManager.context];
-            event.eventId = urlComponents[0];
-            event.team1Name = data[0];
-            event.team2Name = data[1];
-            
-            self.document.event = event;
-            [self loadEvent:event];
+            [self loadEvent:[self.document createEventWithId:urlComponents[0] team1Name:data[0] team2Name:data[1]]];
         }];
     }
 }
 
 - (IBAction)removeEvent:(id)sender {
-    [self.dataModelManager removeEvent:self.document.event];
     [self stopMonitor];
+    [self.document removeEvent];
     [self clean];
 }
 
@@ -83,18 +75,10 @@ static NSString * const kBKMKRWebViewUrl = @"https://www.favoritsport.com.ua/ru/
 }
 
 #pragma mark -
-//@TODO remove dataModelManager property and create event load manager
+
 - (void)load {
     self.document = self.view.window.windowController.document;
-    self.dataModelManager = [[BKMKRDataModelManager alloc]
-        initWithContext:[self.document managedObjectContext]
-    ];
-    NSError *error = nil;
-    NSArray *events = [self.dataModelManager fetchEvents:&error];
-    if (!error && events.count>0) {
-        self.document.event = events[0];
-    }
-
+    [self.document loadEvent];
     self.document.event ? [self loadEvent:self.document.event] : [self clean];
 }
 
@@ -107,8 +91,6 @@ static NSString * const kBKMKRWebViewUrl = @"https://www.favoritsport.com.ua/ru/
 
 - (void)startMonitor {
     [self startMonitorTimer];
-    
-    self.document.eventInfo = [BKMKREventInfo new];
     [self parseWebViewDynamicInfo];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:self.document.eventListenDidStartNotification object:self.document userInfo:@{self.document.userInfoDataKey:self.document.event.eventId}];
@@ -116,13 +98,10 @@ static NSString * const kBKMKRWebViewUrl = @"https://www.favoritsport.com.ua/ru/
 
 - (void)stopMonitor {
     [self stopMonitorTimer];
-    self.document.eventInfo = nil;
-    
     [[NSNotificationCenter defaultCenter] postNotificationName:self.document.eventListenDidStopNotification object:self.document userInfo:@{self.document.userInfoDataKey:self.document.event.eventId}];
 }
 
 - (void)clean {
-    self.document.event = nil;
     self.urlTextField.stringValue = kBKMKRWebViewUrl;
     self.parseCheckbox.state = NSOffState;
     
