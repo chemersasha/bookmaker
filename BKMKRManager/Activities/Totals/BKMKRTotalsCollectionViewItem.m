@@ -88,14 +88,14 @@
 - (void)updateBetMWait {
     Total *total = self.representedObject;
     Document *document = self.view.window.windowController.document;
-    BKMKRTotalInfo totalInfo = [document.eventInfo totalInfoAtTotal:total.total];
+    BKMKRTotalInfo totalInfo = [document.eventInfo totalInfoAtTotalValue:total.total];
     self.betMWaitLabel.stringValue = [NSString stringWithFormat:@"%.2f", [BKMKRTotalAnalyzer betMWaitFromTotal:total withCoefficient:totalInfo.mCoefficient]];
 }
 
 - (void)updateWebViewUI {
     Total *total = self.representedObject;
     Document *document = self.view.window.windowController.document;
-    BKMKRTotalInfo totalInfo = [document.eventInfo totalInfoAtTotal:total.total];
+    BKMKRTotalInfo totalInfo = [document.eventInfo totalInfoAtTotalValue:total.total];
     self.betLCurrentCoefficientLabel.stringValue =  (totalInfo.lCoefficient)
                 ? [NSString stringWithFormat:@"%.2f", totalInfo.lCoefficient]
                 : @"-";

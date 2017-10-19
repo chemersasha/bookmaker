@@ -55,16 +55,13 @@
 }
 
 - (Event *)createEventWithId:(NSString *)identifier team1Name:(NSString *)teame1Name team2Name:(NSString *)teame2Name {
-    self.eventInfo = [BKMKREventInfo new];
     self.event = [self.dataModelManager createEventWithId:identifier team1Name:teame1Name team2Name:teame2Name];
-    
     return self.event;
 }
 
 - (void)removeEvent {
     [self.dataModelManager removeEvent:self.event];
     self.event = nil;
-    self.eventInfo = nil;
 }
 
 - (Total *)createTotal {

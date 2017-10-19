@@ -9,6 +9,7 @@
 
 #import "BKMKRMonitorWebViewController.h"
 #import "BKMKRWebParser.h"
+#import "BKMKRAutopilot.h"
 #import "Document+notifications.h"
 #import "Event+CoreDataClass.h"
 #import "BKMKREventInfo.h"
@@ -90,6 +91,9 @@ static NSString * const kBKMKRWebViewUrl = @"https://www.favoritsport.com.ua/ru/
 }
 
 - (void)startMonitor {
+    self.document.autopilot = [[BKMKRAutopilot alloc] initWithWebView:self.webView];
+    self.document.eventInfo = [BKMKREventInfo new];
+    
     [self startMonitorTimer];
     [self parseWebViewDynamicInfo];
     
@@ -97,6 +101,9 @@ static NSString * const kBKMKRWebViewUrl = @"https://www.favoritsport.com.ua/ru/
 }
 
 - (void)stopMonitor {
+    self.document.autopilot = nil;
+    self.document.eventInfo = nil;
+
     [self stopMonitorTimer];
     [[NSNotificationCenter defaultCenter] postNotificationName:self.document.eventListenDidStopNotification object:self.document userInfo:@{self.document.userInfoDataKey:self.document.event.eventId}];
 }

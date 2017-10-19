@@ -23,6 +23,7 @@
 		961C34FA1ED4F97F0057C611 /* BKMKRWebParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 961C34F91ED4F97F0057C611 /* BKMKRWebParser.m */; };
 		9620F3871F6C330D006BE05A /* BKMKRPreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9620F3851F6C330D006BE05A /* BKMKRPreferencesController.m */; };
 		9620F3881F6C330D006BE05A /* BKMKRPreferencesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9620F3861F6C330D006BE05A /* BKMKRPreferencesController.xib */; };
+		962A9FEB1F97D18D00D78CD4 /* clickTotal.js in Resources */ = {isa = PBXBuildFile; fileRef = 962A9FEA1F97D18D00D78CD4 /* clickTotal.js */; };
 		963C38361EE0AE510007E06C /* BKMKRDataModelManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 963C38351EE0AE510007E06C /* BKMKRDataModelManager.m */; };
 		963C38391EE0BE1A0007E06C /* goal.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 963C38381EE0BE1A0007E06C /* goal.mp3 */; };
 		963EF4E61EAB7B3E00DE39F4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 963EF4E51EAB7B3E00DE39F4 /* AppDelegate.m */; };
@@ -32,6 +33,7 @@
 		963EF4F41EAB7B3E00DE39F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 963EF4F31EAB7B3E00DE39F4 /* Assets.xcassets */; };
 		963EF4F71EAB7B3E00DE39F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 963EF4F51EAB7B3E00DE39F4 /* Main.storyboard */; };
 		963EF5021EAB7B3E00DE39F4 /* BKMKRManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 963EF5011EAB7B3E00DE39F4 /* BKMKRManagerTests.m */; };
+		963FC6AD1F96760900C56173 /* selectAndFocus.js in Resources */ = {isa = PBXBuildFile; fileRef = 963FC6AC1F96760900C56173 /* selectAndFocus.js */; };
 		96433D941F7028960010AD7D /* BKMKRPreferencesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 96433D931F7028960010AD7D /* BKMKRPreferencesManager.m */; };
 		9651B5C21ED9C47600281BF7 /* BKMKREventHandlerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9651B5C11ED9C47600281BF7 /* BKMKREventHandlerView.m */; };
 		9651B5C51ED9CE2B00281BF7 /* BKMKRViewControllerAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 9651B5C41ED9CE2B00281BF7 /* BKMKRViewControllerAnimator.m */; };
@@ -92,6 +94,7 @@
 		9620F3841F6C330D006BE05A /* BKMKRPreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BKMKRPreferencesController.h; path = Preferences/BKMKRPreferencesController.h; sourceTree = "<group>"; };
 		9620F3851F6C330D006BE05A /* BKMKRPreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BKMKRPreferencesController.m; path = Preferences/BKMKRPreferencesController.m; sourceTree = "<group>"; };
 		9620F3861F6C330D006BE05A /* BKMKRPreferencesController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BKMKRPreferencesController.xib; path = Preferences/BKMKRPreferencesController.xib; sourceTree = "<group>"; };
+		962A9FEA1F97D18D00D78CD4 /* clickTotal.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = clickTotal.js; path = Autopilot/js/clickTotal.js; sourceTree = "<group>"; };
 		963C38341EE0AE510007E06C /* BKMKRDataModelManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKMKRDataModelManager.h; sourceTree = "<group>"; };
 		963C38351EE0AE510007E06C /* BKMKRDataModelManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKMKRDataModelManager.m; sourceTree = "<group>"; };
 		963C38381EE0BE1A0007E06C /* goal.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = goal.mp3; sourceTree = "<group>"; };
@@ -109,6 +112,7 @@
 		963EF4FD1EAB7B3E00DE39F4 /* BKMKRManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BKMKRManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		963EF5011EAB7B3E00DE39F4 /* BKMKRManagerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BKMKRManagerTests.m; sourceTree = "<group>"; };
 		963EF5031EAB7B3E00DE39F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		963FC6AC1F96760900C56173 /* selectAndFocus.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = selectAndFocus.js; path = Autopilot/js/selectAndFocus.js; sourceTree = "<group>"; };
 		96433D921F7028960010AD7D /* BKMKRPreferencesManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BKMKRPreferencesManager.h; path = Preferences/BKMKRPreferencesManager.h; sourceTree = "<group>"; };
 		96433D931F7028960010AD7D /* BKMKRPreferencesManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BKMKRPreferencesManager.m; path = Preferences/BKMKRPreferencesManager.m; sourceTree = "<group>"; };
 		9651B5C01ED9C47600281BF7 /* BKMKREventHandlerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BKMKREventHandlerView.h; path = Common/BKMKREventHandlerView.h; sourceTree = "<group>"; };
@@ -197,6 +201,7 @@
 		961060101F94AC8F00D20C5B /* Autopilot */ = {
 			isa = PBXGroup;
 			children = (
+				963FC6AB1F96758700C56173 /* js */,
 				961060111F94ACC800D20C5B /* BKMKRAutopilot.h */,
 				961060121F94ACC800D20C5B /* BKMKRAutopilot.m */,
 			);
@@ -346,6 +351,15 @@
 				963EF5031EAB7B3E00DE39F4 /* Info.plist */,
 			);
 			path = BKMKRManagerTests;
+			sourceTree = "<group>";
+		};
+		963FC6AB1F96758700C56173 /* js */ = {
+			isa = PBXGroup;
+			children = (
+				962A9FEA1F97D18D00D78CD4 /* clickTotal.js */,
+				963FC6AC1F96760900C56173 /* selectAndFocus.js */,
+			);
+			name = js;
 			sourceTree = "<group>";
 		};
 		9651B5BF1ED9C42100281BF7 /* Common */ = {
@@ -555,7 +569,9 @@
 				963EF4F71EAB7B3E00DE39F4 /* Main.storyboard in Resources */,
 				9610479C1F4C4D5D002B6228 /* BKMKRStepperTextField.xib in Resources */,
 				963C38391EE0BE1A0007E06C /* goal.mp3 in Resources */,
+				962A9FEB1F97D18D00D78CD4 /* clickTotal.js in Resources */,
 				961105C31F472052006A407C /* BKMKRSoundNotice.xib in Resources */,
+				963FC6AD1F96760900C56173 /* selectAndFocus.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -106,7 +106,7 @@
         Total *total = self.totals[i];
         BKMKRTotalsCollectionViewItem *item = (BKMKRTotalsCollectionViewItem *)[self.totalsCollectionView itemAtIndex:i];
 
-        BKMKRTotalInfo totalInfo = [self.document.eventInfo totalInfoAtTotal:total.total];
+        BKMKRTotalInfo totalInfo = [self.document.eventInfo totalInfoAtTotalValue:total.total];
         [item betLCurrentCoefficientDidReceive:totalInfo.lCoefficient];
         [item betMCurrentCoefficientDidReceive:totalInfo.mCoefficient];
     }
@@ -144,9 +144,10 @@
 
 - (void)processBetTotalOver:(Total *)total completionBlock:(void (^)())completion {
     if (self.autopilotCheckbox.state == NSOnState) {
-        [self.document.autopilot processBetTotalOver:total];
+        float totalOverCoefficient = [self.document.eventInfo totalInfoAtTotalValue:total.total].mCoefficient;
+        [self.document.autopilot processBetTotalOver:total coefficient:totalOverCoefficient];
     }
-    completion();
+//    completion();
 }
 
 #pragma mark - BKMKRTotalsCollectionViewItemDataSource

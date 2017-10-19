@@ -20,5 +20,5 @@ typedef struct BKMKRTotalInfo {
 @property (nonatomic, strong) NSDictionary *totals;
 @property (nonatomic, strong) NSArray *win1X2;
 
-- (BKMKRTotalInfo)totalInfoAtTotal:(float)total;
+- (BKMKRTotalInfo)totalInfoAtTotalValue:(float)total;
 @end

@@ -13,8 +13,8 @@
 
 @interface BKMKRAutopilot : NSObject
 
-- (instancetype)initWithWebView:(WebView *)webview;
+- (instancetype)initWithWebView:(WebView *)webView;
 
-- (void)processBetTotalOver:(Total *)total;
+- (void)processBetTotalOver:(Total *)total coefficient:(float)coefficient;
 
 @end

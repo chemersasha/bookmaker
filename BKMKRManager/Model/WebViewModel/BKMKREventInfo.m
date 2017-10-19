@@ -10,7 +10,7 @@
 
 @implementation BKMKREventInfo
 
-- (BKMKRTotalInfo)totalInfoAtTotal:(float)total {
+- (BKMKRTotalInfo)totalInfoAtTotalValue:(float)total {
     BKMKRTotalInfo result = {.lCoefficient=0, .mCoefficient=0};
     
     NSString *dataKey = [NSString stringWithFormat:@"Меньше (%.1f)", total];
