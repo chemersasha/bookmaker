@@ -102,13 +102,15 @@
 #pragma mark - Notifications
 
 - (void)webViewTotalsDidReceiveNotification:(NSNotification *)notification {
-    for (int i=0; i<self.totals.count; i++) {
-        Total *total = self.totals[i];
-        BKMKRTotalsCollectionViewItem *item = (BKMKRTotalsCollectionViewItem *)[self.totalsCollectionView itemAtIndex:i];
+    if (!self.view.hidden) {
+        for (int i=0; i<self.totals.count; i++) {
+            Total *total = self.totals[i];
+            BKMKRTotalsCollectionViewItem *item = (BKMKRTotalsCollectionViewItem *)[self.totalsCollectionView itemAtIndex:i];
 
-        BKMKRTotalInfo totalInfo = [self.document.eventInfo totalInfoAtTotalValue:total.total];
-        [item betLCurrentCoefficientDidReceive:totalInfo.lCoefficient];
-        [item betMCurrentCoefficientDidReceive:totalInfo.mCoefficient];
+            BKMKRTotalInfo totalInfo = [self.document.eventInfo totalInfoAtTotalValue:total.total];
+            [item betLCurrentCoefficientDidReceive:totalInfo.lCoefficient];
+            [item betMCurrentCoefficientDidReceive:totalInfo.mCoefficient];
+        }
     }
 }
 
@@ -144,6 +146,9 @@
 
 - (void)processBetTotalOver:(Total *)total completionBlock:(void (^)())completion {
     if (self.autopilotCheckbox.state == NSOnState) {
+        [NSApp activateIgnoringOtherApps:YES];
+        [[self.document.windowControllers[0] window] makeKeyAndOrderFront:nil];
+        
         float totalOverCoefficient = [self.document.eventInfo totalInfoAtTotalValue:total.total].mCoefficient;
         [self.document.autopilot processBetTotalOver:total coefficient:totalOverCoefficient];
     }
