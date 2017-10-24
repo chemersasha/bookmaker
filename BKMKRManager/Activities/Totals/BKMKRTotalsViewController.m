@@ -10,6 +10,7 @@
 #import "BKMKRTotalsCollectionViewItem.h"
 #import "BKMKRTotalDetailViewController.h"
 #import "BKMKRViewControllerAnimator.h"
+#import "BKMKRTotalAnalyzer.h"
 #import "BKMKRAutopilot.h"
 #import "Document+notifications.h"
 #import "Total+CoreDataClass.h"
@@ -110,6 +111,10 @@
             BKMKRTotalInfo totalInfo = [self.document.eventInfo totalInfoAtTotalValue:total.total];
             [item betLCurrentCoefficientDidReceive:totalInfo.lCoefficient];
             [item betMCurrentCoefficientDidReceive:totalInfo.mCoefficient];
+            
+            if ([BKMKRTotalAnalyzer analyzeTotal:total withCoefficient:totalInfo.mCoefficient]) {
+                [self processBetTotalOver:total];
+            }
         }
     }
 }
@@ -144,7 +149,7 @@
     [self presentViewController:totalDetailViewController animator:[BKMKRViewControllerAnimator new]];
 }
 
-- (void)processBetTotalOver:(Total *)total completionBlock:(void (^)())completion {
+- (void)processBetTotalOver:(Total *)total {
     if (self.autopilotCheckbox.state == NSOnState) {
         [NSApp activateIgnoringOtherApps:YES];
         [[self.document.windowControllers[0] window] makeKeyAndOrderFront:nil];
@@ -152,7 +157,6 @@
         float totalOverCoefficient = [self.document.eventInfo totalInfoAtTotalValue:total.total].mCoefficient;
         [self.document.autopilot processBetTotalOver:total coefficient:totalOverCoefficient];
     }
-//    completion();
 }
 
 #pragma mark - BKMKRTotalsCollectionViewItemDataSource

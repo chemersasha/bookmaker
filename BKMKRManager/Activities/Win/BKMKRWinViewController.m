@@ -273,7 +273,8 @@
         [self clearWins0Coef];
     } else {
         self.win0Coef.stringValue = value;
-        if ([BKMKRWinAnalyzer analyzeWin:self.win0Coef.floatValue withCoefficient:self.win0RingCoefTextField.textField.floatValue]
+        if (self.win0 != nil
+            &&[BKMKRWinAnalyzer analyzeWin:self.win0Coef.floatValue withCoefficient:self.win0RingCoefTextField.textField.floatValue]
             && self.notifyCheckbox.state == NSOnState
         ) {
             [self.win0NoticeControl startNotice];
@@ -286,7 +287,8 @@
         [self clearWins1Coef];
     } else {
         self.win1Coef.stringValue = value;
-        if ([BKMKRWinAnalyzer analyzeWin:self.win1Coef.floatValue withCoefficient:self.win1RingCoefTextField.textField.floatValue]
+        if (self.win1 != nil
+            && [BKMKRWinAnalyzer analyzeWin:self.win1Coef.floatValue withCoefficient:self.win1RingCoefTextField.textField.floatValue]
             && self.notifyCheckbox.state == NSOnState
         ) {
             [self.win1NoticeControl startNotice];

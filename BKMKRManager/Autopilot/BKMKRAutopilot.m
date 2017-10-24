@@ -42,6 +42,7 @@
             [self.webView stringByEvaluatingJavaScriptFromString:selectAndFocusScript];
             
             [self inputNumber:floor([BKMKRTotalAnalyzer betMWaitFromTotal:total withCoefficient:coefficient])];
+            //@TODO click BET button
         });
     });
 }
