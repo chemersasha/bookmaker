@@ -85,6 +85,7 @@
 }
 
 - (IBAction)remove:(id)sender {
+    //@TODO can not remove total when betting process on. Fix it
     NSSet<NSIndexPath *> *selectedPaths = self.totalsCollectionView.selectionIndexPaths;
     NSMutableArray *removedTotals = [NSMutableArray new];
     for (NSIndexPath *index in selectedPaths) {
@@ -111,10 +112,6 @@
             BKMKRTotalInfo totalInfo = [self.document.eventInfo totalInfoAtTotalValue:total.total];
             [item betLCurrentCoefficientDidReceive:totalInfo.lCoefficient];
             [item betMCurrentCoefficientDidReceive:totalInfo.mCoefficient];
-            
-            if ([BKMKRTotalAnalyzer analyzeTotal:total withCoefficient:totalInfo.mCoefficient]) {
-                [self processBetTotalOver:total];
-            }
         }
     }
 }
@@ -149,21 +146,18 @@
     [self presentViewController:totalDetailViewController animator:[BKMKRViewControllerAnimator new]];
 }
 
-- (void)processBetTotalOver:(Total *)total {
+- (void)processBetTotalOver:(Total *)total completion:(void (^)())completion {
     if (self.autopilotCheckbox.state == NSOnState) {
-        [NSApp activateIgnoringOtherApps:YES];
-        [[self.document.windowControllers[0] window] makeKeyAndOrderFront:nil];
-        
-        float totalOverCoefficient = [self.document.eventInfo totalInfoAtTotalValue:total.total].mCoefficient;
-        [self.document.autopilot processBetTotalOver:total coefficient:totalOverCoefficient];
+        [self.document.autopilot processBetTotalOver:total completion:^{
+            completion();
+        }];
     }
 }
 
 #pragma mark - BKMKRTotalsCollectionViewItemDataSource
 
 - (BOOL)enabledNotifying {
-    BOOL result = ((self.notifyCheckbox.state == NSOnState) ? YES : NO);
-    return result;
+    return (self.notifyCheckbox.state == NSOnState) ? YES : NO;
 }
 
 @end

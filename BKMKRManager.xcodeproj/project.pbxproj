@@ -24,6 +24,7 @@
 		9620F3871F6C330D006BE05A /* BKMKRPreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9620F3851F6C330D006BE05A /* BKMKRPreferencesController.m */; };
 		9620F3881F6C330D006BE05A /* BKMKRPreferencesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9620F3861F6C330D006BE05A /* BKMKRPreferencesController.xib */; };
 		962A9FEB1F97D18D00D78CD4 /* clickTotal.js in Resources */ = {isa = PBXBuildFile; fileRef = 962A9FEA1F97D18D00D78CD4 /* clickTotal.js */; };
+		962BBE4E1FA264AB00DC83C0 /* BKMKRAutopilotCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 962BBE4D1FA264AB00DC83C0 /* BKMKRAutopilotCoordinator.m */; };
 		963C38361EE0AE510007E06C /* BKMKRDataModelManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 963C38351EE0AE510007E06C /* BKMKRDataModelManager.m */; };
 		963C38391EE0BE1A0007E06C /* goal.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 963C38381EE0BE1A0007E06C /* goal.mp3 */; };
 		963EF4E61EAB7B3E00DE39F4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 963EF4E51EAB7B3E00DE39F4 /* AppDelegate.m */; };
@@ -95,6 +96,8 @@
 		9620F3851F6C330D006BE05A /* BKMKRPreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BKMKRPreferencesController.m; path = Preferences/BKMKRPreferencesController.m; sourceTree = "<group>"; };
 		9620F3861F6C330D006BE05A /* BKMKRPreferencesController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BKMKRPreferencesController.xib; path = Preferences/BKMKRPreferencesController.xib; sourceTree = "<group>"; };
 		962A9FEA1F97D18D00D78CD4 /* clickTotal.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = clickTotal.js; path = Autopilot/js/clickTotal.js; sourceTree = "<group>"; };
+		962BBE4C1FA264AB00DC83C0 /* BKMKRAutopilotCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BKMKRAutopilotCoordinator.h; path = Autopilot/BKMKRAutopilotCoordinator.h; sourceTree = "<group>"; };
+		962BBE4D1FA264AB00DC83C0 /* BKMKRAutopilotCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BKMKRAutopilotCoordinator.m; path = Autopilot/BKMKRAutopilotCoordinator.m; sourceTree = "<group>"; };
 		963C38341EE0AE510007E06C /* BKMKRDataModelManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKMKRDataModelManager.h; sourceTree = "<group>"; };
 		963C38351EE0AE510007E06C /* BKMKRDataModelManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKMKRDataModelManager.m; sourceTree = "<group>"; };
 		963C38381EE0BE1A0007E06C /* goal.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = goal.mp3; sourceTree = "<group>"; };
@@ -204,6 +207,8 @@
 				963FC6AB1F96758700C56173 /* js */,
 				961060111F94ACC800D20C5B /* BKMKRAutopilot.h */,
 				961060121F94ACC800D20C5B /* BKMKRAutopilot.m */,
+				962BBE4C1FA264AB00DC83C0 /* BKMKRAutopilotCoordinator.h */,
+				962BBE4D1FA264AB00DC83C0 /* BKMKRAutopilotCoordinator.m */,
 			);
 			name = Autopilot;
 			sourceTree = "<group>";
@@ -607,6 +612,7 @@
 				961060131F94ACC800D20C5B /* BKMKRAutopilot.m in Sources */,
 				9611F2B11EE03C38003BFBDC /* BKMKRViewController.m in Sources */,
 				960DFDA41ED5A4F80051B522 /* BKMKRTotalsViewController.m in Sources */,
+				962BBE4E1FA264AB00DC83C0 /* BKMKRAutopilotCoordinator.m in Sources */,
 				96BC65621ED17CCA00F013E2 /* BKMKRWebViewSection.m in Sources */,
 				96736C301F4B4A71009AFD24 /* BKMKRWinViewController.m in Sources */,
 				9653B8631EE409DB009BC849 /* BKMKREventInfo.m in Sources */,

@@ -91,7 +91,7 @@ static NSString * const kBKMKRWebViewUrl = @"https://www.favoritsport.com.ua/ru/
 }
 
 - (void)startMonitor {
-    self.document.autopilot = [[BKMKRAutopilot alloc] initWithWebView:self.webView];
+    self.document.autopilot = [[BKMKRAutopilot alloc] initWithWebView:self.webView document:self.document];
     self.document.eventInfo = [BKMKREventInfo new];
     
     [self startMonitorTimer];

@@ -10,11 +10,12 @@
 
 @class WebView;
 @class Total;
+@class Document;
 
 @interface BKMKRAutopilot : NSObject
 
-- (instancetype)initWithWebView:(WebView *)webView;
+- (instancetype)initWithWebView:(WebView *)webView document:(Document *)document;
 
-- (void)processBetTotalOver:(Total *)total coefficient:(float)coefficient;
+- (void)processBetTotalOver:(Total *)total completion:(void(^)())completion;
 
 @end

@@ -8,43 +8,59 @@
 
 #import <WebKit/WebKit.h>
 #import "BKMKRAutopilot.h"
+#import "BKMKRAutopilotCoordinator.h"
+#import "Document.h"
 #import "BKMKRTotalAnalyzer.h"
 #import "Total+CoreDataClass.h"
 
 @interface BKMKRAutopilot ()
 @property (nonatomic, strong) WebView *webView;
+@property (nonatomic, weak) Document *document;
 @end
 
 @implementation BKMKRAutopilot
 
-- (instancetype)initWithWebView:(WebView *)webView;
+- (instancetype)initWithWebView:(WebView *)webView document:(Document *)document;
 {
     self = [super init];
     if (self) {
         self.webView = webView;
+        self.document = document;
     }
     return self;
 }
 
 #pragma mark -
 
-- (void)processBetTotalOver:(Total *)total coefficient:(float)coefficient {
-    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
-        NSString *selectAndFocusPath = [[NSBundle mainBundle] pathForResource:@"selectAndFocus" ofType:@"js"];
-        NSString *selectAndFocusScript = [NSString stringWithContentsOfFile:selectAndFocusPath encoding:NSUTF8StringEncoding error:nil];
-        
-        NSString *clickTotalPath = [[NSBundle mainBundle] pathForResource:@"clickTotal" ofType:@"js"];
-        NSString *clickTotalScript = [NSString stringWithContentsOfFile:clickTotalPath encoding:NSUTF8StringEncoding error:nil];
-        clickTotalScript = [clickTotalScript stringByReplacingOccurrencesOfString:@"<<<>>>" withString:[NSString stringWithFormat:@"%.1f", total.total]];
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self.webView stringByEvaluatingJavaScriptFromString:clickTotalScript];
-            [self.webView stringByEvaluatingJavaScriptFromString:selectAndFocusScript];
+- (void)processBetTotalOver:(Total *)total completion:(void(^)())completion{
+    BKMKRAutopilotCoordinator *coordinator = [BKMKRAutopilotCoordinator sharedInstance];
+    
+    [coordinator runBetProcess:^(BKMKRAutopilotCoordinatorProcessCompletion processCompletion) {
+        [NSApp activateIgnoringOtherApps:YES];
+        [[self.document.windowControllers[0] window] makeKeyAndOrderFront:nil];
+
+        dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
+            NSString *selectAndFocusPath = [[NSBundle mainBundle] pathForResource:@"selectAndFocus" ofType:@"js"];
+            NSString *selectAndFocusScript = [NSString stringWithContentsOfFile:selectAndFocusPath encoding:NSUTF8StringEncoding error:nil];
             
-            [self inputNumber:floor([BKMKRTotalAnalyzer betMWaitFromTotal:total withCoefficient:coefficient])];
-            //@TODO click BET button
+            NSString *clickTotalPath = [[NSBundle mainBundle] pathForResource:@"clickTotal" ofType:@"js"];
+            NSString *clickTotalScript = [NSString stringWithContentsOfFile:clickTotalPath encoding:NSUTF8StringEncoding error:nil];
+            clickTotalScript = [clickTotalScript stringByReplacingOccurrencesOfString:@"<<<>>>" withString:[NSString stringWithFormat:@"%.1f", total.total]];
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.webView stringByEvaluatingJavaScriptFromString:clickTotalScript];
+                [self.webView stringByEvaluatingJavaScriptFromString:selectAndFocusScript];
+                
+                float totalOverCoefficient = [self.document.eventInfo totalInfoAtTotalValue:total.total].mCoefficient;
+                [self inputNumber:floor([BKMKRTotalAnalyzer betMWaitFromTotal:total withCoefficient:totalOverCoefficient])];
+                //@TODO click BET button
+                
+                //@TODO check bet is passed or no. After update model and UI
+//                processCompletion();
+                completion();
+            });
         });
-    });
+    }];
 }
 
 #pragma mark -
