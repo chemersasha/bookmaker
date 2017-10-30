@@ -14,7 +14,6 @@
 @protocol BKMKRTotalsCollectionViewItemDelegate <NSObject>
 @optional
 - (void)colleItemViewItemDidDoubleClick:(BKMKRTotalsCollectionViewItem *)item;
-- (void)processBetTotalOver:(Total *)total completion:(void(^)())completion;
 @end
 
 @protocol BKMKRTotalsCollectionViewItemDataSource <NSObject>

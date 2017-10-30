@@ -8,6 +8,10 @@
 
 #import "BKMKRAutopilotCoordinator.h"
 
+@interface BKMKRAutopilotCoordinator ()
+@property (strong, atomic) NSMutableArray *processes;
+@end
+
 @implementation BKMKRAutopilotCoordinator
 
 + (id)sharedInstance {
@@ -20,17 +24,35 @@
 }
 
 -(instancetype) initSharedInstance {
-    return [super init];
+    self = [super init];
+    if (self) {
+        self.processes = [NSMutableArray new];
+    }
+    return self;
 }
 
 #pragma mark -
 
-- (void)runBetProcess:(BKMKRAutopilotCoordinatorProcess)process {
-    //@TODO Create queue of indexes of processes. Add index
-    process(^() {
-        //@TODO remove index of process
-        NSLog(@"Completion");
-    });
+- (void)addBetProcess:(BKMKRAutopilotCoordinatorProcess)process {
+    @synchronized (self) {
+        [self.processes addObject:[process copy]];
+        if(self.processes.count == 1) {
+            [self runProcess:process];
+        }
+    }
+}
+
+- (void)runProcess:(BKMKRAutopilotCoordinatorProcess)process {
+    @synchronized (self) {
+        BKMKRAutopilotCoordinator * __weak wSelf = self;
+        process(^() {
+            [wSelf.processes removeObject:[wSelf.processes firstObject]];
+            BKMKRAutopilotCoordinatorProcess nextProcess = [wSelf.processes firstObject];
+            if(nextProcess) {
+                [wSelf runProcess:nextProcess];
+            }
+        });
+    }
 }
 
 @end

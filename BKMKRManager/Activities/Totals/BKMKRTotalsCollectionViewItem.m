@@ -29,7 +29,6 @@
 @property (weak) IBOutlet NSView *noticeContainer;
 @property (strong, nonatomic) BKMKRSoundNotice *noticeControl;
 
-@property BOOL betProcessing;
 @end
 
 @implementation BKMKRTotalsCollectionViewItem
@@ -38,7 +37,6 @@
     [super viewDidLoad];
     
     [self loadNotices];
-    self.betProcessing = NO;    
 }
 
 - (void)viewDidAppear {
@@ -123,17 +121,10 @@
             [self updateBetMWait];
             self.betMCurrentCoefficientLabel.stringValue = [NSString stringWithFormat:@"%.2f", currentCoefficient];
             
-            if ([BKMKRTotalAnalyzer analyzeTotal:(Total *)self.representedObject withCoefficient:currentCoefficient])
+            if ([BKMKRTotalAnalyzer analyzeTotal:(Total *)self.representedObject withCoefficient:currentCoefficient]
+                && [self.dataSource enabledNotifying])
             {
-                if ([self.dataSource enabledNotifying]) {
-                    [self.noticeControl startNotice];
-                }
-                if (!self.betProcessing) {
-                    self.betProcessing = YES;
-                    [self.delegate processBetTotalOver:(Total *)self.representedObject completion:^{
-                        self.betProcessing = NO;
-                    }];
-                }
+                [self.noticeControl startNotice];
             }
         }
     } else {

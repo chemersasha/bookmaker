@@ -34,8 +34,8 @@
 
 - (void)processBetTotalOver:(Total *)total completion:(void(^)())completion{
     BKMKRAutopilotCoordinator *coordinator = [BKMKRAutopilotCoordinator sharedInstance];
-    
-    [coordinator runBetProcess:^(BKMKRAutopilotCoordinatorProcessCompletion processCompletion) {
+
+    [coordinator addBetProcess:^(BKMKRAutopilotCoordinatorProcessCompletion processCompletion) {
         [NSApp activateIgnoringOtherApps:YES];
         [[self.document.windowControllers[0] window] makeKeyAndOrderFront:nil];
 
@@ -56,7 +56,7 @@
                 //@TODO click BET button
                 
                 //@TODO check bet is passed or no. After update model and UI
-//                processCompletion();
+                processCompletion();
                 completion();
             });
         });

@@ -28,12 +28,15 @@
 @property (weak) IBOutlet NSButton *notifyCheckbox;
 @property (weak) IBOutlet NSTextField *betSumTextField;
 
+@property (strong, nonatomic) NSMutableSet *betProcesses;
 @end
 
 @implementation BKMKRTotalsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.betProcesses = [NSMutableSet new];
 }
 
 - (void)update {
@@ -112,7 +115,23 @@
             BKMKRTotalInfo totalInfo = [self.document.eventInfo totalInfoAtTotalValue:total.total];
             [item betLCurrentCoefficientDidReceive:totalInfo.lCoefficient];
             [item betMCurrentCoefficientDidReceive:totalInfo.mCoefficient];
+            
+            if ([BKMKRTotalAnalyzer analyzeTotal:total withCoefficient:totalInfo.mCoefficient]) {
+                [self processBetTotalOver:total];
+            }
         }
+    }
+}
+
+- (void)processBetTotalOver:(Total *)total {
+    NSNumber *totalNum = [NSNumber numberWithFloat:total.total];
+    if (self.autopilotCheckbox.state == NSOnState && ![self.betProcesses containsObject:totalNum]) {
+        [self.betProcesses addObject:totalNum];
+        BKMKRTotalsViewController * __weak wSelf = self;
+        [self.document.autopilot processBetTotalOver:total completion:^{
+            //@TODO update model and UI
+            [wSelf.betProcesses removeObject:totalNum];
+        }];
     }
 }
 
@@ -144,14 +163,6 @@
 - (void)colleItemViewItemDidDoubleClick:(BKMKRTotalsCollectionViewItem *)item {
     BKMKRTotalDetailViewController *totalDetailViewController = [[BKMKRTotalDetailViewController alloc] initWithTotal:item.representedObject];
     [self presentViewController:totalDetailViewController animator:[BKMKRViewControllerAnimator new]];
-}
-
-- (void)processBetTotalOver:(Total *)total completion:(void (^)())completion {
-    if (self.autopilotCheckbox.state == NSOnState) {
-        [self.document.autopilot processBetTotalOver:total completion:^{
-            completion();
-        }];
-    }
 }
 
 #pragma mark - BKMKRTotalsCollectionViewItemDataSource

@@ -22,6 +22,6 @@ typedef void(^BKMKRAutopilotCoordinatorProcess)(BKMKRAutopilotCoordinatorProcess
 
 #pragma mark -
 
-- (void)runBetProcess:(BKMKRAutopilotCoordinatorProcess)process;
+- (void)addBetProcess:(BKMKRAutopilotCoordinatorProcess)process;
 
 @end
