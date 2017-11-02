@@ -32,7 +32,7 @@
 
 #pragma mark -
 
-- (void)processBetTotalOver:(Total *)total completion:(void(^)())completion{
+- (void)processBetTotalOver:(Total *)total completion:(void(^)(float bet, float profit))completion{
     BKMKRAutopilotCoordinator *coordinator = [BKMKRAutopilotCoordinator sharedInstance];
 
     [coordinator addBetProcess:^(BKMKRAutopilotCoordinatorProcessCompletion processCompletion) {
@@ -47,17 +47,31 @@
             NSString *clickTotalScript = [NSString stringWithContentsOfFile:clickTotalPath encoding:NSUTF8StringEncoding error:nil];
             clickTotalScript = [clickTotalScript stringByReplacingOccurrencesOfString:@"<<<>>>" withString:[NSString stringWithFormat:@"%.1f", total.total]];
             
+            BKMKRAutopilot * __weak wSelf = self;
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self.webView stringByEvaluatingJavaScriptFromString:clickTotalScript];
-                [self.webView stringByEvaluatingJavaScriptFromString:selectAndFocusScript];
+                [wSelf.webView stringByEvaluatingJavaScriptFromString:clickTotalScript];
+                [wSelf.webView stringByEvaluatingJavaScriptFromString:selectAndFocusScript];
                 
-                float totalOverCoefficient = [self.document.eventInfo totalInfoAtTotalValue:total.total].mCoefficient;
-                [self inputNumber:floor([BKMKRTotalAnalyzer betMWaitFromTotal:total withCoefficient:totalOverCoefficient])];
-                //@TODO click BET button
-                
-                //@TODO check bet is passed or no. After update model and UI
-                processCompletion();
-                completion();
+                float totalOverCoefficient = [wSelf.document.eventInfo totalInfoAtTotalValue:total.total].mCoefficient;
+                float betMWait = floor([BKMKRTotalAnalyzer betMWaitFromTotal:total withCoefficient:totalOverCoefficient]);
+
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 3*NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+                    [wSelf inputNumber:betMWait];
+                    
+                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2*NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+                        [wSelf.webView stringByEvaluatingJavaScriptFromString:@"document.getElementsByName('bbet_pl')[0].click();"];
+                        
+                        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 20*NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+                            //@TODO If (Ставка принимается) refresh webview
+                            //@TODO Check bet is passed or not.
+                            NSString *profit = [wSelf.webView stringByEvaluatingJavaScriptFromString:@"document.getElementsByClassName('bbet_inp_maxp')[0].innerText;"];
+                            [wSelf.webView stringByEvaluatingJavaScriptFromString:clickTotalScript];
+                            
+                            completion(betMWait, profit.floatValue);
+                            processCompletion();
+                        });
+                    });
+                });
             });
         });
     }];

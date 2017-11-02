@@ -117,20 +117,29 @@
             [item betMCurrentCoefficientDidReceive:totalInfo.mCoefficient];
             
             if ([BKMKRTotalAnalyzer analyzeTotal:total withCoefficient:totalInfo.mCoefficient]) {
-                [self processBetTotalOver:total];
+                [self processBetTotalOverAtItem:item];
             }
         }
     }
 }
 
-- (void)processBetTotalOver:(Total *)total {
+- (void)processBetTotalOverAtItem:(BKMKRTotalsCollectionViewItem *)item {
+    Total *total = (Total *)item.representedObject;
     NSNumber *totalNum = [NSNumber numberWithFloat:total.total];
     if (self.autopilotCheckbox.state == NSOnState && ![self.betProcesses containsObject:totalNum]) {
         [self.betProcesses addObject:totalNum];
         BKMKRTotalsViewController * __weak wSelf = self;
-        [self.document.autopilot processBetTotalOver:total completion:^{
-            //@TODO update model and UI
-            [wSelf.betProcesses removeObject:totalNum];
+        [self.document.autopilot processBetTotalOver:total completion:^(float bet, float profit){
+            NSLog(@"profit = %fl", profit);
+            if (profit != 0) {
+                total.betM += bet;
+                total.profitM += profit;
+                
+                [self update];
+                [item stopNotice];
+                
+                [wSelf.betProcesses removeObject:totalNum];
+            }
         }];
     }
 }

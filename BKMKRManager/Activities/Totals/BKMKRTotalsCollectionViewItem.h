@@ -28,4 +28,6 @@
 - (void)betLCurrentCoefficientDidReceive:(float)currentCoefficient;
 - (void)betMCurrentCoefficientDidReceive:(float)currentCoefficient;
 
+- (void)stopNotice;
+
 @end

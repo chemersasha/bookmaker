@@ -103,6 +103,10 @@
                 : @"-";
 }
 
+- (void)stopNotice {
+    [self.noticeControl stopNotice];
+}
+
 #pragma mark -
 
 - (void)betLCurrentCoefficientDidReceive:(float)currentCoefficient {

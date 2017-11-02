@@ -16,6 +16,6 @@
 
 - (instancetype)initWithWebView:(WebView *)webView document:(Document *)document;
 
-- (void)processBetTotalOver:(Total *)total completion:(void(^)())completion;
+- (void)processBetTotalOver:(Total *)total completion:(void(^)(float bet, float profit))completion;
 
 @end
